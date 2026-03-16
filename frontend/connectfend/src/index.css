@@ -1,0 +1,286 @@
+:root {
+  /* ===========================
+     TYPOGRAPHY SYSTEM
+  =========================== */
+  --font-main: "Oxygen", sans-serif;
+  color-scheme: light dark;
+
+  /* Headings scale */
+  --font-h1: 42px;
+  --font-h2: 32px;
+  --font-h3: 24px;
+  --font-h4: 20px;
+
+  /* Body scale */
+  --font-body-lg: 18px;
+  --font-body: 16px;
+  --font-body-sm: 14px;
+  --font-caption: 13px;
+
+  /* Responsive hero */
+  --font-hero: clamp(2.5rem, 6vw, 3.5rem);
+  --font-big: clamp(2.25rem, 5vw + 1rem, 3.5rem);
+
+  /* Weight roles */
+  --fw-title: 700;
+  --fw-subtitle: 600;
+  --fw-h1: var(--fw-title);
+  --fw-h2: var(--fw-subtitle);
+  --fw-h3: var(--fw-subtitle);
+  --fw-h4: var(--fw-subtitle);
+  --fw-body: 400;
+  --fw-body-strong: 500;
+  --fw-title-strong: 800;
+  --fw-light: 300;
+  --fw-lightest: 100;
+
+  /* Line Heights */
+  --lh-tight: 1.2;
+  --lh-normal: 1.6;
+  --lh-base: 1.6;
+  --lh-loose: 1.8;
+
+  /* ===========================
+     COLOR SYSTEM (Dynamic Mode)
+     Default: Light Mode
+  =========================== */
+  --color-primary: #26aae3;
+  --color-primary-strong: #1d8ab9;
+  --color-primary-soft: rgba(38, 170, 227, 0.1);
+  --color-brand-blue: var(--color-primary);
+
+  --color-secondary: #0A192F;
+  --color-accent: #e6782d;
+  --color-accent-soft: rgba(230, 120, 45, 0.1);
+
+  --color-text-main: #1a365d;
+  --color-text-body: #334155;
+  --color-text-muted: #64748b;
+  --color-text-dark: #0f172a;
+  --color-text: var(--color-text-body);
+
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f8fafc;
+  --color-bg: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-surface-overlay: rgba(255, 255, 255, 0.9);
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 10px 30px rgba(0, 0, 0, 0.08);
+  --gradient-panel: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
+  --gradient-app: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+
+  /* ===========================
+     SPACING & LAYOUT
+  =========================== */
+  --spacing-section: 80px;
+  --spacing-section-mobile: 40px;
+  --spacing-container: 40px;
+  --spacing-container-mobile: 20px;
+  --spacing-card: 24px;
+  --spacing-gap: 30px;
+  --container-width: 88%;
+  --container-max: 1440px;
+
+  /* Transitions */
+  --transition-base: all 0.3s ease;
+
+  font-family: var(--font-main);
+  line-height: var(--lh-base);
+  color: var(--color-text-body);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light dark;
+    /* Keep this for proper dark mode behavior */
+    --color-primary: #26aae3;
+    --color-primary-strong: #58c7f4;
+    --color-primary-soft: rgba(38, 170, 227, 0.16);
+    --color-brand-blue: var(--color-primary);
+
+    --color-secondary: #0A192F;
+    --color-accent: #e6782d;
+    --color-accent-soft: rgba(230, 120, 45, 0.16);
+
+    --color-text-main: #ffffff;
+    --color-text-body: #94a3b8;
+    --color-text-muted: #64748b;
+    --color-text-dark: #ffffff;
+    --color-text: var(--color-text-body);
+
+    --color-bg-white: #0f172a;
+    --color-bg-light: #1e293b;
+    --color-bg: #020617;
+    --color-surface-raised: #0f172a;
+    --color-surface-overlay: rgba(2, 6, 23, 0.9);
+    --color-border: #1e293b;
+    --color-border-strong: #334155;
+
+    --shadow-card: 0 24px 50px rgba(0, 0, 0, 0.32);
+    --shadow-card-hover: 0 30px 70px rgba(0, 0, 0, 0.42);
+    --shadow-glow: 0 0 0 1px rgba(38, 170, 227, 0.18), 0 24px 60px rgba(2, 6, 23, 0.6);
+    --gradient-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    --gradient-app:
+      radial-gradient(circle at 20% 20%, rgba(38, 170, 227, 0.1), transparent 0 34%),
+      radial-gradient(circle at 82% 0%, rgba(230, 120, 45, 0.06), transparent 0 28%),
+      linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--gradient-app);
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-main);
+  color: var(--color-text-main);
+  line-height: var(--lh-tight);
+}
+
+h1 {
+  font-size: var(--font-h1);
+  font-weight: var(--fw-h1);
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: var(--font-h2);
+  font-weight: var(--fw-h2);
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: var(--font-h3);
+  font-weight: var(--fw-h3);
+  margin-bottom: 0;
+}
+
+h4 {
+  font-size: var(--font-h4);
+  font-weight: var(--fw-h4);
+  margin-bottom: 0;
+}
+
+p {
+  font-size: var(--font-body);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-base);
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+body p {
+  color: var(--color-text-body);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-primary-strong);
+}
+
+ul,
+ol {
+  list-style-position: inside;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  font-size: var(--font-body);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-base);
+  margin-bottom: 0.5rem;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: var(--fw-body-strong);
+  font-family: inherit;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-main);
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, transform 0.25s;
+}
+
+button:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface-raised);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 3px solid var(--color-primary-soft);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  * {
+    -webkit-tap-highlight-color: rgba(38, 170, 227, 0.2);
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    margin-bottom: 0.875rem;
+  }
+
+  h3 {
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    margin-bottom: 0.875rem;
+  }
+}

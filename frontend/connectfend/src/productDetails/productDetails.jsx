@@ -1,0 +1,966 @@
+import React, { useMemo, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import productData from "../data/productData";
+import SEO from "../components/SEO";
+import "./productDetails.css";
+
+import tosiFavicon from "../assets/tosi_fevicon.png";
+
+// Tosi Images
+import tosiHubImg from "../assets/tosi-industrial-gateway/Tosi Hub.png";
+import tosiKeyImg from "../assets/tosi-industrial-gateway/Tosi Key.webp";
+import tosi175Img from "../assets/tosi-industrial-gateway/Tosi 175.webp";
+import tosi350Img from "../assets/tosi-industrial-gateway/Tosi 350.webp";
+import tosi375Img from "../assets/tosi-industrial-gateway/Tosi 375.webp";
+import tosi610Img from "../assets/tosi-industrial-gateway/Tosi 610.webp";
+import tosi675Img from "../assets/tosi-industrial-gateway/Tosi 675.webp";
+import tosi695Img from "../assets/tosi-industrial-gateway/Tosi 695.webp";
+import tosiLock500Img from "../assets/tosi-industrial-gateway/Tosi 500.webp";
+
+// --- TOSI SPECIFIC DATA (Parsed from Sheet Tab 55) ---
+const TOSI_GENERAL_DESC = `Tosi has automated secure connectivity and made it simple. It is a standardized way of building VPN connections based on a patented connection method. The configuration-free Plug & Go™ implementation is easy and ready to use within minutes. The unique feature of Tosi technology is the two-way connectivity that brings the benefits of IP networking plus remote maintenance with one technology. Tosi is ISO27001 certified, underlining the importance we place on protecting customers´ data. Platform security is based on automated firewall settings and point-to-point VPN technology with 256 Bit AES data encryption. Tosi Platform supports Layer 2 and layer 3 routing functions and protocols.`;
+
+const TOSI_VARIANTS = [
+  {
+    id: 'hub',
+    name: 'Tosi Hub',
+    overview: `Tosi HUB—your gateway to building scalable, secure, and centrally managed VPN networks with unparalleled flexibility and performance. Cut access management work time from days into minutes! Tosi HUB is the cornerstone of constructing professional and secure networks comprising a large number of sites and users. It is the VPN tunnel concentrator maintaining persistent connections to Tosi Nodes while enforcing fine grained access controls.`,
+    specs: `• Enhanced cybersecurity through network segmentation
+• Centralized user and access management
+• Continuous 24/7 data collection and management
+• Audit trail and network monitoring
+• Data routing according to regulations and requirements`,
+    image: tosiHubImg
+  },
+  {
+    id: 'key',
+    name: 'Tosi Key',
+    overview: `Tosi Key is an intelligent cryptoprocessing device that enables a secure connection between your computer and one or more Tosi Node, giving you a full visibility and control over the network devices connected to the Node.`,
+    specs: `Connections are established through a secure, encrypted VPN tunnel over the Internet or other common WANs and LANs, and permissions can be easily granted, revoked and configured in an unlimited number of ways. Tosi Key comes with a durable light metal alloy casing.`,
+    image: tosiKeyImg
+  },
+  {
+    id: '175',
+    name: 'Tosi 175',
+    overview: `Tosi 175 is a cost-effective Plug & GoTM connectivity device and is ideal for demanding industry sectors that require an all-in-one solution that is compact, able to handle all environments and suited to global market usage. The 4G module and external 4G antenna provides stable Internet access, so the node can be easily configured anywhere`,
+    specs: `Ports :
+• 1 x RJ-45 WAN connection, 10/100 Mb/s, auto-negotiation (MDI / MDI-X)
+• 1 x RJ-45 LAN connection, 10/100 Mb/s, auto-negotiation(MDI / MDI-X)
+• LAN can be assigned as Service connection, 10/100 Mb/s, auto-negotiation (MDI / MDI-X)
+• RS485 port is not supported in the software.
+Connections :
+• 9-35V DC
+• 2 x WiFi antenna connector, RP-SMA Male
+• 1 x LTE antenna connector, SMA Female
+• DIN rail attachment (back)
+• Maximum power consumption 10W`,
+    image: tosi175Img
+  },
+  {
+    id: '350',
+    name: 'Tosi 350',
+    overview: `the Tosi 350: Tailored for businesses seeking a compact, all-encompassing solution that operates seamlessly across the globe. With its fixed ethernet interface and WiFi you can enjoy stable remote access wherever you are. No technical expertise is needed – just plug and play`,
+    specs: `Ports :
+• 1 x RJ-45 WAN connection, 10/100 Mbps, auto-negotiation (MDI / MDI-X)
+• 4 x RJ-45 LAN connection, 10/100 Mbps, auto-negotiation (MDI / MDI-X)
+• 1 x USB 2.0, type A
+Connections :
+• 2 pin industrial DC power socket
+• 6-Pin 3.5mm Digital IO socket (6-Pin serial interface not supported in software)
+• 5-35V DC, reverse polarity protection, voltage surge/transient protection
+• 1 x RP-SMA for WiFi
+• DIN rail mounting in the back
+• Maximum power consumption 10W`,
+    image: tosi350Img
+  },
+  {
+    id: '375',
+    name: 'Tosi 375',
+    overview: `Tosi 375 - Your workhorse for any industry. If you are in a business that needs a compact, allin-one solution that can work nearly anywhere in the world, Tosi 375 is for you! With its fixed ethernet interface, WiFi, or internal LTE module complemented with external antennas, you can enjoy stable remote access wherever you are.`,
+    specs: `Ports :
+• 1 x RJ-45 WAN connection, 10/100 Mbps, auto-negotiation (MDI / MDI-X)
+• 4 x RJ-45 LAN connection, 10/100 Mbps, auto-negotiation (MDI / MDI-X)
+• 1 x USB 2.0, type A
+Connections :
+• 2-pin industrial DC power socket
+• 6-pin 3.5mm digital IO socket (6-pin serial interface not supported in software)
+• 5-35V DC, reverse polarity protection, voltage surge/transient protection
+• 1 x RP-SMA for WiFi
+• 2 x SMA for LTE
+• DIN rail mounting in the back
+• Maximum power consumption 10W`,
+    image: tosi375Img
+  },
+  {
+    id: '610',
+    name: 'Tosi 610',
+    overview: `Tosi 610 is a perfect choice for professional applications when wireless networking is not required. Leading edge cybersecurity technology from Tosi enable diverse application scenarios. The durable aluminium alloy shell and small form factor is ideal for rugged mounting conditions.`,
+    specs: `Ports
+• 1 x RJ-45 WAN connection, 10/100/1000 Mb/s, autonegotiation (MDI / MDI-X)
+• 3 x RJ-45 LAN connection, 10/100/1000 Mb/s, autonegotiation (MDI / MDI-X)
+• 1 x USB 2.0, type A
+Connections
+• 4 pin industrial DC power socket
+• 9-50V DC, reverse polarity protection, voltage surge/
+transient protection
+• DIN rail mounting slot in the back
+• Maximum power consumption 6W`,
+    image: tosi610Img
+  },
+  {
+    id: '675',
+    name: 'Tosi 675',
+    overview: `Tosi 675 is a powerful device for high demanding application in demanding industrial environments. With a wide range of connectivity interfaces the demand for always on connectivity is guaranteed. This device can be used in power-hungry industrial applications where speed and robustness are at the heart of the solution.`,
+    specs: `Ports
+• 1 x RJ-45 WAN connection, 10/100/1000 Mb/s, autonegotiation (MDI / MDI-X)
+• 3 x RJ-45 LAN connection, 10/100/1000 Mb/s, autonegotiation (MDI / MDI-X)
+• 1 x USB 2.0, type A
+Connections
+• 4 pin industrial DC power socket
+• 9-50V DC, reverse polarity protection,
+voltage surge/transient protection
+• 2 x RP-SMA for WiFi
+• 2 x SMA for LTE
+• 1 x GNSS
+• DIN rail mounting slot in the back and on both sides
+• Maximum power consumption 16W`,
+    image: tosi675Img
+  },
+  {
+    id: '695',
+    name: 'Tosi 695',
+    overview: `Unleash the power of 5G cellular connectivity and LTE fallback with the Tosi 695 - a game-changer for networking professionals! Crafted with precision and engineered for toughness, the Tosi 695 boasts a robust metal alloy casing complemented by an extensive temperature range and an IP30 Ingress Protection Rating. It's built to thrive in challenging environmental conditions.`,
+    specs: `Ports
+• 1 x RJ-45 WAN connection, 10/100/1000 Mb/s, autonegotiation (MDI / MDI-X)
+• 4 x RJ-45 LAN connection, 10/100/1000 Mb/s, autonegotiation (MDI / MDI-X)
+• 1 x USB 2.0, type A
+Connections
+• 4 pin industrial DC power socket
+• 9-50V DC, reverse polarity protection,
+voltage surge/transient protection
+• 2 x RP-SMA for WiFi
+• 4 x SMA for 5G/LTE
+• 1 x GNSS
+• DIN rail mounting slot in the back and on both sides
+• Maximum power consumption 18W`,
+    image: tosi695Img
+  },
+  {
+    id: 'lock500',
+    name: 'Tosi Lock 500',
+    overview: `Tosi Lock 500 is a high-end connectivity device bringing unprecedented possibilities for customers to manage their operations and to build new IoT solutions. The Lock 500 is ideal for demanding industrial environments and opens up new opportunities in security and office networking sectors. The Lock 500 is compatible with all existing Tosi products.`,
+    specs: `Ports
+• 1 x USB 2.0, type A
+• 1 x RJ-45 WAN connection, 10/100 Mb/s, auto-negotiation (MDI / MDI-X)
+• 3 x RJ-45 LAN connection, 10/100 Mb/s, auto-negotiation (MDI / MDI-X)
+• LAN3 can be assigned as Service connection, 10/100 Mb/s, auto-negotiation (MDI / MDI-X)
+Connections
+• 12-48V DC (+/-20%), reverse polarity protected
+• Device frame connector
+• 2 x WiFi antenna connector, RP-SMA Female
+• (TBL5i*) 2 x LTE antenna connectors, SMA Female
+• 2 x Digital Input, 2 x Digital Output, 24V DC out
+• DIN rail attachment (back)
+• Maximum power consumption 10W`,
+    image: tosiLock500Img
+  }
+];
+
+
+export default function ProductDetails() {
+  const { category, subcategory, productId, variantId } = useParams();
+
+  const [activeTab, setActiveTab] = useState('features');
+  const [activeTosiVariant, setActiveTosiVariant] = useState(TOSI_VARIANTS[0]);
+
+  const { product, relatedProducts, breadcrumbs, isVariantParentPage, isTosiPage, foundCat, foundSub } = useMemo(() => {
+    let foundProduct = null;
+    let foundCat = null;
+    let foundSub = null;
+    let parentProduct = null;
+    let variantParentPage = false;
+    const tosiPage = productId === 'tosi-industrial-gateway' || productId === 'Tosi-industrial-gateway';
+
+    if (productId) {
+      for (const cat of productData) {
+        for (const sub of cat.subcategories) {
+          const found = sub.products.find(p => p.id === productId);
+          if (found) {
+            foundProduct = found;
+            foundCat = cat;
+            foundSub = sub;
+
+            if (variantId && foundProduct.variants) {
+              const variant = foundProduct.variants.find(v => v.id === variantId);
+              if (variant) {
+                parentProduct = foundProduct;
+                foundProduct = variant;
+              }
+            }
+            else if (foundProduct.variants && !variantId) {
+              variantParentPage = true;
+            }
+
+            break;
+          }
+        }
+        if (foundProduct) break;
+      }
+    }
+
+    if (!foundProduct) {
+      return {
+        product: null,
+        relatedProducts: [],
+        breadcrumbs: [],
+        isVariantParentPage: false,
+        isTosiPage: tosiPage,
+      };
+    }
+
+    const crumbs = [
+      { label: "Products", path: "/products" },
+      { label: foundCat.category, path: `/products/${foundCat.slug}` },
+      { label: foundSub.name, path: `/products/${foundCat.slug}/${foundSub.slug}` },
+    ];
+
+    if (parentProduct) {
+      crumbs.push({ label: parentProduct.name, path: `/products/${foundCat.slug}/${foundSub.slug}/${parentProduct.id}` });
+    }
+
+    crumbs.push({ label: foundProduct.name, path: "#" });
+
+    const resolvedRelatedProducts = parentProduct
+      ? parentProduct.variants
+        .filter(v => v.id !== foundProduct.id)
+        .map(v => ({ ...v, isVariant: true, parentId: parentProduct.id }))
+      : foundSub.products
+        .filter(p => p.id !== foundProduct.id)
+        .slice(0, 4)
+        .map(p => ({ ...p, isVariant: false }));
+
+    return {
+      product: foundProduct,
+      relatedProducts: resolvedRelatedProducts,
+      breadcrumbs: crumbs,
+      isVariantParentPage: variantParentPage,
+      isTosiPage: tosiPage,
+      foundCat,
+      foundSub
+    };
+  }, [productId, variantId]);
+
+  if (!product) return <div className="pd-not-found">Loading or Product Not Found...</div>;
+
+  // --- Helper to parse/render specs for Tosi/LoRaWAN ---
+  const renderSpecializedSpecs = (specsString) => {
+    const lines = (specsString || "")
+      .split("\n")
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+    if (lines.length === 0) return null;
+
+    const groups = [];
+    let currentTitle = "";
+    let currentItems = [];
+
+    const pushGroup = () => {
+      if (!currentTitle && currentItems.length === 0) return;
+      groups.push({
+        title: currentTitle,
+        items: currentItems,
+      });
+    };
+
+    lines.forEach((line) => {
+      const isSectionHeader = /:$/.test(line) || /^(ports|connections)$/i.test(line);
+      if (isSectionHeader) {
+        pushGroup();
+        currentTitle = line.replace(/:$/, "");
+        currentItems = [];
+        return;
+      }
+
+      currentItems.push(line.replace(/^•\s*/, ""));
+    });
+
+    pushGroup();
+
+    return (
+      <div className="tosi-specs-groups">
+        {groups.map((group, index) => (
+          <div key={`${group.title}-${index}`} className="tosi-specs-group">
+            {group.title && <h4 className="section-title">{group.title}</h4>}
+            <ul className="pd-features-list">
+              {group.items.map((item, itemIndex) => (
+                <li key={`${group.title}-${itemIndex}`}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+
+
+  const traverseBack = () => {
+    // Navigate back to the subcategory list if possible, or main products page
+    if (category && subcategory) {
+      return `/products/${category}/${subcategory}`;
+    }
+    return "/products";
+  };
+
+  // --- SPECIALIZED VIEW FOR TOSI ---
+  if (isTosiPage) {
+    return (
+      <div className="pd-page pd-tosi-theme">
+        <SEO
+          title={`${product.name} - ConnectME`}
+          description={TOSI_GENERAL_DESC.substring(0, 160)}
+        />
+
+        {/* BACK BUTTON */}
+        <div className="pd-back-wrapper">
+          <Link to={traverseBack()} className="pd-back-btn" aria-label="Go Back">
+            <FaArrowLeft />
+          </Link>
+        </div>
+
+        {/* BREADCRUMBS */}
+        <div className="pd-breadcrumb">
+          {breadcrumbs.map((b, i) => (
+            <span key={i}>
+              {b.path !== "#" ? <Link to={b.path}>{b.label}</Link> : <span>{b.label}</span>}
+              {i < breadcrumbs.length - 1 && " / "}
+            </span>
+          ))}
+        </div>
+
+        {/* HERO SECTION - Modified for Tosi */}
+        <div className="pd-hero pd-tosi-hero">
+          <div className="pd-hero-content">
+            <h1 className="pd-title">{product.name}</h1>
+            <div className="pd-overview pd-tosi-general-desc">
+              <p>{TOSI_GENERAL_DESC}</p>
+            </div>
+            <div className="pd-actions">
+              <Link to="/contact" className="btn-primary">Request a Quote</Link>
+              {product.brochure && (
+                <a href={product.brochure} target="_blank" rel="noreferrer" className="btn-secondary">
+                  Download Sheet
+                </a>
+              )}
+            </div>
+          </div>
+          <div className="pd-hero-image">
+            <img src={product.image} alt={product.name}  loading="lazy" />
+            <img src={tosiFavicon} alt="Tosi Overlay" className="tosi-hero-overlay"  loading="lazy" />
+          </div>
+        </div>
+
+        {/* MAIN CONTENT AREA - VARIANT TABS */}
+        <div className="pd-content pd-tosi-content">
+          <h2 className="section-title">Product Variants</h2>
+
+          <div className="pd-tabs pd-tosi-tabs">
+            {TOSI_VARIANTS.map((variant) => (
+              <button
+                key={variant.id}
+                className={`pd-tab-btn ${activeTosiVariant.id === variant.id ? 'active' : ''}`}
+                onClick={() => setActiveTosiVariant(variant)}
+              >
+                {variant.name}
+              </button>
+            ))}
+          </div>
+
+          <div className="pd-tab-content pd-tosi-variant-panel">
+            <h3 className="variant-title">{activeTosiVariant.name}</h3>
+
+            <div className="tosi-variant-layout" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '40px', alignItems: 'start' }}>
+              <div className="tosi-variant-text">
+                <div className="variant-overview">
+                  <h4>Overview</h4>
+                  <p>{activeTosiVariant.overview}</p>
+                </div>
+
+                <div className="variant-specs">
+                  {renderSpecializedSpecs(activeTosiVariant.specs)}
+                </div>
+              </div>
+
+              {activeTosiVariant.image && (
+                <div className="tosi-variant-image" style={{ maxWidth: '350px' }}>
+                  <img
+                    src={activeTosiVariant.image}
+                    alt={activeTosiVariant.name}
+                    style={{ width: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                   loading="lazy" />
+                </div>
+              )}
+            </div>
+          </div>
+
+          {relatedProducts.length > 0 && (
+            <div className="pd-related-section">
+              <h2 className="section-title">Related Products</h2>
+              <div className="related-grid">
+                {relatedProducts.map(rp => (
+                  <Link to={`/products/${category}/${subcategory}/${rp.id}`} key={rp.id} className="related-card">
+                    <div className="related-img">
+                      <img src={rp.image} alt={rp.name}  loading="lazy" />
+                    </div>
+                    <h4 className="related-title">{rp.name}</h4>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // --- VARIANT PARENT PAGE VIEW ---
+  if (isVariantParentPage && product.variants) {
+    return (
+      <div className="pd-page">
+        <SEO
+          title={`${product.name} - ConnectME`}
+          description={product.description || "High-performance LoRaWAN gateways for industrial IoT connectivity."}
+        />
+
+        {/* BACK BUTTON */}
+        <div className="pd-back-wrapper">
+          <Link to={traverseBack()} className="pd-back-btn" aria-label="Go Back">
+            <FaArrowLeft />
+          </Link>
+        </div>
+
+        {/* BREADCRUMBS */}
+        <div className="pd-breadcrumb">
+          {breadcrumbs.map((b, i) => (
+            <span key={i}>
+              {b.path !== "#" ? <Link to={b.path}>{b.label}</Link> : <span>{b.label}</span>}
+              {i < breadcrumbs.length - 1 && " / "}
+            </span>
+          ))}
+        </div>
+        {/* HERO SECTION */}
+        <div className="pd-hero">
+          <div className="pd-hero-content">
+            <h1 className="pd-title">{product.name}</h1>
+            <div className="pd-overview">
+              <p>{product.overview || product.description}</p>
+            </div>
+            <div className="pd-actions">
+              <Link to="/contact" className="btn-primary">Request a Quote</Link>
+            </div>
+          </div>
+          <div className="pd-hero-image">
+            <img src={product.image} alt={product.name} loading="lazy" />
+          </div>
+        </div>
+
+        {/* VARIANT CARDS GRID */}
+        <div className="pd-content">
+          <h2 className="section-title">Product Variants</h2>
+
+          <div className="unified-products-grid" style={{ marginTop: '40px' }}>
+            {product.variants.map((variant) => (
+              <div key={variant.id} className="premium-product-card">
+                <div className="product-image-wrapper">
+                  <img src={variant.image} alt={variant.name} className="product-image" loading="lazy" />
+                </div>
+                <div className="product-details">
+                  <div className="product-subtitle">GATEWAYS & CONNECTIVITY</div>
+                  <h3 className="product-title">{variant.name}</h3>
+
+                  <p className="product-description">{variant.description}</p>
+
+                  <div className="product-specs-preview">
+                    {variant.specs && Object.entries(variant.specs).slice(0, 3).map(([key, val]) => (
+                      <div className="spec-row" key={key}>
+                        <span className="spec-key">{key}</span>
+                        <span className="spec-val" title={val}>{val}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="product-tags">
+                    {variant.tags && variant.tags.map((tag, idx) => (
+                      <span key={idx} className="tag-badge">{tag}</span>
+                    ))}
+                  </div>
+
+                  <Link
+                    to={`/products/${category}/${subcategory}/${productId}/${variant.id}`}
+                    className="view-more-link"
+                  >
+                    View Product →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+
+
+  // --- GENERIC VIEW (Old Layout) ---
+  return (
+    <div className="pd-page">
+      <SEO
+        title={`${product.name} - ConnectME Product`}
+        description={product.description ? product.description.substring(0, 160) : "ConnectME Industrial IoT Product"}
+      />
+
+      {/* BACK BUTTON */}
+      <div className="pd-back-wrapper">
+        <Link to={traverseBack()} className="pd-back-btn" aria-label="Go Back">
+          <FaArrowLeft />
+        </Link>
+      </div>
+
+      {/* BREADCRUMBS */}
+      <div className="pd-breadcrumb">
+        {breadcrumbs.map((b, i) => (
+          <span key={i}>
+            {b.path !== "#" ? <Link to={b.path}>{b.label}</Link> : <span>{b.label}</span>}
+            {i < breadcrumbs.length - 1 && " / "}
+          </span>
+        ))}
+      </div>
+
+      {/* HERO SECTION */}
+      <div className="pd-hero">
+        <div className="pd-hero-content">
+          <h1 className="pd-title">{product.name}</h1>
+          {product.overview && (
+            <div className="pd-overview">
+              {product.overview.split('\n').map((para, i) => <p key={i}>{para}</p>)}
+            </div>
+          )}
+
+          <div className="pd-actions">
+            <Link to="/contact" className="btn-primary">Request a Quote</Link>
+            {product.brochure ? (
+              <a href={product.brochure} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                Download Datasheet
+              </a>
+            ) : (
+              <button className="btn-secondary" disabled>Download Datasheet (Coming Soon)</button>
+            )}
+          </div>
+        </div>
+        <div className={`pd-hero-image ${['u2404-edge', 'u2403x-s100', 'u2406edge-u2602-s100-u1402', 'u2406-edge-u1401'].includes(product.id) ? 'pd-scaled-image' : ''}`}>
+          <img src={product.image} alt={product.name} loading="lazy" />
+        </div>
+      </div>
+
+      {/* MAIN CONTENT AREA */}
+      <div className="pd-content">
+
+        {/* TABS NAVIGATION */}
+        <div className="pd-tabs">
+          <button
+            className={`pd-tab-btn ${activeTab === 'features' ? 'active' : ''}`}
+            onClick={() => setActiveTab('features')}
+          >
+            Key Features
+          </button>
+
+          {product.specs && (
+            <button
+              className={`pd-tab-btn ${activeTab === 'specs' ? 'active' : ''}`}
+              onClick={() => setActiveTab('specs')}
+            >
+              Specifications
+            </button>
+          )}
+              {(product.dimensions || product.technicalFlow || product.dimensionsDescription) && (
+                <button
+                  className={`pd-tab-btn ${activeTab === 'dimensions' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('dimensions')}
+                >
+                  Dimensions & Flow
+                </button>
+              )}
+              {(product.orderCodes || product.orderCodeSections || product.orderCodesDescription) && (
+                <button
+                  className={`pd-tab-btn ${activeTab === 'order' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('order')}
+                >
+                  Order Codes
+                </button>
+              )}
+              {(product.application || product.applicationDescription) && (
+                <button
+                  className={`pd-tab-btn ${activeTab === 'application' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('application')}
+                >
+                  Applications
+                </button>
+              )}
+              {relatedProducts.length > 0 && (
+                <button
+                  className={`pd-tab-btn ${activeTab === 'related' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('related')}
+                >
+                  Related Products
+                </button>
+              )}
+            </div>
+            {/* TAB CONTENT */}
+            <div className="pd-tab-content">
+
+
+          {/* FEATURES TAB */}
+          {activeTab === 'features' && (
+            <section className="pd-tab-panel">
+              <h2 className="section-title">Key Features</h2>
+              <ul className="pd-features-list">
+                {product.features?.map((f, i) => (
+                  <li key={i}>{f}</li>
+                )) || <p>No specific features listed.</p>}
+              </ul>
+            </section>
+          )}
+
+              {/* SPECS TAB - With Optional 2-Column Controller Specs */}
+              {activeTab === 'specs' && product.specs && (
+                <section className="pd-tab-panel">
+                  <h2 className="section-title">Specifications</h2>
+                  {product.controllerSpecs ? (
+                    <div className="pd-dual-specs-container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', alignItems: 'start' }}>
+                      <div className="specs-column">
+                        <h3 className="specs-col-title" style={{ fontSize: '1.2rem', marginBottom: '15px', color: '#0eb582', fontWeight: '600' }}>Valve Specification</h3>
+                        <div className="pd-specs-table-wrapper">
+                          <table className="pd-specs-table">
+                            <tbody>
+                              {Object.entries(product.specs).map(([key, val]) => (
+                                <tr key={key}>
+                                  <td className="spec-label">{key}</td>
+                                  <td className="spec-value">{val}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div className="specs-column">
+                        <h3 className="specs-col-title" style={{ fontSize: '1.2rem', marginBottom: '15px', color: '#262626', fontWeight: '600', backgroundColor: '#f5f5f5', padding: '5px 10px', borderRadius: '4px', display: 'inline-block' }}>Controller Unit (CU) Specification</h3>
+                        <div className="pd-specs-table-wrapper">
+                          <table className="pd-specs-table">
+                            <tbody>
+                              {Object.entries(product.controllerSpecs).map(([key, val]) => (
+                                <tr key={key}>
+                                  <td className="spec-label">{key}</td>
+                                  <td className="spec-value">{val}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    /* Default Single Spec Table */
+                    <div className="pd-specs-table-wrapper">
+                      <table className="pd-specs-table">
+                        <tbody>
+                          {Object.entries(product.specs).map(([key, val]) => (
+                            <tr key={key}>
+                              <td className="spec-label">{key}</td>
+                              <td className="spec-value">{val}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </section>
+              )}
+
+              {/* DIMENSIONS & FLOW TAB */}
+              {activeTab === 'dimensions' && (
+                <section className="pd-tab-panel">
+                  {product.technicalFlow && (
+                    <>
+                      <h2 className="section-title">Technical Specifications - Flow</h2>
+                      <div className="pd-specs-table-wrapper">
+                        <table className="pd-data-table">
+                          <thead>
+                            <tr>
+                              {product.technicalFlowColumns ? (
+                                product.technicalFlowColumns.map((col, i) => <th key={i}>{col.label}</th>)
+                              ) : (
+                                <>
+                                  <th>Nominal Diameter (DN)</th>
+                                  <th>Minimum Flow qmin (m³/h)</th>
+                                  <th>Nominal Flow qp (m³/h)</th>
+                                  <th>Maximum Flow qmax (m³/h)</th>
+                                  <th>Length (mm)</th>
+                                </>
+                              )}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {product.technicalFlow.map((row, i) => (
+                              <tr key={i}>
+                                {product.technicalFlowColumns ? (
+                                  product.technicalFlowColumns.map((col, j) => <td key={j}>{row[col.key]}</td>)
+                                ) : (
+                                  <>
+                                    <td>{row.dn}</td>
+                                    <td>{row.min}</td>
+                                    <td>{row.nominal}</td>
+                                    <td>{row.max}</td>
+                                    <td>{row.length}</td>
+                                  </>
+                                )}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </>
+                  )}
+
+                  {product.dimensionsDescription && (
+                    <div style={{ marginBottom: '20px', whiteSpace: 'pre-line', fontSize: '15px', color: '#555', lineHeight: '1.6' }}>
+                      <h2 className="section-title">Dimensions</h2>
+                      {product.dimensionsDescription}
+                    </div>
+                  )}
+
+                  {product.dimensions && (
+                    <>
+                      <h2 className="section-title">Dimensions</h2>
+                      <div className="pd-specs-table-wrapper">
+                        <table className="pd-data-table">
+                          <thead>
+                            <tr>
+                              {product.dimensionsColumns ? (
+                                product.dimensionsColumns.map((col, i) => <th key={i}>{col.label}</th>)
+                              ) : (
+                                <>
+                                  <th>Nominal Diameter (DN)</th>
+                                  <th>Thread Size</th>
+                                  <th>Length (L)</th>
+                                  <th>Width (W)</th>
+                                  <th>Height (H)</th>
+                                </>
+                              )}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {product.dimensions.map((row, i) => (
+                              <tr key={i}>
+                                {product.dimensionsColumns ? (
+                                  product.dimensionsColumns.map((col, j) => <td key={j}>{row[col.key]}</td>)
+                                ) : (
+                                  <>
+                                    <td>{row.dn}</td>
+                                    <td>{row.thread}</td>
+                                    <td>{row.length}</td>
+                                    <td>{row.width}</td>
+                                    <td>{row.height}</td>
+                                  </>
+                                )}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </>
+                  )}
+                </section>
+              )}
+
+              {/* ORDER CODES TAB */}
+              {activeTab === 'order' && (product.orderCodes || product.orderCodeSections || product.orderCodesDescription) && (
+                <section className="pd-tab-panel">
+                  <h2 className="section-title">Order Code</h2>
+
+                  {product.orderCodesDescription && (
+                    <div style={{ marginBottom: '20px', whiteSpace: 'pre-line', fontSize: '15px', color: '#555', lineHeight: '1.6' }}>
+                      {product.orderCodesDescription}
+                    </div>
+                  )}
+
+                  {product.orderCodeSections ? (
+                    <div className="pd-sections-wrapper">
+                      {product.orderCodeSections.map((section, sidx) => {
+                        const cols = section.columns || product.orderCodeColumns || [
+                          { label: "Order Code", key: "model" },
+                          { label: "Description", key: "desc" }
+                        ];
+                        return (
+                          <div key={sidx} className="pd-order-section" style={{ marginBottom: '40px' }}>
+                            {section.title && (
+                              <h3 style={{ 
+                                fontSize: '24px', 
+                                fontWeight: '700', 
+                                marginBottom: '20px', 
+                                color: section.titleColor || 'var(--color-primary)',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
+                              }}>
+                                {section.title}
+                              </h3>
+                            )}
+                            <div className="pd-specs-table-wrapper">
+                              <table className="pd-data-table">
+                                <thead>
+                                  <tr>
+                                    {cols.map((col, i) => (
+                                      <th key={i}>{col.label}</th>
+                                    ))}
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {(section.items || []).map((row, i) => (
+                                    <tr key={i}>
+                                      {cols.map((col, j) => (
+                                        <td key={j}>{row[col.key] || ''}</td>
+                                      ))}
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : product.orderCodes && (
+                    <div className="pd-specs-table-wrapper">
+                      {product.orderCodeLayout === 'positional' ? (
+                        /* ── POSITIONAL MULTI-COLUMN TABLE ── */
+                        (() => {
+                          const slots = product.orderCodeSlots || 6;
+                          const circleNums = ['1','2','3','4','5','6','7','8','9','10'];
+                          // Find the model row (col === null)
+                          const modelRow = product.orderCodes.find(r => r.col === null);
+                          const dataRows = product.orderCodes.filter(r => r.col !== null);
+                          return (
+                            <table className="pd-order-positional">
+                              <thead>
+                                <tr>
+                                  <th className="pos-model-header" rowSpan={2}>Model</th>
+                                  <th className="pos-code-header" colSpan={slots}>Order Code</th>
+                                  <th className="pos-desc-header" rowSpan={2}>Description</th>
+                                </tr>
+                                <tr>
+                                  {Array.from({ length: slots }, (_, i) => (
+                                    <th key={i} className="pos-slot-header">
+                                      <span className="pos-circle">{circleNums[i]}</span>
+                                    </th>
+                                  ))}
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {dataRows.map((row, i) => (
+                                  <tr key={i}>
+                                    <td className="pos-param-cell">{row.param}</td>
+                                    {Array.from({ length: slots }, (_, s) => (
+                                      <td key={s} className="pos-code-cell">
+                                        {row.col === s + 1 ? row.code : ''}
+                                      </td>
+                                    ))}
+                                    <td className="pos-desc-cell">{row.desc}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          );
+                        })()
+                      ) : (
+                        /* ── STANDARD TABLE (existing) ── */
+                        <table className="pd-data-table">
+                          <thead>
+                            <tr>
+                              {product.orderCodeColumns && product.orderCodeColumns.map((col, i) => (
+                                <th key={i}>{col.label}</th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {product.orderCodes.map((row, i) => (
+                              <tr key={i}>
+                                {product.orderCodeColumns && product.orderCodeColumns.map((col, j) => (
+                                  <td key={j}>{row[col.key]}</td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      )}
+                    </div>
+                  )}
+                </section>
+              )}
+
+              {/* APPLICATION TAB */}
+              {activeTab === 'application' && (product.application || product.applicationDescription) && (
+                <section className="pd-tab-panel">
+                  <h2 className="section-title">Applications</h2>
+
+                  {product.applicationDescription && (
+                    <div style={{ marginBottom: '20px', whiteSpace: 'pre-line', fontSize: '15px', color: '#555', lineHeight: '1.6' }}>
+                      {product.applicationDescription}
+                    </div>
+                  )}
+
+                  {product.application && (
+                    Array.isArray(product.application) ? (
+                      <ul className="pd-features-list">
+                        {product.application.map((app, i) => (
+                          <li key={i}>{app}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <div style={{ whiteSpace: 'pre-line', fontSize: '15px', color: '#555', lineHeight: '1.6' }}>
+                        {product.application}
+                      </div>
+                    )
+                  )}
+                </section>
+              )}
+
+              {/* RELATED TAB */}
+              {activeTab === 'related' && relatedProducts.length > 0 && (
+                <section className="pd-tab-panel pd-related">
+                  <h2 className="section-title">Related Products</h2>
+                  <div className="related-grid">
+                    {relatedProducts.map(rp => (
+                      <Link
+                        to={rp.isVariant
+                          ? `/products/${foundCat.slug}/${foundSub.slug}/${rp.parentId}/${rp.id}`
+                          : `/products/${foundCat.slug}/${foundSub.slug}/${rp.id}`
+                        }
+                        key={rp.id}
+                        className="related-card"
+                      >
+                        <div className="related-img">
+                          <img src={rp.image} alt={rp.name} loading="lazy" />
+                        </div>
+                        <h4 className="related-title">{rp.name}</h4>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
+            </div>
+          </div>
+    </div>
+  );
+}

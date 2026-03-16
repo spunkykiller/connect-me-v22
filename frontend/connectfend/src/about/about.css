@@ -1,0 +1,616 @@
+.about-wrapper {
+  font-family: var(--font-main);
+  color: var(--color-text-dark);
+  background: transparent;
+}
+
+/* ===========================
+   HERO
+   =========================== */
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  background-color: #050608;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.38;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #fff;
+  text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.9);
+}
+
+.about-hero-overlay h1 {
+  font-size: var(--font-big);
+  font-weight: var(--fw-title);
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.about-hero-overlay p {
+  font-size: var(--font-body-lg);
+  color: #fff;
+}
+
+
+.about-section {
+  font-family: var(--font-main);
+  padding: var(--spacing-section-mobile) var(--spacing-section);
+  /* More side padding for breathing room */
+  color: var(--color-text-dark);
+}
+
+/* --- TOP TWO COLUMN LAYOUT --- */
+.about-top {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  /* Give text slightly more space */
+  gap: 60px;
+  align-items: center;
+  /* Center align image and text vertically */
+}
+
+/* LEFT IMAGE */
+.about-image-box {
+  width: 100%;
+  position: relative;
+  /* Context for absolute positioning of footer */
+}
+
+.about-image {
+  width: 100%;
+  height: 480px;
+  /* Slightly reduced height for balance */
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  display: block;
+  /* Removes bottom gap */
+}
+
+.about-image-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-primary);
+  /* Blue color */
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-weight: var(--fw-title);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-size: var(--font-body);
+  padding-left: 20px;
+  text-transform: uppercase;
+}
+
+/* RIGHT TEXT */
+.about-text p {
+  font-size: var(--font-body);
+  /* Standardized Body Text */
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: var(--color-text-body);
+}
+
+/* FULL-WIDTH PARAGRAPHS BELOW */
+.about-full-text {
+  font-size: var(--font-body);
+  /* Standardized Body Text */
+  line-height: 1.8;
+  margin-top: 40px;
+  /* Better separation */
+  max-width: 100%;
+  color: var(--color-text-body);
+}
+
+/* KEY HIGHLIGHTS GRID */
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+.highlight-item {
+  background: var(--color-bg-light);
+  border-left: 4px solid var(--color-primary);
+  padding: 24px 20px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+
+.highlight-item h3 {
+  font-size: var(--font-body);
+  font-weight: var(--fw-title);
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.highlight-item p {
+  font-size: var(--font-body-sm);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* CO-FOUNDER LABEL */
+.founder-label {
+  font-size: var(--font-body-sm);
+  font-weight: var(--fw-title);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+/* ========================= */
+/*   THREE-CARD SECTION      */
+/* ========================= */
+
+.about-cards-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  margin-top: 40px;
+}
+
+.about-card {
+  width: 30%;
+  background: var(--color-bg-white);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+.about-card-title {
+  font-size: var(--font-h3);
+  font-weight: var(--fw-title);
+  color: var(--color-primary);
+  /* green like screenshot */
+  margin-bottom: 10px;
+}
+
+.about-card-sub {
+  font-size: var(--font-h2);
+  /* Was 30px, bumped to 38px standard, or maybe h3? Let's use h2 as it looks big in design */
+  font-weight: var(--fw-subtitle);
+  margin-bottom: 20px;
+}
+
+.about-card ul,
+.about-card p {
+  font-size: var(--font-body);
+  line-height: var(--lh-normal);
+  color: var(--color-text-body);
+}
+
+.about-card-small {
+  margin-top: 15px;
+  font-size: var(--font-body-sm) !important;
+  color: var(--color-text-muted) !important;
+}
+
+/* =========================== */
+/*      ISO CERTIFICATIONS     */
+/* =========================== */
+
+.iso-section {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 190px;
+  /* spacing exactly like screenshot */
+  padding-bottom: 40px;
+}
+
+.iso-card {
+  text-align: center;
+}
+
+.iso-img {
+  width: 280px;
+  height: auto;
+  object-fit: contain;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  padding: 5px;
+  background: var(--color-bg-white);
+}
+
+.iso-label {
+  font-size: var(--font-h2);
+  /* Was 36px */
+  font-weight: var(--fw-subtitle);
+  color: var(--color-accent);
+  /* same orange as screenshot */
+  margin-top: 20px;
+}
+
+/* ABOUT THE FOUNDER */
+.founder-section {
+  margin-top: 60px;
+  padding: 20px 40px;
+}
+
+.founder-title {
+  text-align: center;
+  font-size: var(--font-h2);
+  font-weight: var(--fw-title);
+  line-height: var(--lh-tight);
+  color: var(--color-primary);
+  margin-bottom: 40px;
+}
+
+/* ROWS */
+.founder-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.founder-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMAGES */
+.founder-img {
+  width: 500px;
+  height: 420px;
+  /* Increased height */
+  object-fit: cover;
+  object-position: center;
+  /* Focus on face/upper body */
+  border-radius: 8px;
+}
+
+.founder-img-top {
+  object-position: top center !important;
+}
+
+/* INFO BLOCK */
+.founder-info {
+  max-width: 680px;
+}
+
+.founder-name {
+  font-size: var(--font-h3);
+  /* Was 26px */
+  font-weight: var(--fw-title);
+  margin-bottom: 5px;
+}
+
+.founder-role {
+  font-size: var(--font-body);
+  /* Was 18px */
+  color: var(--color-accent);
+  margin-bottom: 15px;
+}
+
+.founder-list {
+  font-size: var(--font-body);
+  /* Was 18px */
+  line-height: 1.6;
+  color: var(--color-text-body);
+}
+
+.founder-list li {
+  margin-bottom: 10px;
+}
+
+/* TECHNOLOGY HERO SECTION */
+
+.tech-hero {
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(135deg, #061019 0%, #0b1621 38%, #123049 100%);
+  position: relative;
+  margin-top: 40px;
+}
+
+.tech-overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.tech-title {
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: var(--fw-title);
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 0;
+  max-width: 800px;
+}
+
+.tech-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-strong) 100%);
+  margin: 24px 0;
+  border-radius: 2px;
+}
+
+.tech-sub {
+  font-size: var(--font-body-lg);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 0;
+  max-width: 680px;
+}
+
+.about-title {
+  font-size: var(--font-h1);
+  color: var(--color-text-main);
+  margin-bottom: 20px;
+}
+
+.about-subtitle {
+  font-size: var(--font-h4);
+  color: var(--color-primary);
+  margin-bottom: 30px;
+  font-weight: var(--fw-subtitle);
+}
+
+.about-text p {
+  font-size: var(--font-body);
+  color: var(--color-text-body);
+  line-height: var(--lh-base);
+  margin-bottom: 20px;
+}
+
+/* ===========================
+   RESPONSIVE MOBILE STYLES
+   =========================== */
+
+@media (max-width: 1024px) {
+  .about-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-cards-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-card {
+    width: 80%;
+    max-width: 500px;
+  }
+
+  .iso-section {
+    gap: 80px;
+  }
+
+  .founder-row,
+  .founder-row.reverse {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .founder-img {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 30px 20px;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+
+  .about-hero {
+    height: 300px;
+  }
+
+  .about-hero-overlay h1 {
+    font-size: var(--font-h1);
+    /* Mobile header */
+  }
+
+  .about-hero-overlay p {
+    font-size: var(--font-caption);
+  }
+
+  .about-image {
+    height: 350px;
+  }
+
+  .about-text p,
+  .about-full-text {
+    font-size: var(--font-body-sm);
+    line-height: 1.7;
+  }
+
+  .about-cards-section {
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .about-card {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .about-card-title {
+    font-size: var(--font-h3);
+  }
+
+  .about-card-sub {
+    font-size: var(--font-h3);
+    /* Reduce from h2 on mobile */
+  }
+
+  .about-card ul,
+  .about-card p {
+    font-size: var(--font-body-sm);
+  }
+
+  .iso-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .iso-img {
+    width: 220px;
+  }
+
+  .iso-label {
+    font-size: var(--font-h3);
+  }
+
+  .founder-section {
+    padding: 20px;
+  }
+
+  .founder-title {
+    font-size: var(--font-h2);
+    margin-bottom: 30px;
+  }
+
+  .founder-row {
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+
+  .founder-img {
+    height: 320px;
+  }
+
+  .founder-name {
+    font-size: var(--font-h4);
+  }
+
+  .founder-role {
+    font-size: var(--font-body-sm);
+  }
+
+  .founder-list {
+    font-size: var(--font-body-sm);
+  }
+
+  .tech-hero {
+    height: 400px;
+  }
+
+  .tech-title {
+    font-size: clamp(2rem, 10vw, 3rem);
+    margin-bottom: 15px;
+  }
+
+  .tech-sub {
+    font-size: var(--font-body);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 20px 15px;
+  }
+
+
+  .about-hero {
+    height: 250px;
+  }
+
+  .about-hero-overlay h1 {
+    font-size: var(--font-h2);
+  }
+
+  .about-hero-overlay p {
+    font-size: var(--font-caption);
+  }
+
+  .about-image {
+    height: 280px;
+  }
+
+  .about-text p,
+  .about-full-text {
+    font-size: var(--font-body-sm);
+  }
+
+  .about-cards-section {
+    padding: 15px;
+  }
+
+  .about-card {
+    padding: 20px;
+  }
+
+  .about-card-sub {
+    font-size: var(--font-h4);
+  }
+
+  .iso-img {
+    width: 180px;
+  }
+
+  .iso-label {
+    font-size: var(--font-h4);
+  }
+
+  .founder-img {
+    height: 280px;
+  }
+
+  .tech-hero {
+    height: 350px;
+  }
+
+  .tech-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .tech-sub {
+    font-size: var(--font-body-sm);
+    line-height: 1.3;
+  }
+}

@@ -1,0 +1,93 @@
+.cookie-consent-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  background: #000000;
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 99999;
+}
+
+.cookie-consent-box {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cookie-consent-box h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  font-weight: var(--fw-title);
+  color: var(--color-primary);
+}
+
+.cookie-consent-box p {
+  margin: 0 0 15px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.cookie-consent-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.cookie-consent-actions button {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: var(--fw-subtitle);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-accept {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-accept:hover {
+  box-shadow: 0 12px 24px rgba(38, 170, 227, 0.24);
+}
+
+.btn-decline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.btn-decline:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-main);
+}
+
+@media (min-width: 768px) {
+  .cookie-consent-box {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .cookie-consent-box p {
+    margin: 0;
+    flex: 1;
+    padding: 0 30px;
+  }
+
+  .cookie-consent-box h3 {
+    margin: 0;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,696 @@
+Insights
+Render blocking requests Est savings of 250 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer size
+Duration
+connectme.biz 1st party
+4.0 KiB	350 ms
+/assets/index-Cl7ZRW3w.css(connectme.biz)
+4.0 KiB
+350 ms
+Google Fonts cdn 
+1.2 KiB	200 ms
+/css2?family=Oxygen:wght@300;400;700&display=swap(fonts.googleapis.com)
+1.2 KiB
+200 ms
+Improve image delivery Est savings of 7,045 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimising image sizeLCPFCPUnscored
+URL
+Resource size
+Est savings
+connectme.biz 1st party
+7,177.9 KiB	7,044.9 KiB
+news
+<img src="https://connectme.biz/assets/qatar_new_office-uLIgV5GK.png" alt="news" class="news-image">
+/assets/qatar_new….png(connectme.biz)
+2,448.0 KiB
+2,437.2 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+2,192.0 KiB
+This image file is larger than it needs to be (1536x1024) for its displayed dimensions (315x210). Use responsive images to reduce the image download size.
+2,345.0 KiB
+trust
+<img src="https://connectme.biz/assets/Homepage_cme-DUP29y85.png" alt="trust">
+/assets/Homepage_….png(connectme.biz)
+2,034.3 KiB
+1,995.5 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+1,778.3 KiB
+This image file is larger than it needs to be (1536x1024) for its displayed dimensions (598x398). Use responsive images to reduce the image download size.
+1,726.4 KiB
+ConnectME
+<img src="https://connectme.biz/assets/connectMe_correctLogo_medqual-Y4hDVglD.png" alt="ConnectME">
+/assets/connectMe….png(connectme.biz)
+206.2 KiB
+201.0 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+165.5 KiB
+This image file is larger than it needs to be (500x500) for its displayed dimensions (180x180). Use responsive images to reduce the image download size.
+179.5 KiB
+Tosi Industrial Gateway
+<img src="https://connectme.biz/assets/Tosibox-eCGXOWMs.webp" class="product-image" alt="Tosi Industrial Gateway" loading="lazy" width="300" height="300">
+/assets/Tosibox-eCGXOWMs.webp(connectme.biz)
+150.0 KiB
+148.1 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+148.1 KiB
+Uflo U60 Advanced Series
+<img src="https://connectme.biz/assets/u60%20advanced%20series-e-NwZh3q.webp" class="product-image" alt="Uflo U60 Advanced Series" loading="lazy" width="300" height="300">
+/assets/u60%20advanced%20series-e-NwZh3q.webp(connectme.biz)
+127.0 KiB
+125.1 KiB
+This image file is larger than it needs to be (1600x1458) for its displayed dimensions (196x179). Use responsive images to reduce the image download size.
+125.1 KiB
+M-Bus Gateway Panel
+<img src="https://connectme.biz/assets/M-bus%20gateway%20panel-B7tuMCe7.webp" class="product-image" alt="M-Bus Gateway Panel" loading="lazy" width="300" height="300">
+/assets/M-bus%20gateway%20panel-B7tuMCe7.webp(connectme.biz)
+106.9 KiB
+104.5 KiB
+This image file is larger than it needs to be (1600x1066) for its displayed dimensions (238x159). Use responsive images to reduce the image download size.
+104.5 KiB
+M-Bus USB Powered
+<img src="https://connectme.biz/assets/usb%20mbus%20master-D9_4-Bpw.webp" class="product-image" alt="M-Bus USB Powered" loading="lazy" width="300" height="300">
+/assets/usb%20mbus%20master-D9_4-Bpw.webp(connectme.biz)
+97.1 KiB
+95.9 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+95.9 KiB
+M-Bus Master
+<img src="https://connectme.biz/assets/Mbus%20Master-C0uwcgEr.webp" class="product-image" alt="M-Bus Master" loading="lazy" width="300" height="300">
+/assets/Mbus%20Master-C0uwcgEr.webp(connectme.biz)
+92.1 KiB
+91.0 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+91.0 KiB
+Uflo U40 Bulk Series
+<img src="https://connectme.biz/assets/uflo_u40_bulk-O0nK-oY4.webp" class="product-image" alt="Uflo U40 Bulk Series" loading="lazy" width="300" height="300">
+/assets/uflo_u40_….webp(connectme.biz)
+88.4 KiB
+87.3 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+87.3 KiB
+Gaskonnect Relay module
+<img src="https://connectme.biz/assets/Gas%20Konnect%20relay%20module-Br7ScHEp.webp" class="product-image" alt="Gaskonnect Relay module" loading="lazy" width="300" height="300">
+/assets/Gas%20Konnect%20relay%20module-Br7ScHEp.webp(connectme.biz)
+86.2 KiB
+85.1 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+85.1 KiB
+Gaskonnect AMR & Solenoid Controller
+<img src="https://connectme.biz/assets/Gas%20Konnect%20tkn2801C%20_%20pulse%20reader…" class="product-image" alt="Gaskonnect AMR &amp; Solenoid Controller" loading="lazy" width="300" height="300">
+/assets/Gas%20Konnect%20tkn2801C%20_%20pulse%20reader%20_%….webp(connectme.biz)
+85.8 KiB
+84.6 KiB
+This image file is larger than it needs to be (1600x1481) for its displayed dimensions (193x179). Use responsive images to reduce the image download size.
+84.6 KiB
+Uflo Intelligent Valve with Integrated Heat Meter- U51
+<img src="https://connectme.biz/assets/U51-Intelligent%20Btu%20meter%20with%20valve-…" class="product-image" alt="Uflo Intelligent Valve with Integrated Heat Meter- U51" loading="lazy" width="300" height="300">
+/assets/U51-Intelligent%20Btu%20meter%20with%20valve-B7BqN….webp(connectme.biz)
+84.1 KiB
+83.0 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+83.0 KiB
+Edge Controllers
+<img src="https://connectme.biz/assets/Uconnect%20edge%20module-WG_a6EAr.webp" class="product-image" alt="Edge Controllers" loading="lazy" width="300" height="300">
+/assets/Uconnect%20edge%20module-WG_a6EAr.webp(connectme.biz)
+82.1 KiB
+81.1 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+81.1 KiB
+Techknave Insertion Ultrasonic BTU/Flow meter
+<img src="https://connectme.biz/assets/tkn%20insertion%20clamp%20on%20btu%20meter-4n…" class="product-image" alt="Techknave Insertion Ultrasonic BTU/Flow meter" loading="lazy" width="300" height="300">
+/assets/tkn%20insertion%20clamp%20on%20btu%20meter-4nU551ks.webp(connectme.biz)
+78.5 KiB
+76.8 KiB
+This image file is larger than it needs to be (1600x1069) for its displayed dimensions (238x159). Use responsive images to reduce the image download size.
+76.8 KiB
+M-Bus Gateway
+<img src="https://connectme.biz/assets/Serial%20to%20TCP%20Converter-BLZvXdTM.webp" class="product-image" alt="M-Bus Gateway" loading="lazy" width="300" height="300">
+/assets/Serial%20to%20TCP%20Converter-BLZvXdTM.webp(connectme.biz)
+73.4 KiB
+72.5 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+72.5 KiB
+ConnectME
+<img src="https://connectme.biz/assets/connectME_logo_transparent-WeudyTn7.webp" alt="ConnectME" class="logo-img">
+/assets/connectME….webp(connectme.biz)
+72.8 KiB
+72.3 KiB
+This image file is larger than it needs to be (1600x894) for its displayed dimensions (125x70). Use responsive images to reduce the image download size.
+72.3 KiB
+Gaskonnect Pulse Reader
+<img src="https://connectme.biz/assets/Gas%20Konnect%20tkn2801P-BcHGY4AT.webp" class="product-image" alt="Gaskonnect Pulse Reader" loading="lazy" width="300" height="300">
+/assets/Gas%20Konnect%20tkn2801….webp(connectme.biz)
+73.4 KiB
+72.0 KiB
+This image file is larger than it needs to be (1600x1267) for its displayed dimensions (226x179). Use responsive images to reduce the image download size.
+72.0 KiB
+Techknave Enhanced Clampon Ultrasonic BTU /Flow meter
+<img src="https://connectme.biz/assets/TKN%20enhanced-r15LM1Nt.webp" class="product-image" alt="Techknave Enhanced Clampon Ultrasonic BTU /Flow meter" loading="lazy" width="300" height="300">
+/assets/TKN%20enhance….webp(connectme.biz)
+71.1 KiB
+69.5 KiB
+This image file is larger than it needs to be (1600x1066) for its displayed dimensions (238x159). Use responsive images to reduce the image download size.
+69.5 KiB
+news
+<img src="https://connectme.biz/assets/uflo_u60_advanced-BmJX9jv4.webp" alt="news" class="news-image">
+/assets/uflo_u60_….webp(connectme.biz)
+71.9 KiB
+65.1 KiB
+This image file is larger than it needs to be (1024x933) for its displayed dimensions (315x287). Use responsive images to reduce the image download size.
+65.1 KiB
+Techknave Portable Ultrasonic Flow meter
+<img src="https://connectme.biz/assets/TKN203F_portable_flow%20meter-DS6NmHxn.webp" class="product-image" alt="Techknave Portable Ultrasonic Flow meter" loading="lazy" width="300" height="300">
+/assets/TKN203F_p…%20meter-DS6NmHxn.webp(connectme.biz)
+64.6 KiB
+63.8 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+63.8 KiB
+Made in UAE
+<img src="https://connectme.biz/assets/made_in_uae-C1RIMkla.webp" alt="Made in UAE">
+/assets/made_in_u….webp(connectme.biz)
+66.3 KiB
+63.7 KiB
+This image file is larger than it needs to be (1024x1024) for its displayed dimensions (202x202). Use responsive images to reduce the image download size.
+63.7 KiB
+GasKonnect Smart Gas Meters
+<img src="https://connectme.biz/assets/Gas%20Konnect%20tkn2810X%20smart%20gas%20mete…" class="product-image" alt="GasKonnect Smart Gas Meters" loading="lazy" width="300" height="300">
+/assets/Gas%20Konnect%20tkn2810X%20smart%20gas%20meter-l8C….webp(connectme.biz)
+64.4 KiB
+63.6 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+63.6 KiB
+Techknave Standard Clampon Ultrasonic BTU /Flow meter
+<img src="https://connectme.biz/assets/Techknave%20202%20Standard-Cgs-hO3-.webp" class="product-image" alt="Techknave Standard Clampon Ultrasonic BTU /Flow meter" loading="lazy" width="300" height="300">
+/assets/Techknave%20202%20Standar….webp(connectme.biz)
+59.7 KiB
+58.9 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+58.9 KiB
+Wireless Single Point Leak Sensor
+<img src="https://connectme.biz/assets/uconnect_single_point_leak-DjFihDzY.webp" class="product-image" alt="Wireless Single Point Leak Sensor" loading="lazy" width="300" height="300">
+/assets/uconnect_single_point_leak-DjFihDzY.webp(connectme.biz)
+57.9 KiB
+56.1 KiB
+This image file is larger than it needs to be (1024x1024) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+56.1 KiB
+Uflo U40 Compact Series
+<img src="https://connectme.biz/assets/u40%20compact-Dl_MEaFL.webp" class="product-image" alt="Uflo U40 Compact Series" loading="lazy" width="300" height="300">
+/assets/u40%20compact-Dl_MEaFL.webp(connectme.biz)
+50.9 KiB
+50.3 KiB
+This image file is larger than it needs to be (1600x1600) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+50.3 KiB
+Modbus to LoRaWAN Converter
+<img src="https://connectme.biz/assets/modbus_lorawan_converter-CiSu8IJc.webp" class="product-image" alt="Modbus to LoRaWAN Converter" loading="lazy" width="300" height="300">
+/assets/modbus_lo….webp(connectme.biz)
+47.9 KiB
+46.3 KiB
+This image file is larger than it needs to be (805x963) for its displayed dimensions (150x179). Use responsive images to reduce the image download size.
+46.3 KiB
+Wireless Zone Leak Sensor
+<img src="https://connectme.biz/assets/uconnect_zone_leak-BiQMChMd.webp" class="product-image" alt="Wireless Zone Leak Sensor" loading="lazy" width="300" height="300">
+/assets/uconnect_zone_leak-BiQMChMd.webp(connectme.biz)
+46.4 KiB
+45.0 KiB
+This image file is larger than it needs to be (1024x1024) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+45.0 KiB
+M-Bus to LoRaWAN Converter
+<img src="https://connectme.biz/assets/Cloudgate%20mini-BhwH4415.webp" class="product-image" alt="M-Bus to LoRaWAN Converter" loading="lazy" width="300" height="300">
+/assets/Cloudgate%20mini-BhwH4415.webp(connectme.biz)
+45.2 KiB
+42.1 KiB
+This image file is larger than it needs to be (910x594) for its displayed dimensions (238x155). Use responsive images to reduce the image download size.
+42.1 KiB
+Techknave Smart Compact Valve
+<img src="https://connectme.biz/assets/Techknave%20smart%20valve%20compact-DKz_3iFg.…" class="product-image" alt="Techknave Smart Compact Valve" loading="lazy" width="300" height="300">
+/assets/Techknave%20smart%20valve%20compact-DKz_3iFg.webp(connectme.biz)
+40.8 KiB
+39.9 KiB
+This image file is larger than it needs to be (1600x1069) for its displayed dimensions (238x159). Use responsive images to reduce the image download size.
+39.9 KiB
+Uflo U70 Advanced Series
+<img src="https://connectme.biz/assets/u70-DdXfG3Qh.webp" class="product-image" alt="Uflo U70 Advanced Series" loading="lazy" width="300" height="300">
+/assets/u70-DdXfG3Qh.webp(connectme.biz)
+39.0 KiB
+38.4 KiB
+This image file is larger than it needs to be (1024x1536) for its displayed dimensions (119x179). Use responsive images to reduce the image download size.
+38.4 KiB
+Pulse to LoRaWAN Converter
+<img src="https://connectme.biz/assets/tkn2803p_pulse_lorawan-kkW5mc3O.webp" class="product-image" alt="Pulse to LoRaWAN Converter" loading="lazy" width="300" height="300">
+/assets/tkn2803p_….webp(connectme.biz)
+38.1 KiB
+36.9 KiB
+This image file is larger than it needs to be (1024x1024) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+36.9 KiB
+Wired Non-Location Area Leak Sensor
+<img src="https://connectme.biz/assets/uconnect_ald_s-DtX53-Jf.webp" class="product-image" alt="Wired Non-Location Area Leak Sensor" loading="lazy" width="300" height="300">
+/assets/uconnect_….webp(connectme.biz)
+37.4 KiB
+36.3 KiB
+This image file is larger than it needs to be (1024x1024) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+36.3 KiB
+ISO 14001:2015
+<img src="https://connectme.biz/assets/iso_14001-Dt6p1B78.webp" alt="ISO 14001:2015">
+/assets/iso_14001-Dt6p1B78.webp(connectme.biz)
+33.5 KiB
+30.5 KiB
+This image file is larger than it needs to be (670x921) for its displayed dimensions (202x278). Use responsive images to reduce the image download size.
+30.5 KiB
+ISO 45001:2018
+<img src="https://connectme.biz/assets/iso_45001-CUxv6PoB.webp" alt="ISO 45001:2018">
+/assets/iso_45001-CUxv6PoB.webp(connectme.biz)
+33.7 KiB
+30.4 KiB
+This image file is larger than it needs to be (645x903) for its displayed dimensions (201x282). Use responsive images to reduce the image download size.
+30.4 KiB
+ISO 9001:2015
+<img src="https://connectme.biz/assets/iso_9001-CeTT_3xV.webp" alt="ISO 9001:2015">
+/assets/iso_9001-CeTT_3xV.webp(connectme.biz)
+31.9 KiB
+28.8 KiB
+This image file is larger than it needs to be (650x897) for its displayed dimensions (202x279). Use responsive images to reduce the image download size.
+28.8 KiB
+Smart M-Bus Valve Controller
+<img src="https://connectme.biz/assets/mbus_smart_valves_segregated_tkn2201-DIUW-7BZ…" class="product-image" alt="Smart M-Bus Valve Controller" loading="lazy" width="300" height="300">
+/assets/mbus_smar….webp(connectme.biz)
+28.1 KiB
+26.0 KiB
+This image file is larger than it needs to be (599x657) for its displayed dimensions (163x179). Use responsive images to reduce the image download size.
+26.0 KiB
+M-Bus Level Converter
+<img src="https://connectme.biz/assets/Mbus%20level%20Converter-IE6hOtOW.webp" class="product-image" alt="M-Bus Level Converter" loading="lazy" width="300" height="300">
+/assets/Mbus%20level%20Convert….webp(connectme.biz)
+26.7 KiB
+25.4 KiB
+This image file is larger than it needs to be (683x791) for its displayed dimensions (155x179). Use responsive images to reduce the image download size.
+25.4 KiB
+Wireless Capacitive Level Sensor
+<img src="https://connectme.biz/assets/uconnect_cls-CBzMRLZa.webp" class="product-image" alt="Wireless Capacitive Level Sensor" loading="lazy" width="300" height="300">
+/assets/uconnect_cls-CBzMRLZa.webp(connectme.biz)
+26.2 KiB
+25.4 KiB
+This image file is larger than it needs to be (1024x1024) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+25.4 KiB
+Serial to TCP Converter
+<img src="https://connectme.biz/assets/U2301_Serial_to_TCP-CZ-vXRpC.webp" class="product-image" alt="Serial to TCP Converter" loading="lazy" width="300" height="300">
+/assets/U2301_Serial_to_TCP-CZ-vXRpC.webp(connectme.biz)
+25.6 KiB
+24.8 KiB
+This image file is larger than it needs to be (1024x1024) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+24.8 KiB
+Uflo U50 Bulk Series
+<img src="https://connectme.biz/assets/u50-bulk%20btu%20meter-CFIf9CJ_.webp" class="product-image" alt="Uflo U50 Bulk Series" loading="lazy" width="300" height="300">
+/assets/u50-bulk%20btu%20meter-CFIf9CJ_.webp(connectme.biz)
+24.9 KiB
+23.6 KiB
+This image file is larger than it needs to be (1024x687) for its displayed dimensions (238x160). Use responsive images to reduce the image download size.
+23.6 KiB
+M-Bus to Modbus Converter
+<img src="https://connectme.biz/assets/modbus%20gateway-BCRUtJhD.webp" class="product-image" alt="M-Bus to Modbus Converter" loading="lazy" width="300" height="300">
+/assets/modbus%20gateway-BCRUtJhD.webp(connectme.biz)
+19.7 KiB
+19.3 KiB
+This image file is larger than it needs to be (1600x1069) for its displayed dimensions (238x159). Use responsive images to reduce the image download size.
+19.3 KiB
+Uflo U50 Compact Series
+<img src="https://connectme.biz/assets/U50_Compact_New-5dlTiXSY.webp" class="product-image" alt="Uflo U50 Compact Series" loading="lazy" width="300" height="300">
+/assets/U50_Compa….webp(connectme.biz)
+17.4 KiB
+16.5 KiB
+This image file is larger than it needs to be (1024x399) for its displayed dimensions (238x93). Use responsive images to reduce the image download size.
+16.5 KiB
+Temperature and Humidity Sensor
+<img src="https://connectme.biz/assets/milesight_am300-DPuPtH_0.webp" class="product-image" alt="Temperature and Humidity Sensor" loading="lazy" width="300" height="300">
+/assets/milesight….webp(connectme.biz)
+17.0 KiB
+16.4 KiB
+This image file is larger than it needs to be (1024x1024) for its displayed dimensions (179x179). Use responsive images to reduce the image download size.
+16.4 KiB
+Modbus Gateway
+<img src="https://connectme.biz/assets/modbus_gateway-DLW6POXx.jpeg" class="product-image" alt="Modbus Gateway" loading="lazy" width="300" height="300">
+/assets/modbus_ga….jpeg(connectme.biz)
+19.6 KiB
+14.6 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+6.9 KiB
+This image file is larger than it needs to be (274x285) for its displayed dimensions (172x179). Use responsive images to reduce the image download size.
+11.9 KiB
+Wired Location Area Leak Sensor
+<img src="https://connectme.biz/assets/wired_leak_sensor-Cby_vTw5.webp" class="product-image" alt="Wired Location Area Leak Sensor" loading="lazy" width="300" height="300">
+/assets/wired_lea….webp(connectme.biz)
+15.5 KiB
+12.9 KiB
+This image file is larger than it needs to be (586x264) for its displayed dimensions (238x107). Use responsive images to reduce the image download size.
+12.9 KiB
+Smart compact switch
+<img src="https://connectme.biz/assets/Smart%20compact%20switch-DGDp7CU4.webp" class="product-image" alt="Smart compact switch" loading="lazy" width="300" height="300">
+/assets/Smart%20compact%20switch-DGDp7CU4.webp(connectme.biz)
+13.1 KiB
+11.9 KiB
+This image file is larger than it needs to be (690x573) for its displayed dimensions (216x179). Use responsive images to reduce the image download size.
+11.9 KiB
+Indoor Air Quality Sensor
+<img src="https://connectme.biz/assets/decentlab_iam-B2R6epxS.webp" class="product-image" alt="Indoor Air Quality Sensor" loading="lazy" width="300" height="300">
+/assets/decentlab….webp(connectme.biz)
+10.4 KiB
+9.7 KiB
+This image file is larger than it needs to be (919x714) for its displayed dimensions (230x179). Use responsive images to reduce the image download size.
+9.7 KiB
+GI Instruments GIMA-B type Electromagnetic Flow meters
+<img src="https://connectme.biz/assets/gima_b_electromagnetic-RWN00Hfh.webp" class="product-image" alt="GI Instruments GIMA-B type Electromagnetic Flow meters" loading="lazy" width="300" height="300">
+/assets/gima_b_el….webp(connectme.biz)
+11.0 KiB
+9.5 KiB
+This image file is larger than it needs to be (405x475) for its displayed dimensions (153x179). Use responsive images to reduce the image download size.
+9.5 KiB
+GI Instrument Wallmounted Clamp-On Ultrasonic BTU/Flow meter
+<img src="https://connectme.biz/assets/GIWU-226%20Series%20Ultrasonic%20Flow%20Meter…" class="product-image" alt="GI Instrument Wallmounted Clamp-On Ultrasonic BTU/Flow meter" loading="lazy" width="300" height="300">
+/assets/GIWU-226%20Series%20Ultrasonic%20Flow%20Meter-IsTj….webp(connectme.biz)
+10.6 KiB
+9.0 KiB
+This image file is larger than it needs to be (600x399) for its displayed dimensions (238x158). Use responsive images to reduce the image download size.
+9.0 KiB
+GI instruments GIMA-H electromagnetic HEAT/BTU meters
+<img src="https://connectme.biz/assets/GIMA_IB_insertion_electromagentic%20flo%20met…" class="product-image" alt="GI instruments GIMA-H electromagnetic HEAT/BTU meters" loading="lazy" width="300" height="300">
+/assets/GIMA_IB_i…%20flo%20meter-wnzTXQ1N.webp(connectme.biz)
+7.1 KiB
+6.3 KiB
+This image file is larger than it needs to be (467x523) for its displayed dimensions (160x179). Use responsive images to reduce the image download size.
+6.3 KiB
+Uconnect DIN Rail Power Supply
+<img src="https://connectme.biz/assets/uconnect_din_rail_ps-Cqx6oOWP.webp" class="product-image" alt="Uconnect DIN Rail Power Supply" loading="lazy" width="300" height="300">
+/assets/uconnect_….webp(connectme.biz)
+6.8 KiB
+5.6 KiB
+This image file is larger than it needs to be (357x429) for its displayed dimensions (149x179). Use responsive images to reduce the image download size.
+5.6 KiB
+GI instruments GIMA-H electromagnetic HEAT/BTU meters
+<img src="https://connectme.biz/assets/Gima_H_electromagnetic%20Heat%20meter-DHPjZhW…" class="product-image" alt="GI instruments GIMA-H electromagnetic HEAT/BTU meters" loading="lazy" width="300" height="300">
+/assets/Gima_H_el…%20Heat%20meter-DHPjZhWX.webp(connectme.biz)
+6.2 KiB
+5.3 KiB
+This image file is larger than it needs to be (360x453) for its displayed dimensions (142x179). Use responsive images to reduce the image download size.
+5.3 KiB
+LoRaWAN Gateway
+<img src="https://connectme.biz/assets/wirnet%20istation%20lorawan%20outdoor%20gatew…" class="product-image" alt="LoRaWAN Gateway" loading="lazy" width="300" height="300">
+/assets/wirnet%20istation%20lorawan%20outdoor%20gateway-C9….webp(connectme.biz)
+5.0 KiB
+4.4 KiB
+This image file is larger than it needs to be (376x528) for its displayed dimensions (127x179). Use responsive images to reduce the image download size.
+4.4 KiB
+Use efficient cache lifetimes Est savings of 739 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more.LCPFCPUnscored
+Request
+Cache TTL
+Transfer size
+connectme.biz 1st party
+7,346 KiB
+/assets/qatar_new….png(connectme.biz)
+7d
+2,449 KiB
+/assets/Homepage_….png(connectme.biz)
+7d
+2,035 KiB
+/assets/connectMe….png(connectme.biz)
+7d
+207 KiB
+/assets/Tosibox-eCGXOWMs.webp(connectme.biz)
+7d
+151 KiB
+/assets/u60%20advanced%20series-e-NwZh3q.webp(connectme.biz)
+7d
+128 KiB
+/assets/M-bus%20gateway%20panel-B7tuMCe7.webp(connectme.biz)
+7d
+108 KiB
+/assets/index-DDFIwBlu.js(connectme.biz)
+7d
+106 KiB
+/assets/usb%20mbus%20master-D9_4-Bpw.webp(connectme.biz)
+7d
+98 KiB
+/assets/Mbus%20Master-C0uwcgEr.webp(connectme.biz)
+7d
+93 KiB
+/assets/uflo_u40_….webp(connectme.biz)
+7d
+89 KiB
+/assets/Gas%20Konnect%20relay%20module-Br7ScHEp.webp(connectme.biz)
+7d
+87 KiB
+/assets/Gas%20Konnect%20tkn2801C%20_%20pulse%20reader%20_%….webp(connectme.biz)
+7d
+87 KiB
+/assets/U51-Intelligent%20Btu%20meter%20with%20valve-B7BqN….webp(connectme.biz)
+7d
+85 KiB
+/assets/Uconnect%20edge%20module-WG_a6EAr.webp(connectme.biz)
+7d
+83 KiB
+/assets/tkn%20insertion%20clamp%20on%20btu%20meter-4nU551ks.webp(connectme.biz)
+7d
+79 KiB
+/assets/Gas%20Konnect%20tkn2801….webp(connectme.biz)
+7d
+74 KiB
+/assets/Serial%20to%20TCP%20Converter-BLZvXdTM.webp(connectme.biz)
+7d
+74 KiB
+/assets/connectME….webp(connectme.biz)
+7d
+74 KiB
+/assets/uflo_u60_….webp(connectme.biz)
+7d
+73 KiB
+/assets/TKN%20enhance….webp(connectme.biz)
+7d
+72 KiB
+/assets/made_in_u….webp(connectme.biz)
+7d
+67 KiB
+/assets/TKN203F_p…%20meter-DS6NmHxn.webp(connectme.biz)
+7d
+65 KiB
+/assets/Gas%20Konnect%20tkn2810X%20smart%20gas%20meter-l8C….webp(connectme.biz)
+7d
+65 KiB
+/assets/Techknave%20202%20Standar….webp(connectme.biz)
+7d
+60 KiB
+/assets/uconnect_single_point_leak-DjFihDzY.webp(connectme.biz)
+7d
+59 KiB
+/assets/u40%20compact-Dl_MEaFL.webp(connectme.biz)
+7d
+52 KiB
+/assets/modbus_lo….webp(connectme.biz)
+7d
+49 KiB
+/assets/uconnect_zone_leak-BiQMChMd.webp(connectme.biz)
+7d
+47 KiB
+/assets/Cloudgate%20mini-BhwH4415.webp(connectme.biz)
+7d
+46 KiB
+/assets/Techknave%20smart%20valve%20compact-DKz_3iFg.webp(connectme.biz)
+7d
+42 KiB
+/assets/u70-DdXfG3Qh.webp(connectme.biz)
+7d
+40 KiB
+/assets/tkn2803p_….webp(connectme.biz)
+7d
+39 KiB
+/assets/uconnect_….webp(connectme.biz)
+7d
+38 KiB
+/assets/iso_45001-CUxv6PoB.webp(connectme.biz)
+7d
+35 KiB
+/assets/iso_14001-Dt6p1B78.webp(connectme.biz)
+7d
+34 KiB
+/assets/iso_9001-CeTT_3xV.webp(connectme.biz)
+7d
+33 KiB
+/assets/mbus_smar….webp(connectme.biz)
+7d
+29 KiB
+/assets/Mbus%20level%20Convert….webp(connectme.biz)
+7d
+28 KiB
+/assets/uconnect_cls-CBzMRLZa.webp(connectme.biz)
+7d
+27 KiB
+/assets/U2301_Serial_to_TCP-CZ-vXRpC.webp(connectme.biz)
+7d
+26 KiB
+/assets/u50-bulk%20btu%20meter-CFIf9CJ_.webp(connectme.biz)
+7d
+26 KiB
+/assets/modbus%20gateway-BCRUtJhD.webp(connectme.biz)
+7d
+20 KiB
+/assets/modbus_ga….jpeg(connectme.biz)
+7d
+20 KiB
+/assets/U50_Compa….webp(connectme.biz)
+7d
+18 KiB
+/assets/milesight….webp(connectme.biz)
+7d
+18 KiB
+/assets/wired_lea….webp(connectme.biz)
+7d
+16 KiB
+/assets/Smart%20compact%20switch-DGDp7CU4.webp(connectme.biz)
+7d
+14 KiB
+/assets/gima_b_el….webp(connectme.biz)
+7d
+12 KiB
+/assets/GIWU-226%20Series%20Ultrasonic%20Flow%20Meter-IsTj….webp(connectme.biz)
+7d
+11 KiB
+/assets/decentlab….webp(connectme.biz)
+7d
+11 KiB
+/assets/GIMA_IB_i…%20flo%20meter-wnzTXQ1N.webp(connectme.biz)
+7d
+8 KiB
+/assets/uconnect_….webp(connectme.biz)
+7d
+8 KiB
+/assets/Gima_H_el…%20Heat%20meter-DHPjZhWX.webp(connectme.biz)
+7d
+7 KiB
+/assets/wirnet%20istation%20lorawan%20outdoor%20gateway-C9….webp(connectme.biz)
+7d
+6 KiB
+/assets/logo-DuiBh3x8.webp(connectme.biz)
+7d
+5 KiB
+/assets/index-Cl7ZRW3w.css(connectme.biz)
+7d
+4 KiB
+/assets/landingpa….js(connectme.biz)
+7d
+4 KiB
+/assets/landingpa….css(connectme.biz)
+7d
+4 KiB
+/assets/SEO-Bm5SkEDj.js(connectme.biz)
+7d
+2 KiB
+/assets/iso_45001-CrQshIUZ.js(connectme.biz)
+7d
+1 KiB
+Cloudflare utility 
+11 KiB
+/beacon.min.js/v67327c5…(static.cloudflareinsights.com)
+1d
+11 KiB
+LCP breakdown
+Each sub-part has specific improvement strategies. Ideally, most of the LCP time should be spent on loading the resources, not within delays.LCPUnscored
+Sub-part
+Duration
+Time to First Byte
+0 ms
+Element render delay
+2,680 ms
+A complete ecosystem for reliability. We engineer precision hardware and automa…
+<p class="hero-subtitle">
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 1,654 ms
+Initial Navigation
+https://connectme.biz - 381 ms, 1.77 KiB
+/assets/index-Cl7ZRW3w.css(connectme.biz) - 746 ms, 4.03 KiB
+/css2?family=Oxygen:wght@300;400;700&display=swap(fonts.googleapis.com) - 752 ms, 1.16 KiB
+…v16/2sDfZG1Wl….woff2(fonts.gstatic.com) - 1,332 ms, 10.88 KiB
+…v16/2sDcZG1Wl….woff2(fonts.gstatic.com) - 1,459 ms, 10.82 KiB
+/assets/index-DDFIwBlu.js(connectme.biz) - 1,249 ms, 106.33 KiB
+/assets/landingpa….css(connectme.biz) - 1,643 ms, 3.64 KiB
+/assets/landingpa….js(connectme.biz) - 1,489 ms, 3.87 KiB
+/assets/iso_45001-CrQshIUZ.js(connectme.biz) - 1,642 ms, 0.92 KiB
+/assets/SEO-Bm5SkEDj.js(connectme.biz) - 1,654 ms, 1.58 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+Origin
+Source
+https://fonts.googleapis.com/
+head > link
+<link rel="preconnect" href="https://fonts.googleapis.com">
+https://fonts.gstatic.com/
+head > link
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Layout shift culprits
+Third parties
+These insights are also available in the Chrome DevTools performance panel – record a trace to view more detailed information.
+Diagnostics
+Reduce unused JavaScript Est savings of 21 KiB
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.LCPFCPUnscored
+URL
+Transfer size
+Est savings
+connectme.biz 1st party
+105.3 KiB	21.0 KiB
+/assets/index-DDFIwBlu.js(connectme.biz)
+105.3 KiB
+21.0 KiB
+Avoid enormous network payloads Total size was 7,382 KiB
+Large network payloads cost users real money and are highly correlated with long load times. Learn how to reduce payload sizes.Unscored
+URL
+Transfer size
+connectme.biz 1st party
+5,463.6 KiB
+/assets/qatar_new….png(connectme.biz)
+2,448.8 KiB
+/assets/Homepage_….png(connectme.biz)
+2,035.1 KiB
+/assets/connectMe….png(connectme.biz)
+207.0 KiB
+/assets/Tosibox-eCGXOWMs.webp(connectme.biz)
+150.8 KiB
+/assets/u60%20advanced%20series-e-NwZh3q.webp(connectme.biz)
+127.8 KiB
+/assets/M-bus%20gateway%20panel-B7tuMCe7.webp(connectme.biz)
+107.7 KiB
+/assets/index-DDFIwBlu.js(connectme.biz)
+106.3 KiB
+/assets/usb%20mbus%20master-D9_4-Bpw.webp(connectme.biz)
+97.9 KiB
+/assets/Mbus%20Master-C0uwcgEr.webp(connectme.biz)
+92.9 KiB
+/assets/uflo_u40_….webp(connectme.biz)
+89.2 KiB
+Image elements do not have explicit width and height
+Set an explicit width and height on image elements to reduce layout shifts and improve CLS. Learn how to set image dimensionsCLSUnscored
+URL
+connectme.biz 1st party
+trust
+<img src="https://connectme.biz/assets/Homepage_cme-DUP29y85.png" alt="trust">
+/assets/Homepage_….png(connectme.biz)
+ConnectME
+<img src="https://connectme.biz/assets/connectME_logo_transparent-WeudyTn7.webp" alt="ConnectME" class="logo-img">
+/assets/connectME….webp(connectme.biz)
+Made in UAE
+<img src="https://connectme.biz/assets/made_in_uae-C1RIMkla.webp" alt="Made in UAE">
+/assets/made_in_u….webp(connectme.biz)
+ISO 14001:2015
+<img src="https://connectme.biz/assets/iso_14001-Dt6p1B78.webp" alt="ISO 14001:2015">
+/assets/iso_14001-Dt6p1B78.webp(connectme.biz)
+ISO 9001:2015
+<img src="https://connectme.biz/assets/iso_9001-CeTT_3xV.webp" alt="ISO 9001:2015">
+/assets/iso_9001-CeTT_3xV.webp(connectme.biz)
+ISO 45001:2018
+<img src="https://connectme.biz/assets/iso_45001-CUxv6PoB.webp" alt="ISO 45001:2018">
+/assets/iso_45001-CUxv6PoB.webp(connectme.biz)
+ConnectME
+<img src="https://connectme.biz/assets/connectMe_correctLogo_medqual-Y4hDVglD.png" alt="ConnectME">
+/assets/connectMe….png(connectme.biz

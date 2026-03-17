@@ -1860,6 +1860,23 @@ const productData = [
                             "Modes": "TCP Master & RS485 Slave, TCP slave & RS485 Master",
                             "Budrate": "Upto 115200 bps"
                         },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { "label": "Parameters", "key": "param" },
+                                { "label": "Specification", "key": "spec" }
+                            ],
+                            "items": [
+                                { "param": "Power Supply", "spec": "12-24V DC, 1A" },
+                                { "param": "Protocol Support", "spec": "M-Bus, Transparent" },
+                                { "param": "Modes", "spec": "TCP Master & RS485 Slave, TCP Slave & RS485 Master" },
+                                { "param": "Consumption", "spec": "current consumption ≤ 500mA Nominal" },
+                                { "param": "Baudrate", "spec": "Up to 115200bps" },
+                                { "param": "M-BUS Voltage(Transmit)", "spec": "24V" },
+                                { "param": "Dimension", "spec": "110mm x 92mm x 26mm" },
+                                { "param": "Indications", "spec": "Power ON (PWR), Transmit Telegram (TX), Receive Telegram (RX), Overload / Short Circuit Buzze" }
+                            ]
+                        },
                         "tags": [
                             "Gateways & Connectivity",
                             "Gateways"

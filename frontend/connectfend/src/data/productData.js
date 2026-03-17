@@ -29,7 +29,6 @@ import mmsPlatformPdf from "../assets/brochures/mms_platform.pdf";
 import mbusLevelImg from "../assets/products/Mbus level Converter.webp";
 import mbusUsbImg from "../assets/mbus_usb_powered.webp";
 import mbusPanelImg from "../assets/products/M-bus gateway panel.webp";
-import modbusGwImg from "../assets/products/modbus gateway.webp";
 import cloudgateImg from "../assets/products/Cloudgate mini.webp";
 import wirnetIndoorImg from "../assets/products/Wirnet LoraWan indoor gateway.webp";
 import wirnetOutdoorImg from "../assets/LoRaWAN Gateway.webp";
@@ -254,7 +253,43 @@ const productData = [
                             "Self-diagnosis: fault alarm on low battery, temperature sensor, short circuit, flow sensor, etc."
                         ],
                         "overview": "The Uflo U50 Bulk Meter is Suitable for industrial/commercial heat/cold flow metering, district heat/water supply utility's demand on accurately metering, billing, and big data analysis, and so on.",
-                        "longDescription": "Uflo Ultrasonic buld BTU Meter-U50 Compact Series\nSize : DN50 to DN300\nProtection : IP65 / IP68\nBattery Life : 10 Years\nCommunication: Mbus / RS485"
+                        "longDescription": "Uflo Ultrasonic buld BTU Meter-U50 Bulk Series\nSize : DN50 to DN300\nProtection : IP65 / IP68\nBattery Life : 10 Years\nCommunication: Mbus / RS485",
+                        "orderCodeColumns": [
+                            { "label": "Model", "key": "model" },
+                            { "label": "❶", "key": "c1" },
+                            { "label": "❷", "key": "c2" },
+                            { "label": "❸", "key": "c3" },
+                            { "label": "❹", "key": "c4" },
+                            { "label": "❺", "key": "c5" },
+                            { "label": "❻", "key": "c6" },
+                            { "label": "Description", "key": "desc" }
+                        ],
+                        "orderCodes": [
+                            { "model": "U50", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "" },
+                            { "model": "Meter Type", "c1": "1", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "Ultrasonic" },
+                            { "model": "Communication Protocol", "c1": "", "c2": "1", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "M bus" },
+                            { "model": "", "c1": "", "c2": "2", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "W M-Bus" },
+                            { "model": "", "c1": "", "c2": "4", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "Modbus" },
+                            { "model": "", "c1": "", "c2": "6", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "NB-IoT" },
+                            { "model": "Area of Usage", "c1": "", "c2": "", "c3": "DH", "c4": "", "c5": "", "c6": "", "desc": "Domestic -Hot" },
+                            { "model": "", "c1": "", "c2": "", "c3": "DD", "c4": "", "c5": "", "c6": "", "desc": "Domestic - Drinking" },
+                            { "model": "Flow rate", "c1": "", "c2": "", "c3": "", "c4": "F", "c5": "", "c6": "", "desc": "15" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "G", "c5": "", "c6": "", "desc": "25" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "H", "c5": "", "c6": "", "desc": "40" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "I", "c5": "", "c6": "", "desc": "60" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "J", "c5": "", "c6": "", "desc": "100" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "K", "c5": "", "c6": "", "desc": "160" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "L", "c5": "", "c6": "", "desc": "250" },
+                            { "model": "Size", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "F", "c6": "", "desc": "50" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "G", "c6": "", "desc": "65" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "H", "c6": "", "desc": "80" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "I", "c6": "", "desc": "100" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "J", "c6": "", "desc": "125" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "K", "c6": "", "desc": "150" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "L", "c6": "", "desc": "200" },
+                            { "model": "Range", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "R1", "desc": "50" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "R2", "desc": "100" }
+                        ]
                     },
                     {
                         "id": "uflo-u51-intelligent-valve-series",
@@ -499,23 +534,44 @@ const productData = [
                             { model: "DN500", dn: "500", q3: "2500", q2: "32", q1: "20", flange: "705", length: "650", bolt: "20*M30" }
                         ],
                         "orderCodeColumns": [
-                            { label: "Parameter", key: "param" },
-                            { label: "Code", key: "code" },
-                            { label: "Description", key: "desc" }
+                            { "label": "Model", "key": "model" },
+                            { "label": "❶", "key": "c1" },
+                            { "label": "❷", "key": "c2" },
+                            { "label": "❸", "key": "c3" },
+                            { "label": "❹", "key": "c4" },
+                            { "label": "❺", "key": "c5" },
+                            { "label": "❻", "key": "c6" },
+                            { "label": "Description", "key": "desc" }
                         ],
                         "orderCodes": [
-                            { param: "Model", code: "U40", desc: "Ultrasonic Bulk Meter" },
-                            { param: "1. Meter Type", code: "1", desc: "Ultrasonic" },
-                            { param: "2. Comm Protocol", code: "0", desc: "No Protocol" },
-                            { param: "", code: "1", desc: "M-Bus" },
-                            { param: "", code: "2", desc: "Modbus" },
-                            { param: "", code: "3", desc: "4G" },
-                            { param: "", code: "4", desc: "NB-IoT" },
-                            { param: "3. Area of Usage", code: "DH", desc: "Domestic - Hot" },
-                            { param: "", code: "DC", desc: "Domestic - Cooling" },
-                            { param: "4. Flow Rate", code: "A / B / C / D", desc: "1400 / 1600 / 2000 / 2500 m³/h" },
-                            { param: "5. Size", code: "A / B / C / D", desc: "300 / 400 / 450 / 500 mm" },
-                            { param: "6. Range", code: "R1", desc: "R125" }
+                            { "model": "U40", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "" },
+                            { "model": "Meter Type", "c1": "1", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "Ultrasonic" },
+                            { "model": "Communication Protocol", "c1": "", "c2": "1", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "M bus" },
+                            { "model": "", "c1": "", "c2": "4", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "Modbus" },
+                            { "model": "", "c1": "", "c2": "6", "c3": "", "c4": "", "c5": "", "c6": "", "desc": "NB-IoT" },
+                            { "model": "Area of Usage", "c1": "", "c2": "", "c3": "DH", "c4": "", "c5": "", "c6": "", "desc": "Domestic -Hot" },
+                            { "model": "", "c1": "", "c2": "", "c3": "DD", "c4": "", "c5": "", "c6": "", "desc": "Domestic - Drinking" },
+                            { "model": "Flow rate", "c1": "", "c2": "", "c3": "", "c4": "G", "c5": "", "c6": "", "desc": "25" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "H", "c5": "", "c6": "", "desc": "40" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "I", "c5": "", "c6": "", "desc": "60" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "J", "c5": "", "c6": "", "desc": "100" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "K", "c5": "", "c6": "", "desc": "160" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "L", "c5": "", "c6": "", "desc": "250" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "M", "c5": "", "c6": "", "desc": "400" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "N", "c5": "", "c6": "", "desc": "600" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "O", "c5": "", "c6": "", "desc": "1000" },
+                            { "model": "Size", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "G", "c6": "", "desc": "50" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "H", "c6": "", "desc": "65" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "I", "c6": "", "desc": "80" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "J", "c6": "", "desc": "100" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "K", "c6": "", "desc": "125" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "L", "c6": "", "desc": "150" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "M", "c6": "", "desc": "200" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "N", "c6": "", "desc": "250" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "O", "c6": "", "desc": "300" },
+                            { "model": "Range", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "R3", "desc": "200" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "R4", "desc": "250" },
+                            { "model": "", "c1": "", "c2": "", "c3": "", "c4": "", "c5": "", "c6": "R6", "desc": "400" }
                         ],
                         "tags": [
                             "Meters",
@@ -1303,7 +1359,17 @@ const productData = [
                             "DIN-rail mounting, industrial design"
                         ],
                         "overview": "UConnect M-Bus Masters are industrial-grade communication gateways designed to reliably collect data from large networks of M-Bus meters and sensors. They act as a central hub that powers, manages, and communicates with up to 250 M-Bus slave devices from a single unit.\nBy converting M-Bus signals into RS232, RS485, or TCP/IP, UConnect M-Bus Masters enable seamless integration with PLCs, BMS, SCADA systems, data loggers, and cloud platforms. Built-in protection against short circuits, overloads, and high voltage ensures safe and stable operation even in harsh field conditions.\nWith automatic load adjustment, intelligent fault recovery, and DIN-rail industrial design, UConnect M-Bus Masters provide a reliable and scalable solution for smart metering, energy management, and large-scale monitoring applications.",
-                        "longDescription": "Uconnect M-Bus Master\nSlaves : 100/250\nCommunication: RS485 / TCP\nPower supply: 24V DC, 1.2A\nDIN Rail Sleek model"
+                        "longDescription": "Uconnect M-Bus Master\nSlaves : 100/250\nCommunication: RS485 / TCP\nPower supply: 24V DC, 1.2A\nDIN Rail Sleek model",
+                        "orderCodeColumns": [
+                            { "label": "Part Number", "key": "partNumber" },
+                            { "label": "Description", "key": "desc" }
+                        ],
+                        "orderCodes": [
+                            { "partNumber": "U2602-S100", "desc": "M-Bus Master supporting up to 100 slaves RS485/RS232 Out" },
+                            { "partNumber": "U2602-S250", "desc": "M-Bus Master supporting up to 250 slaves RS485/RS232 Out" },
+                            { "partNumber": "U2602T-S100", "desc": "M-Bus Master supporting up to 100 slaves RS485/RS232/TCP Out" },
+                            { "partNumber": "U2602T-S250", "desc": "M-Bus Master supporting up to 250 slaves RS485/RS232/TCP Out" }
+                        ]
                     },
                     {
                         "id": "u2601-sxxx",
@@ -1319,44 +1385,30 @@ const productData = [
                             "Communication": "RS485",
                             "Power supply": "24V DC, 1A"
                         },
-                        "orderCodeSections": [
-                            {
-                                "title": "Order Codes",
-                                "columns": [
-                                    { label: "Order Code", key: "code" },
-                                    { label: "Details", key: "details" }
-                                ],
-                                "items": [
-                                    { code: "U2601-S125", details: "M-Bus Master supporting up to 125 slaves" },
-                                    { code: "U2601-S250", details: "M-Bus Master supporting up to 250 slaves" },
-                                    { code: "U2601T-TCP", details: "M-Bus Master to TCP/IP module" }
-                                ]
-                            },
-                            {
-                                "title": "Technical Parameters",
-                                "columns": [
-                                    { label: "Parameter", key: "param" },
-                                    { label: "Specification", key: "spec" }
-                                ],
-                                "items": [
-                                    { param: "Interfaces", spec: "RS232, RS485, TCP/IP" },
-                                    { param: "RS232 Range", spec: "Up to 15 meters" },
-                                    { param: "RS485", spec: "Auto direction" },
-                                    { param: "TCP/IP", spec: "IP/Port programmable" },
-                                    { param: "M-Bus Capacity", spec: "Up to 250 devices" },
-                                    { param: "Power Supply", spec: "24V DC, 2A" },
-                                    { param: "M-Bus Voltage", spec: "Mark 36–40V, Space 24–27V" },
-                                    { param: "Short-Circuit Current", spec: "≥500 mA" },
-                                    { param: "Reaction Time", spec: "Configurable 1–4s" },
-                                    { param: "Recovery Time", spec: "Configurable 10–60s" },
-                                    { param: "Weight", spec: "300 g" },
-                                    { param: "Mounting", spec: "DIN rail, ABS Body" },
-                                    { param: "Protection", spec: "IP20" },
-                                    { param: "Operating Temp", spec: "–20°C to +50°C" },
-                                    { param: "Humidity", spec: "5–95%, non-condensing" }
-                                ]
-                            }
-                        ],
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Parameter", key: "param" },
+                                { label: "Specification", key: "spec" }
+                            ],
+                            "items": [
+                                { param: "Interfaces", spec: "RS232, RS485, TCP/IP" },
+                                { param: "RS232 Range", spec: "Up to 15 meters" },
+                                { param: "RS485", spec: "Auto direction" },
+                                { param: "TCP/IP", spec: "IP/Port programmable" },
+                                { param: "M-Bus Capacity", spec: "Up to 250 devices" },
+                                { param: "Power Supply", spec: "24V DC, 2A" },
+                                { param: "M-Bus Voltage", spec: "Mark 36–40V, Space 24–27V" },
+                                { param: "Short-Circuit Current", spec: "≥500 mA" },
+                                { param: "Reaction Time", spec: "Configurable 1–4s" },
+                                { param: "Recovery Time", spec: "Configurable 10–60s" },
+                                { param: "Weight", spec: "300 g" },
+                                { param: "Mounting", spec: "DIN rail, ABS Body" },
+                                { param: "Protection", spec: "IP20" },
+                                { param: "Operating Temp", spec: "–20°C to +50°C" },
+                                { param: "Humidity", spec: "5–95%, non-condensing" }
+                            ]
+                        },
                         "tags": [
                             "Gateways & Connectivity",
                             "M-Bus Products"
@@ -1389,26 +1441,24 @@ const productData = [
                             "Power Supply": "USB powered (5v, 500mA)",
                             "Maximum Slaves": "Upto 20 slaves"
                         },
-                        "orderCodeSections": [
-                            {
-                                "title": "Technical Parameters",
-                                "columns": [
-                                    { label: "Parameter", key: "param" },
-                                    { label: "Specification", key: "spec" }
-                                ],
-                                "items": [
-                                    { param: "Power Supply", spec: "USB Powered (5V, 500mA)" },
-                                    { param: "Protocol Standard", spec: "conforms to European EN1434-3 standard" },
-                                    { param: "Maximum Slaves", spec: "Up to 20 Slaves" },
-                                    { param: "Consumption", spec: "no-load state, current consumption ≤ 25mA" },
-                                    { param: "Baudrate", spec: "Up to 115200bps" },
-                                    { param: "M-BUS Voltage(Transmit)", spec: "24V" },
-                                    { param: "Dimension", spec: "85mm x 45mm x 26mm" },
-                                    { param: "Protections", spec: "USB Over Voltage / Over Current, M-Bus Short circuit / Over Load" },
-                                    { param: "Indications", spec: "Power ON (PWR), Transmit Telegram (TX), Receive Telegram (RX), Overload / Short Circuit Buzze" }
-                                ]
-                            }
-                        ],
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Parameter", key: "param" },
+                                { label: "Specification", key: "spec" }
+                            ],
+                            "items": [
+                                { param: "Power Supply", spec: "USB Powered (5V, 500mA)" },
+                                { param: "Protocol Standard", spec: "conforms to European EN1434-3 standard" },
+                                { param: "Maximum Slaves", spec: "Up to 20 Slaves" },
+                                { param: "Consumption", spec: "no-load state, current consumption ≤ 25mA" },
+                                { param: "Baudrate", spec: "Up to 115200bps" },
+                                { param: "M-BUS Voltage(Transmit)", spec: "24V" },
+                                { param: "Dimension", spec: "85mm x 45mm x 26mm" },
+                                { param: "Protections", spec: "USB Over Voltage / Over Current, M-Bus Short circuit / Over Load" },
+                                { param: "Indications", spec: "Power ON (PWR), Transmit Telegram (TX), Receive Telegram (RX), Overload / Short Circuit Buzze" }
+                            ]
+                        },
                         "tags": [
                             "Gateways & Connectivity",
                             "M-Bus Products"
@@ -1450,29 +1500,29 @@ const productData = [
                                     { code: "U2601G-S750", model: "3-Master Panel", capacity: "Up to 750 slaves" },
                                     { code: "U2601G-S1000", model: "4-Master Panel", capacity: "Up to 1000 slaves" }
                                 ]
-                            },
-                            {
-                                "title": "Technical Parameters",
-                                "columns": [
-                                    { label: "Parameter", key: "param" },
-                                    { label: "Specification", key: "spec" }
-                                ],
-                                "items": [
-                                    { param: "Communication Interface", spec: "Ethernet (TCP/IP)" },
-                                    { param: "Meter Interface", spec: "M-Bus (EN 13757)" },
-                                    { param: "Supported Slaves", spec: "250 / 500 / 750 / 1000 (model dependent)" },
-                                    { param: "Power Input", spec: "230 V AC, 50/60 Hz" },
-                                    { param: "Internal Power Supply", spec: "24 V DC Industrial SMPS" },
-                                    { param: "M-Bus Voltage", spec: "Mark 36–40 V, Space 24–27 V" },
-                                    { param: "Short-Circuit Protection", spec: "Built-in, auto recovery" },
-                                    { param: "Mounting", spec: "DIN rail inside enclosure" },
-                                    { param: "Enclosure Material", spec: "Industrial polycarbonate" },
-                                    { param: "Protection Class", spec: "IP65 -rated enclosure (panel type)" },
-                                    { param: "Operating Environment", spec: "Indoor industrial installations" },
-                                    { param: "Integration", spec: "BMS, EMS, AMR, Cloud platforms" }
-                                ]
                             }
                         ],
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Parameter", key: "param" },
+                                { label: "Specification", key: "spec" }
+                            ],
+                            "items": [
+                                { param: "Communication Interface", spec: "Ethernet (TCP/IP)" },
+                                { param: "Meter Interface", spec: "M-Bus (EN 13757)" },
+                                { param: "Supported Slaves", spec: "250 / 500 / 750 / 1000 (model dependent)" },
+                                { param: "Power Input", spec: "230 V AC, 50/60 Hz" },
+                                { param: "Internal Power Supply", spec: "24 V DC Industrial SMPS" },
+                                { param: "M-Bus Voltage", spec: "Mark 36–40 V, Space 24–27 V" },
+                                { param: "Short-Circuit Protection", spec: "Built-in, auto recovery" },
+                                { param: "Mounting", spec: "DIN rail inside enclosure" },
+                                { param: "Enclosure Material", spec: "Industrial polycarbonate" },
+                                { param: "Protection Class", spec: "IP65 -rated enclosure (panel type)" },
+                                { param: "Operating Environment", spec: "Indoor industrial installations" },
+                                { param: "Integration", spec: "BMS, EMS, AMR, Cloud platforms" }
+                            ]
+                        },
                         "tags": [
                             "Gateways & Connectivity",
                             "M-Bus Products"
@@ -1500,7 +1550,7 @@ const productData = [
                         "name": "M-Bus to Modbus Converter",
                         "description": "Uconnect M-Bus to Modbus Convertor\nSlaves : 100 nodes\nCommunication: RS485 / TCP\nPower supply: 24V DC, 1A\nDIN Rail Sleek model",
                         "productGroup": "U2403X-S100",
-                        "image": modbusGwImg,
+                        "image": "/assets/M-BUS to MODBUS 1.png",
                         "images": [],
                         "brochure": null,
                         "specs": {
@@ -1521,35 +1571,36 @@ const productData = [
                                     { code: "U2602M-S100", model: "1-Master DIN Rail (RS485)", capacity: "Up to 100 Slaves" },
                                     { code: "U2602TM-S100", model: "1-Master DIN Rail (RS485 + TCP/IP)", capacity: "Up to 100 Slaves" }
                                 ]
-                            },
-                            {
-                                "title": "Technical Parameters",
-                                "columns": [
-                                    { label: "Technical Data", key: "data" },
-                                    { label: "Details", key: "details" }
-                                ],
-                                "items": [
-                                    { data: "Model Variants", details: "U2602M-S100 (RS485) / U2602TM-S100 (RS485 + TCP/IP)" },
-                                    { data: "M-Bus Capacity", details: "Up to 100 Standard M-Bus Slaves" },
-                                    { data: "M-Bus Standard", details: "EN 13757" },
-                                    { data: "M-Bus Output Voltage", details: "Nominal 36–42V DC (Internal Master Supply)" },
-                                    { data: "Power Supply Input", details: "24V DC ±10%" },
-                                    { data: "Power Consumption", details: "≤ 15W (depending on load)" },
-                                    { data: "Modbus Protocol", details: "Modbus RTU (RS485), Modbus TCP (TM Model)" },
-                                    { data: "RS485 Baud Rate", details: "9600 – 115200 bps (configurable)" },
-                                    { data: "Ethernet (TM Model)", details: "10/100 Mbps RJ45" },
-                                    { data: "Data Mapping", details: "M-Bus registers mapped to Modbus Holding Registers" },
-                                    { data: "Isolation Protection", details: "Galvanic isolation between M-Bus and Modbus" },
-                                    { data: "Mounting Type", details: "Standard 35mm DIN Rail" },
-                                    { data: "Operating Temperature", details: "-10°C to +60°C" },
-                                    { data: "Storage Temperature", details: "-20°C to +70°C" },
-                                    { data: "Humidity", details: "5% – 95% RH (Non-condensing)" },
-                                    { data: "Protection Class", details: "IP20 (Panel Mounted)" },
-                                    { data: "LED Indicators", details: "Power, M-Bus TX/RX, RS485 TX/RX, Ethernet Status" },
-                                    { data: "Configuration", details: "DIP Switch / Software Configuration" }
-                                ]
                             }
                         ],
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Technical Data", key: "data" },
+                                { label: "Details", key: "details" }
+                            ],
+                            "items": [
+                                { data: "Model Variants", details: "U2602M-S100 (RS485) / U2602TM-S100 (RS485 + TCP/IP)" },
+                                { data: "M-Bus Capacity", details: "Up to 100 Standard M-Bus Slaves" },
+                                { data: "M-Bus Standard", details: "EN 13757" },
+                                { data: "M-Bus Output Voltage", details: "Nominal 36–42V DC (Internal Master Supply)" },
+                                { data: "Power Supply Input", details: "24V DC ±10%" },
+                                { data: "Power Consumption", details: "≤ 15W (depending on load)" },
+                                { data: "Modbus Protocol", details: "Modbus RTU (RS485), Modbus TCP (TM Model)" },
+                                { data: "RS485 Baud Rate", details: "9600 – 115200 bps (configurable)" },
+                                { data: "Ethernet (TM Model)", details: "10/100 Mbps RJ45" },
+                                { data: "Data Mapping", details: "M-Bus registers mapped to Modbus Holding Registers" },
+                                { data: "Isolation Protection", details: "Galvanic isolation between M-Bus and Modbus" },
+                                { data: "Mounting Type", details: "Standard 35mm DIN Rail" },
+                                { data: "Operating Temperature", details: "-10°C to +60°C" },
+                                { data: "Storage Temperature", details: "-20°C to +70°C" },
+                                { data: "Humidity", details: "5% – 95% RH (Non-condensing)" },
+                                { data: "Protection Class", details: "IP20 (Panel Mounted)" },
+                                { data: "LED Indicators", details: "Power, M-Bus TX/RX, RS485 TX/RX, Ethernet Status" },
+                                { data: "Configuration", details: "DIP Switch / Software Configuration" }
+                            ]
+                        },
+
                         "tags": [
                             "Gateways & Connectivity",
                             "Converters"
@@ -1589,7 +1640,15 @@ const productData = [
                             "Power supply - 24vDC, 1 amps"
                         ],
                         "overview": "Uconnect Modbus to BACnet IP Converter is combination of UCONNECT Edge controller hardware and U1401 Modbus to bacnetIP firware pre-loaded into the module. The device enable the communication of Modbus devices over BACnet protocol. 64 Modbus devices data can be converted into BACnet object and can be accessed from BACnet IP network. The data can be monitored from BMS, HVAC control, Lighting control, and energy Management software.\n\nThe base module support  upto 500 tag count. Incase of additonal tags seperate licesne to be obtained with 500 tags count. Maximum of 2000 tags only suporrted.\nU1401 - Modbus/Bacnet IP license - 500 tag count\nU2406-Edge Controller - hardware module",
-                        "longDescription": "Uconnect Edge gateway + Mod to BacIP driver\nSoft License - 500 tag license."
+                        "longDescription": "Uconnect Edge gateway + Mod to BacIP driver\nSoft License - 500 tag license.",
+                        "orderCodeColumns": [
+                            { "label": "Order Code", "key": "code" },
+                            { "label": "Details", "key": "desc" }
+                        ],
+                        "orderCodes": [
+                            { "code": "U2401-1", "desc": "Support 32 Modbus Devices" },
+                            { "code": "U2401-2", "desc": "Support 64 Modbus Devices" }
+                        ]
                     },
                     {
                         "id": "u2406edge-u2602-s100-u1402",
@@ -2091,29 +2150,27 @@ const productData = [
                             "LED indicator for power on",
                             "No load power consumption <0.3W"
                         ],
-                        "orderCodeSections": [
-                            {
-                                "title": "Technical Parameters",
-                                "columns": [
-                                    { label: "Parameter", key: "param" },
-                                    { label: "Specification", key: "spec" }
-                                ],
-                                "items": [
-                                    { param: "Input Voltage", spec: "85~264VAC" },
-                                    { param: "Output Voltage", spec: "24V DC" },
-                                    { param: "Output Current", spec: "2500mA" },
-                                    { param: "Dimensions", spec: "52.5(3SU) x 90 x 54.5mm" },
-                                    { param: "Weight", spec: "100 g" },
-                                    { param: "Mounting Type", spec: "DIN rail TS-35/7.5 or 15 mountable" },
-                                    { param: "Protection Type", spec: "IP 20" },
-                                    { param: "Operating Temperature", spec: "-30 to +70°C" },
-                                    { param: "Storage Temperature", spec: "50 to +70°C" },
-                                    { param: "Humidity Range", spec: "5 – 95%, non-condensing" },
-                                    { param: "PWR", spec: "Power ON" },
-                                    { param: "Warranty", spec: "2 Years" }
-                                ]
-                            }
-                        ],
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Parameter", key: "param" },
+                                { label: "Specification", key: "spec" }
+                            ],
+                            "items": [
+                                { param: "Input Voltage", spec: "85~264VAC" },
+                                { param: "Output Voltage", spec: "24V DC" },
+                                { param: "Output Current", spec: "2500mA" },
+                                { param: "Dimensions", spec: "52.5(3SU) x 90 x 54.5mm" },
+                                { param: "Weight", spec: "100 g" },
+                                { param: "Mounting Type", spec: "DIN rail TS-35/7.5 or 15 mountable" },
+                                { param: "Protection Type", spec: "IP 20" },
+                                { param: "Operating Temperature", spec: "-30 to +70°C" },
+                                { param: "Storage Temperature", spec: "50 to +70°C" },
+                                { param: "Humidity Range", spec: "5 – 95%, non-condensing" },
+                                { param: "PWR", spec: "Power ON" },
+                                { param: "Warranty", spec: "2 Years" }
+                            ]
+                        },
                         "overview": "A Switched-Mode Power Supply (SMPS) is a type of power supply that converts electrical power efficiently from one voltage level to another, usually from a higher voltage (85~264VAC ) to a lower DC voltage 24V DC.",
                         "longDescription": "Uconnect Power supply\nType : Switch mode power supply\nInput voltage : 85~264V AC\nOutput Voltage : 24V DC\nProtection : IP 20"
                     }
@@ -2218,34 +2275,32 @@ const productData = [
                             "IP Rating": "Sensors : IP65",
                             "Operating Temperature": "15 to 40°C (5 to 104°F)"
                         },
-                        "orderCodeSections": [
-                            {
-                                "title": "Technical Specifications",
-                                "columns": [
-                                    { label: "Parameter", key: "param" },
-                                    { label: "Specification", key: "spec" }
-                                ],
-                                "items": [
-                                    { param: "Detection Method", spec: "Conductive liquid zone detection" },
-                                    { param: "Liquid Type", spec: "Conductive liquids" },
-                                    { param: "Trigger Condition", spec: "Liquid level ≥ 5 mm" },
-                                    { param: "Sensing Cable Length", spec: "3 m (customizable)" },
-                                    { param: "Wireless Technology", spec: "LoRaWAN®" },
-                                    { param: "Frequency Bands", spec: "EU868, US915" },
-                                    { param: "Transmission Range", spec: "Up to 2 km (urban area)" },
-                                    { param: "Output Power", spec: "Up to 14 dBm" },
-                                    { param: "Power Supply", spec: "1 × 4000 mAh LiSOCl₂ battery (8000 mAh optional)" },
-                                    { param: "Battery Life", spec: "Up to 10 years (usage dependent)" },
-                                    { param: "Operating Temperature", spec: "-30 °C to +70 °C" },
-                                    { param: "Relative Humidity", spec: "0–100% RH (non-condensing)" },
-                                    { param: "Ingress Protection", spec: "IP67" },
-                                    { param: "Dimensions", spec: "105.6 × 85.3 × 27 mm" },
-                                    { param: "Housing Material", spec: "ABS + PC (flame retardant)" },
-                                    { param: "Certifications", spec: "CE, FCC" },
-                                    { param: "Environmental Compliance", spec: "RoHS" }
-                                ]
-                            }
-                        ],
+                        "technicalParameters": {
+                            "title": "Technical Specifications",
+                            "columns": [
+                                { label: "Parameter", key: "param" },
+                                { label: "Specification", key: "spec" }
+                            ],
+                            "items": [
+                                { param: "Detection Method", spec: "Conductive liquid zone detection" },
+                                { param: "Liquid Type", spec: "Conductive liquids" },
+                                { param: "Trigger Condition", spec: "Liquid level ≥ 5 mm" },
+                                { param: "Sensing Cable Length", spec: "3 m (customizable)" },
+                                { param: "Wireless Technology", spec: "LoRaWAN®" },
+                                { param: "Frequency Bands", spec: "EU868, US915" },
+                                { param: "Transmission Range", spec: "Up to 2 km (urban area)" },
+                                { param: "Output Power", spec: "Up to 14 dBm" },
+                                { param: "Power Supply", spec: "1 × 4000 mAh LiSOCl₂ battery (8000 mAh optional)" },
+                                { param: "Battery Life", spec: "Up to 10 years (usage dependent)" },
+                                { param: "Operating Temperature", spec: "-30 °C to +70 °C" },
+                                { param: "Relative Humidity", spec: "0–100% RH (non-condensing)" },
+                                { param: "Ingress Protection", spec: "IP67" },
+                                { param: "Dimensions", spec: "105.6 × 85.3 × 27 mm" },
+                                { param: "Housing Material", spec: "ABS + PC (flame retardant)" },
+                                { param: "Certifications", spec: "CE, FCC" },
+                                { param: "Environmental Compliance", spec: "RoHS" }
+                            ]
+                        },
                         "tags": [
                             "Sensors & Actuators",
                             "Water Leak Detection Sensor"
@@ -2275,33 +2330,31 @@ const productData = [
                             "Communication": "LoRaWAN",
                             "IP Rating": "IP67"
                         },
-                        "orderCodeSections": [
-                            {
-                                "title": "Technical Specifications",
-                                "columns": [
-                                    { label: "Specification", key: "spec" },
-                                    { label: "Description", key: "desc" }
-                                ],
-                                "items": [
-                                    { spec: "Wireless Technology", desc: "LoRaWAN®, Milesight D2D" },
-                                    { spec: "Operating Mode", desc: "OTAA / ABP, Class A" },
-                                    { spec: "Frequency Bands", desc: "EU868, US915, CN470, AU915, AS923, KR920, IN865, RU864" },
-                                    { spec: "Tx Power", desc: "Up to 20 dBm (region dependent)" },
-                                    { spec: "Sensitivity", desc: "–137 dBm @ 300 bps" },
-                                    { spec: "Leak Detection Type", desc: "Conductive Liquid" },
-                                    { spec: "Trigger Condition", desc: "Liquid level ≥ 5 mm" },
-                                    { spec: "Probe Cable Length", desc: "1.5 m (customizable)" },
-                                    { spec: "Temperature Range", desc: "–30°C to +70°C" },
-                                    { spec: "Temperature Accuracy", desc: "±0.3°C (0–70°C)" },
-                                    { spec: "Humidity Range", desc: "0–100% RH (non-condensing)" },
-                                    { spec: "Ingress Protection", desc: "IP67" },
-                                    { spec: "Battery", desc: "4000 mAh Li-SOCl2 (optional 8000 mAh)" },
-                                    { spec: "Battery Life", desc: "Up to 10+ years (typical conditions)" },
-                                    { spec: "Dimensions", desc: "105.6 × 85.3 × 27 mm" },
-                                    { spec: "Certifications", desc: "CE, RoHS" }
-                                ]
-                            }
-                        ],
+                        "technicalParameters": {
+                            "title": "Technical Specifications",
+                            "columns": [
+                                { label: "Specification", key: "spec" },
+                                { label: "Description", key: "desc" }
+                            ],
+                            "items": [
+                                { spec: "Wireless Technology", desc: "LoRaWAN®, Milesight D2D" },
+                                { spec: "Operating Mode", desc: "OTAA / ABP, Class A" },
+                                { spec: "Frequency Bands", desc: "EU868, US915, CN470, AU915, AS923, KR920, IN865, RU864" },
+                                { spec: "Tx Power", desc: "Up to 20 dBm (region dependent)" },
+                                { spec: "Sensitivity", desc: "–137 dBm @ 300 bps" },
+                                { spec: "Leak Detection Type", desc: "Conductive Liquid" },
+                                { spec: "Trigger Condition", desc: "Liquid level ≥ 5 mm" },
+                                { spec: "Probe Cable Length", desc: "1.5 m (customizable)" },
+                                { spec: "Temperature Range", desc: "–30°C to +70°C" },
+                                { spec: "Temperature Accuracy", desc: "±0.3°C (0–70°C)" },
+                                { spec: "Humidity Range", desc: "0–100% RH (non-condensing)" },
+                                { spec: "Ingress Protection", desc: "IP67" },
+                                { spec: "Battery", desc: "4000 mAh Li-SOCl2 (optional 8000 mAh)" },
+                                { spec: "Battery Life", desc: "Up to 10+ years (typical conditions)" },
+                                { spec: "Dimensions", desc: "105.6 × 85.3 × 27 mm" },
+                                { spec: "Certifications", desc: "CE, RoHS" }
+                            ]
+                        },
                         "tags": [
                             "Sensors & Actuators",
                             "Water Leak Detection Sensor"
@@ -2328,16 +2381,15 @@ const productData = [
                             "Communication": "LoRa / LoRaWAN Class A",
                             "Battery Life": "Upto 4.6 years"
                         },
-                        "orderCodeSections": [
-                            {
-                                "title": "Technical Specifications",
-                                "columns": [
-                                    { label: "Parameter", key: "param" },
-                                    { label: "Specification", key: "spec" }
-                                ],
-                                "items": [
-                                    { param: "Detection Method", spec: "Non-contact capacitive sensing" },
-                                    { param: "Sensor Model", spec: "UEM300-CL" },
+                        "technicalParameters": {
+                            "title": "Technical Specifications",
+                            "columns": [
+                                { label: "Parameter", key: "param" },
+                                { label: "Specification", key: "spec" }
+                            ],
+                            "items": [
+                                { param: "Detection Method", spec: "Non-contact capacitive sensing" },
+                                { param: "Sensor Model", spec: "UEM300-CL" },
                                     { param: "Wireless Technology", spec: "LoRa / LoRaWAN Class A" },
                                     { param: "Frequency Bands", spec: "EU868, US915" },
                                     { param: "Communication Distance", spec: "Up to 2 km (environment dependent)" },
@@ -2350,9 +2402,8 @@ const productData = [
                                     { param: "Enclosure Protection", spec: "Main body IP65 / IP67 (optional), sensor probe IP67" },
                                     { param: "Dimensions", spec: "112 × 88.19 × 32 mm" },
                                     { param: "Weight", spec: "Approx. 150 g" }
-                                ]
-                            }
-                        ],
+                            ]
+                        },
                         "tags": [
                             "Sensors & Actuators",
                             "Water Leak Detection Sensor"
@@ -2392,7 +2443,16 @@ const productData = [
                             "NC/COM/NO Relay connections",
                             "Robust industrial housing"
                         ],
-                        "longDescription": "Uconnect Wired Non-Location Area Leak Sensor\nPower Supply :\tDC 9–30 V (DC 12 V recommended)\nMax Sensing Cable Length : Up to 500 m\nDetection Method : Non-positional liquid leak detection"
+                        "longDescription": "Uconnect Wired Non-Location Area Leak Sensor\nPower Supply :\tDC 9–30 V (DC 12 V recommended)\nMax Sensing Cable Length : Up to 500 m\nDetection Method : Non-positional liquid leak detection",
+                        "orderCodeColumns": [
+                            { "label": "ORDER CODES", "key": "code" },
+                            { "label": "DESCRIPTION", "key": "desc" }
+                        ],
+                        "orderCodes": [
+                            { "code": "U3001-ALD-S", "desc": "UConnect Area Leak Detector Module" },
+                            { "code": "U3001-ALC-5M", "desc": "UConnect Leak Sensor Cables (5 Meters Length)" },
+                            { "code": "U3001-ALC-10M", "desc": "UConnect Leak Sensor Cables (10 Meters Length)" }
+                        ]
                     },
                     {
                         "id": "u3101l-ald-s",
@@ -2421,7 +2481,17 @@ const productData = [
                             "Relay Outputs: Provides both normally open and normally closed relay contact options"
                         ],
                         "overview": "The U2801W is a high-precision leak detection positioning controller designed for real-time monitoring and localization of liquid leaks in critical infrastructure environments. Capable of supporting up to 7.5 meters of sensing cable, this controller provides rapid detection, accurate leak location reporting, and comprehensive alarm signaling via visual\nindicators, relay outputs, and RS-485 communication.",
-                        "longDescription": "Uconnect Wired Location Area Leak Sensor\nPower Supply :  12V DC, 24V DC, 24V AC, or 220V AC\nProtocols Supported : MODBUS-RTU, MODBUS-ASCII\nMax Cable Length : 1200 meters (RS-485)"
+                        "longDescription": "Uconnect Wired Location Area Leak Sensor\nPower Supply :  12V DC, 24V DC, 24V AC, or 220V AC\nProtocols Supported : MODBUS-RTU, MODBUS-ASCII\nMax Cable Length : 1200 meters (RS-485)",
+                        "orderCodeColumns": [
+                            { "label": "Order Code", "key": "code" },
+                            { "label": "Product Name", "key": "name" },
+                            { "label": "Description", "key": "desc" }
+                        ],
+                        "orderCodes": [
+                            { "code": "U3101-ALD-S", "name": "UConnect Wired Location Area Leak Sensor", "desc": "DIN-rail mounted leak detection controller module for monitoring connected sensor cables and generating alarm outputs." },
+                            { "code": "U3101-ALC-5M", "name": "UConnect Leak Sensor Cable - 5M", "desc": "Conductive leak detection sensor cable, 5 meters length, compatible with U3101-ALD-S module." },
+                            { "code": "U3101-ALC-10M", "name": "UConnect Leak Sensor Cable - 10M", "desc": "Conductive leak detection sensor cable, 10 meters length, compatible with U3101-ALD-S module." }
+                        ]
                     },
 
                 ]
@@ -2454,6 +2524,17 @@ const productData = [
                             "UBILL IBM/AMR have provision to integrate to BMS System ( Push / Pull meter data over BACnet IP ).\r\n• UBILL BMS module runs over top of UBILL IBM/AMR software installed in the desktop PC.\r\n• UBILL BMS module to be purchased along with IBM or AMR software license.\r\n• BMS module compatible with most BMS system (Honeywell, Siemens, Schneider, Johnson\r\ncontrols, Niagara etc."
                         ],
                         longDescription: "UBILL is a future ready Utility Metering solutions from CONNECTME SOLUTIONS providing\r\nimproved Operational efficiency, reduced operation cost and greater customer experience in\r\nmetering and billing sector.\n\nSpecifcations\n\nCopy from Brochure",
+                        "orderCodeColumns": [
+                            { "label": "Model", "key": "model" },
+                            { "label": "Order Code", "key": "code" },
+                            { "label": "Description", "key": "desc" }
+                        ],
+                        "orderCodes": [
+                            { "model": "BMS Integral Module", "code": "1", "desc": "" },
+                            { "model": "Nodes/Meters", "code": "BMS 1207-0050", "desc": "50" },
+                            { "model": "Nodes/Meters", "code": "BMS 1207-0100", "desc": "100" },
+                            { "model": "Nodes/Meters", "code": "BMS 1207-nnnn", "desc": "nnnn nodes" }
+                        ]
                     },
                     {
                         id: "desktop-tenant-billing",
@@ -2581,6 +2662,16 @@ const productData = [
                             "Sustainable Energy Management\r\n* Data Acquisition & Comprehensive Data management\r\n* Energy Dashboards\r\n* Intuitive User interface & Visualization\r\n* Compliance assurance & reporting\r\n* Performance benchmarking\r\n* Alerts & Notifications\r\n* Long term value creation"
                         ],
                         longDescription: "UENERGY EMS is cutting-edge platform designed to streamline and optimize customers sustainability initiatives, ensuring compliance with industry regulations while maximizing efficiency and reducing environmental impact. UENERGY helps organizations track, analyze, and optimize their energy consumption and performance. These software solutions typically offer a range of features to monitor energy usage in real-time, identify areas for improvement, and implement strategies to increase efficiency and reduce costs.\n\nSpecifcations\n\nCopy from Brochure",
+                        "orderCodeColumns": [
+                            { "label": "Order Code", "key": "code" },
+                            { "label": "Description", "key": "desc" }
+                        ],
+                        "orderCodes": [
+                            { "code": "UENERGY 1301-0010", "desc": "10" },
+                            { "code": "UENERGY 1301-0020", "desc": "20" },
+                            { "code": "UENERGY 1301-0050", "desc": "50" },
+                            { "code": "UENERGY 1301-xxxx", "desc": "xx" }
+                        ]
                     },
                     {
                         id: "vcm-platform",

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./landingpage.css";
-import bgVideo from "../assets/hero-video.mp4"; // change path
+// Hero video: optimized from ~90MB to ~7MB for fast web loading
+const bgVideo = "/assets/ConnectMEad_optimized.mp4";
 import Products from "../products1/products1";
 import Testimonials from "../testimonials/testimonial";
 import WhyTrust from "../whytrust/whytrust";
@@ -12,6 +13,13 @@ import SEO from "../components/SEO";
 
 export default function LandingPage() {
   const [isVideoLoaded, setIsVideoLoaded] = React.useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current && videoRef.current.readyState >= 2) {
+      setIsVideoLoaded(true);
+    }
+  }, []);
 
   return (
     <div>
@@ -47,6 +55,7 @@ export default function LandingPage() {
             )}
 
             <video
+              ref={videoRef}
               className={`landing-video ${isVideoLoaded ? "loaded" : ""}`}
               autoPlay
               loop

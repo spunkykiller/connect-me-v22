@@ -601,6 +601,14 @@ export default function ProductDetails() {
                   Order Codes
                 </button>
               )}
+              {product.technicalParameters && (
+                <button
+                  className={`pd-tab-btn ${activeTab === 'tech' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('tech')}
+                >
+                  Technical Parameters
+                </button>
+              )}
               {(product.application || product.applicationDescription) && (
                 <button
                   className={`pd-tab-btn ${activeTab === 'application' ? 'active' : ''}`}
@@ -788,7 +796,7 @@ export default function ProductDetails() {
               {/* ORDER CODES TAB */}
               {activeTab === 'order' && (product.orderCodes || product.orderCodeSections || product.orderCodesDescription) && (
                 <section className="pd-tab-panel">
-                  <h2 className="section-title">Order Code</h2>
+                  {!product.orderCodeSections && <h2 className="section-title">Order Code</h2>}
 
                   {product.orderCodesDescription && (
                     <div style={{ marginBottom: '20px', whiteSpace: 'pre-line', fontSize: '15px', color: '#555', lineHeight: '1.6' }}>
@@ -906,6 +914,33 @@ export default function ProductDetails() {
                       )}
                     </div>
                   )}
+                </section>
+              )}
+
+              {/* TECHNICAL PARAMETERS TAB */}
+              {activeTab === 'tech' && product.technicalParameters && (
+                <section className="pd-tab-panel">
+                  <h2 className="section-title">{product.technicalParameters.title || "Technical Parameters"}</h2>
+                  <div className="pd-specs-table-wrapper">
+                    <table className="pd-data-table">
+                      <thead>
+                        <tr>
+                          {product.technicalParameters.columns.map((col, i) => (
+                            <th key={i}>{col.label}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {product.technicalParameters.items.map((row, i) => (
+                          <tr key={i}>
+                            {product.technicalParameters.columns.map((col, j) => (
+                              <td key={j}>{row[col.key]}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </section>
               )}
 

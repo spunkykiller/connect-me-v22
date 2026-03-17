@@ -1641,6 +1641,23 @@ const productData = [
                         ],
                         "overview": "Uconnect Modbus to BACnet IP Converter is combination of UCONNECT Edge controller hardware and U1401 Modbus to bacnetIP firware pre-loaded into the module. The device enable the communication of Modbus devices over BACnet protocol. 64 Modbus devices data can be converted into BACnet object and can be accessed from BACnet IP network. The data can be monitored from BMS, HVAC control, Lighting control, and energy Management software.\n\nThe base module support  upto 500 tag count. Incase of additonal tags seperate licesne to be obtained with 500 tags count. Maximum of 2000 tags only suporrted.\nU1401 - Modbus/Bacnet IP license - 500 tag count\nU2406-Edge Controller - hardware module",
                         "longDescription": "Uconnect Edge gateway + Mod to BacIP driver\nSoft License - 500 tag license.",
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { "label": "Technical Data", "key": "data" },
+                                { "label": "Details", "key": "details" }
+                            ],
+                            "items": [
+                                { "data": "External Power supply", "details": "DC+12-24V/1A" },
+                                { "data": "Load capacity", "details": "Upto 64 Modbus devices" },
+                                { "data": "Consumption single slave", "details": "Based on Modbus standard" },
+                                { "data": "Device Ip configuration", "details": "IP Web access for configuration" },
+                                { "data": "BACnet Object configuration", "details": "Configurable using web access" },
+                                { "data": "Transmission speed", "details": "300~ 115200bps" },
+                                { "data": "Certification", "details": "CE & ROHS" },
+                                { "data": "Short-circuit Protection", "details": "Short-circuit, over-current protection and warning LED indicator" }
+                            ]
+                        },
                         "orderCodeColumns": [
                             { "label": "Order Code", "key": "code" },
                             { "label": "Details", "key": "desc" }

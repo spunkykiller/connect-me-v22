@@ -807,6 +807,60 @@ export default function ProductDetails() {
                   {product.orderCodeSections ? (
                     <div className="pd-sections-wrapper">
                       {product.orderCodeSections.map((section, sidx) => {
+                        if (section.positional) {
+                          /* ── POSITIONAL SECTION TABLE ── */
+                          const slots = section.slots || 6;
+                          const circleNums = ['1','2','3','4','5','6','7','8','9','10'];
+                          const dataRows = (section.items || []).filter(r => r.col !== null);
+                          return (
+                            <div key={sidx} className="pd-order-section" style={{ marginBottom: '40px' }}>
+                              {section.title && (
+                                <h3 style={{ 
+                                  fontSize: '24px', 
+                                  fontWeight: '700', 
+                                  marginBottom: '20px', 
+                                  color: section.titleColor || 'var(--color-primary)',
+                                  textTransform: 'uppercase',
+                                  letterSpacing: '0.5px'
+                                }}>
+                                  {section.title}
+                                </h3>
+                              )}
+                              <div className="pd-specs-table-wrapper">
+                                <table className="pd-order-positional">
+                                  <thead>
+                                    <tr>
+                                      <th className="pos-model-header" rowSpan={2}>Model</th>
+                                      <th className="pos-code-header" colSpan={slots}>Order Code</th>
+                                      <th className="pos-desc-header" rowSpan={2}>Description</th>
+                                    </tr>
+                                    <tr>
+                                      {Array.from({ length: slots }, (_, i) => (
+                                        <th key={i} className="pos-slot-header">
+                                          <span className="pos-circle">{circleNums[i]}</span>
+                                        </th>
+                                      ))}
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {dataRows.map((row, i) => (
+                                      <tr key={i}>
+                                        <td className="pos-param-cell">{row.param}</td>
+                                        {Array.from({ length: slots }, (_, s) => (
+                                          <td key={s} className="pos-code-cell">
+                                            {row.col === s + 1 ? row.code : ''}
+                                          </td>
+                                        ))}
+                                        <td className="pos-desc-cell">{row.desc}</td>
+                                      </tr>
+                                    ))}
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          );
+                        }
+                        /* ── STANDARD SECTION TABLE ── */
                         const cols = section.columns || product.orderCodeColumns || [
                           { label: "Order Code", key: "model" },
                           { label: "Description", key: "desc" }

@@ -1,6 +1,7 @@
 // src/servicespage/servicesPage2.jsx
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import SEO from "../components/SEO";
 import "./services.css";
 import "./servicesPage2_new.css";
 import capture from "../assets/Utility Meter Maintenance.jpeg";
@@ -38,26 +39,29 @@ export default function ServicesPage2() {
     }, [hash]);
 
 
-    const ServiceCard = ({ id, title, shortDesc, fullDesc, imageSrc, listItems }) => (
-        <section id={id} className="service-section">
-            <div className="service-container">
-                <div className="service-row align-start">
-                    <div className="service-text-top">
-                        <h2 className="service-title" style={{ marginTop: 0 }}>{title}</h2>
-                        <p className="service-short-desc">{shortDesc}</p>
-                        <a href="/contact" className="request-consultation-btn">Request Consultation</a>
+    const ServiceCard = ({ id, title, subtitle, shortDesc, highlights, imageSrc, imageRight }) => (
+        <section id={id} className="service-section-v2">
+            <div className="service-container-v2">
+                <div className={`service-row-v2 ${imageRight ? '' : 'reverse'}`}>
+                    <div className="service-text-v2">
+                        <span className="service-eyebrow">{subtitle}</span>
+                        <h2 className="service-title-v2">{title}</h2>
+                        <p className="service-desc-v2">{shortDesc}</p>
+                        {highlights && (
+                            <ul className="service-highlights">
+                                {highlights.map((item, idx) => (
+                                    <li key={idx}>
+                                        <span className="highlight-icon">✓</span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                        <a href="/contact" className="service-cta-btn">Get Started →</a>
                     </div>
-                    <div className="service-image-wrapper">
-                        <img src={imageSrc} alt={title} className="service-img-new" loading="lazy" />
+                    <div className="service-image-v2">
+                        <img src={imageSrc} alt={title} loading="lazy" />
                     </div>
-                </div>
-                <div className="service-text-bottom">
-                    {fullDesc.map((text, idx) => <p key={idx}>{text}</p>)}
-                    {listItems && (
-                        <ul className="service-list">
-                            {listItems.map((item, idx) => <li key={idx}>{item}</li>)}
-                        </ul>
-                    )}
                 </div>
             </div>
         </section>
@@ -73,7 +77,42 @@ export default function ServicesPage2() {
     ];
 
     return (
-        <div className="services-page">
+        <div className="services-page-v2">
+            <SEO
+                title="Services - ConnectME"
+                description="ConnectME delivers end-to-end IoT services including utility meter maintenance, billing management, AMC & training, technical consultancy, PLC & SCADA, and custom development."
+            />
+
+            {/* HERO SECTION */}
+            <section className="services-hero">
+                <div className="services-hero-inner">
+                    <span className="hero-label">Our Services</span>
+                    <h1 className="services-hero-title">End-to-End IoT Solutions,<br />Engineered for Performance</h1>
+                    <p className="services-hero-subtitle">From precision metering to intelligent billing, our services power smarter infrastructure across the GCC and beyond.</p>
+                </div>
+                <div className="services-stats-bar">
+                    <div className="stat-item">
+                        <span className="stat-number">500+</span>
+                        <span className="stat-label">Meters Maintained</span>
+                    </div>
+                    <div className="stat-divider"></div>
+                    <div className="stat-item">
+                        <span className="stat-number">50+</span>
+                        <span className="stat-label">Projects Delivered</span>
+                    </div>
+                    <div className="stat-divider"></div>
+                    <div className="stat-item">
+                        <span className="stat-number">12+</span>
+                        <span className="stat-label">Years Experience</span>
+                    </div>
+                    <div className="stat-divider"></div>
+                    <div className="stat-item">
+                        <span className="stat-number">6</span>
+                        <span className="stat-label">Countries Served</span>
+                    </div>
+                </div>
+            </section>
+
             {/* STICKY SECTION NAV */}
             <div className="services-nav-wrapper">
                 <div className="services-nav-container">
@@ -91,80 +130,96 @@ export default function ServicesPage2() {
                 </div>
             </div>
 
+            {/* SERVICE SECTIONS */}
             <ServiceCard
                 id="utility-maintenance"
                 title="Utility Meter Maintenance"
-                shortDesc="Ensuring meters stay healthy for accurate billing. Includes AI-enabled AMR validation and faulty meter replacements."
-                fullDesc={[
-                    "A tenant metering provides the overview and insights needed for accurate billing of water and energy consumption in residential and/or commercial buildings. Highly accurate and reliable meters combined with intuitive meter reading, correct billing platform and proper validation of Meter data.",
-                    "ConnectME offers meter maintenance service, to ensure meters stay healthy, critical for correct billing. Our services cover AI enabled AMR application, which validates the meter data on each meter polling and automated meter error reports. We do maintenance service on faulty meters replacements."
+                subtitle="Preventive & Corrective"
+                shortDesc="Keep your metering infrastructure accurate and reliable with AI-powered validation, automated error reporting, and proactive fault resolution — ensuring every reading counts."
+                highlights={[
+                    "AI-enabled AMR validation on every meter poll",
+                    "Automated faulty meter detection & replacement",
+                    "Preventive maintenance scheduling",
+                    "Real-time meter health dashboards"
                 ]}
                 imageSrc={capture}
+                imageRight={true}
             />
 
             <ServiceCard
                 id="billing"
                 title="Billing Managed Service"
-                shortDesc="Our payment portal allows residents to download bills and check their account from the comfort of their own home or anywhere in the world."
-                fullDesc={[
-                    "Billing system is a combination of software and hardware that receives service usage information, groups this information for specific accounts or customers, produces invoices, creates reports for management, and records (posts) payments made to customer accounts.",
-                    "After an invoice is generated and dispatched to the customer, ideally, all customers will receive their bills and pay promptly. However, there may be some customers, who do not pay their bills and there may be an unacceptable delay in paying the bill and hence the service providers must take some action needed to remedy the situation and collect the outstanding balance due.",
-                    "Collection is the process of chasing past due receivables on customer account. This usually involves sending notifications to the customer and taking appropriate actions in absence of due payments after the due date."
+                subtitle="Revenue Assurance"
+                shortDesc="From invoice generation to payment collection, our fully managed billing platform handles multi-utility tariffs, automated dispatching, and integrated payment gateways — so you never miss revenue."
+                highlights={[
+                    "Multi-utility tariff management (water, energy, gas)",
+                    "Automated invoice generation & dispatch",
+                    "Payment portal for residents & tenants",
+                    "Overdue collection workflows & notifications"
                 ]}
                 imageSrc={bill}
+                imageRight={false}
             />
 
             <ServiceCard
                 id="amc"
                 title="AMC & Training"
-                shortDesc="ConnectME provides comprehensive Annual Maintenance Contract (AMC) and professional training services for metering, billing, PLC, SCADA, and automation systems."
-                fullDesc={[
-                    "Our AMC services ensure continuous system performance through preventive maintenance, regular inspections, software updates, and rapid fault resolution. We support both hardware and software platforms to maximize system reliability and operational uptime.",
-                    "In addition, ConnectME delivers structured technical training programs for operators, engineers, and maintenance teams, enabling effective system operation and troubleshooting. Our hands-on training covers system configuration, monitoring, reporting, and best practices. With dedicated support teams and domain expertise, we help clients achieve long-term efficiency, compliance, and return on investment from their automation and monitoring solutions."
+                subtitle="Ongoing Support"
+                shortDesc="Maximize uptime and team capability with our Annual Maintenance Contracts and structured training programs — covering metering, billing, PLC, SCADA, and full automation stacks."
+                highlights={[
+                    "Preventive maintenance & rapid fault resolution",
+                    "Software updates & system health monitoring",
+                    "Hands-on operator & engineer training",
+                    "Custom training modules for your tech stack"
                 ]}
                 imageSrc={amc}
+                imageRight={true}
             />
 
             <ServiceCard
                 id="consultancy"
                 title="Technical Consultancy"
-                shortDesc="Specialized focusing on everything from market research and strategy consulting to hardware and software specialists to help navigate the minefield of IoT protocols and technical hurdles."
-                fullDesc={[
-                    "We offer: Plant Optimization Networking & security Audit trails – Plant / SCADA networks IoT enablement."
+                subtitle="Strategy & Architecture"
+                shortDesc="Navigate the complexities of IoT architecture with our domain experts. From protocol selection to network security audits, we help you design systems that scale."
+                highlights={[
+                    "IoT architecture design & protocol advisory",
+                    "Plant optimization & network security audits",
+                    "SCADA/BMS integration strategy",
+                    "Regulatory compliance consulting"
                 ]}
                 imageSrc={consult}
+                imageRight={false}
             />
 
             <ServiceCard
                 id="plc"
                 title="PLC & SCADA Services"
-                shortDesc="Usage of control systems, such as computers or robots, and information technologies for handling different processes and machineries in an industry to replace a human being."
-                fullDesc={[
-                    "It is the second step beyond mechanization in the scope of industrialization.",
-                    "We offer:"
-                ]}
-                listItems={[
-                    "Plant / machine upgrade – retrofits",
-                    "PLC / SCADA / HMI – modifications",
-                    "Maintenance contracts – AMC / SLA",
-                    "Engineering Services",
-                    "Manpower deployment – Engineers / Project Manager"
+                subtitle="Industrial Automation"
+                shortDesc="Modernize your industrial control systems with our engineering teams. We handle upgrades, retrofits, and maintenance contracts for PLC, SCADA, and HMI installations."
+                highlights={[
+                    "Plant & machine upgrade retrofits",
+                    "PLC / SCADA / HMI modifications",
+                    "Maintenance contracts (AMC / SLA)",
+                    "On-site engineer & project manager deployment"
                 ]}
                 imageSrc={plc}
+                imageRight={true}
             />
 
             <ServiceCard
                 id="development"
                 title="Development & Services"
-                shortDesc="Application development services allow you to build consumer-facing apps for a range of digital platforms like mobile App, web, desktop."
-                fullDesc={[
-                    "Web development services imply designing, building, integrating, scaling and maintaining dynamic software solutions that work via intranet or internet.",
-                    "We rely on our technological expertise and specialized industry experience to develop any type of web, mobile App, desktop, and hybrid app per your business requirements. Our application maintenance and modernization services are designed to ensure the scalability, performance, and sustainability of your entire software infrastructure as your business grows.",
-                    "Our thorough threat audits help us identify your software infrastructure’s most pressing vulnerabilities, allowing us to integrate the encryptions, security services and access protocols you require. Our implementation specialists will work with your IT team to establish detailed software deployment objectives and timelines, covering configuration, testing, project governance, troubleshooting and more. We provide holistic IT Infrastructure support, including help desk management, custom messaging and collaboration, network management and system administration services."
+                subtitle="Custom Software"
+                shortDesc="Build powerful web, mobile, and desktop applications tailored to your business. Our full-stack teams deliver from concept to deployment, with ongoing security audits and infrastructure support."
+                highlights={[
+                    "Web, mobile & hybrid app development",
+                    "Application modernization & scaling",
+                    "Security audits & threat assessments",
+                    "IT infrastructure support & help desk"
                 ]}
                 imageSrc={dev}
+                imageRight={false}
             />
-
         </div>
     );
 }

@@ -113,19 +113,66 @@ const productData = [
                             "Display": "LCD 10 digits + prompts",
                             "Pressure Loss": "< 25 kPa"
                         },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Performance", key: "perf" },
+                                { label: "Parameters", key: "param" }
+                            ],
+                            "items": [
+                                { perf: "Accuracy", param: "Class 2" },
+                                { perf: "Temperature Sensor Type", param: "Pt1000, DIN/IEC751B - Detachable" },
+                                { perf: "Temperature Range (°C)", param: "2 - 105" },
+                                { perf: "Temperature Difference Range (K)", param: "2 ~ 95" },
+                                { perf: "Initial Temperature Difference (°C)", param: "0.2 K" },
+                                { perf: "Max Permissible Working Pressure (MPa)", param: "1.6" },
+                                { perf: "Protection Level", param: "IP66 / IP68, the default is IP66 (IP68 is proposed when ordering)" },
+                                { perf: "Power Supply", param: "3.6V lithium battery, one battery can work continuously for more than 12 years & replaceable" },
+                                { perf: "Mechanical Installation Level", param: "M1" },
+                                { perf: "Environmental Class", param: "Class A / B" },
+                                { perf: "Values Displayed", param: "LCD, 10 digits + prompt; Heat quantity (kW·h or MJ), Thermal power (kW), Instantaneous flowrate (m³/h), Cumulative flowrate(m³), Supply water temperature (°C), Return water temperature (°C), Temperature difference (K), Cumulative effective running time (h), Date (year/month/day), Time (hour/minute/second)" },
+                                { perf: "Display Resolution", param: "Heat quantity 0.1kW·h or 1MJ, Cumulative flowrate 0.001m³; Instantaneous flowrate: 0.001 m³/h; Temperature 0.01°C; Temperature difference 0.01K" },
+                                { perf: "Optical Interface", param: "Baud rate 2400bps, even parity, EN13757 protocol" },
+                                { perf: "Wireless Interface", param: "W M-Bus and NB-IoT" },
+                                { perf: "NB-IoT (Data Communication)", param: "Heat quantity, cumulative flowrate and corresponding time and the max. Heat power of the current month can be stored by month. Latest 24 month's data can be stored. Latest 100 daily cumulative heat quantity; Latest 4800 cyclic heat consumption; Latest 100 alarm records." },
+                                { perf: "M-Bus/RS-485 (Data Communication)", param: "Baud rate: 2400bps, 4800bps, 9600bps optional, the default is 2400bps; Transmission distance < 1200m; EN13757 protocol, Modbus protocol are optional, the default is EN13757 protocol" },
+                                { perf: "M-Bus/RS-485 (Data Storage)", param: "Monthly and daily heat quantity, cumulative flowrate and corresponding time and the max. heat power of the current month/day can be stored. Latest 24 month's data can be stored." },
+                                { perf: "Storage Temperature (°C)", param: "-25 ~ +55" },
+                                { perf: "Pressure Loss (kPa)", param: "<25" },
+                                { perf: "Cable Length of Temperature Sensor (m)", param: ">1.3" },
+                                { perf: "Meter Mounting Position", param: "On supply/return water pipe (selectable)" }
+                            ]
+                        },
+                        "dimensionsColumns": [
+                            { label: "Nominal Diameter (mm)", key: "dn" },
+                            { label: "A without Connections", key: "a" },
+                            { label: "B with Connections", key: "b" },
+                            { label: "L (mm)", key: "l" },
+                            { label: "L1 (mm)", key: "l1" },
+                            { label: "H (mm)", key: "h" },
+                            { label: "W (mm)", key: "w" },
+                            { label: "S Connection Length (mm)", key: "s" }
+                        ],
                         "dimensions": [
-                            { dn: "DN15", thread: "G¾B", length: "110 mm", width: "94 mm", height: "110 mm" },
-                            { dn: "DN20", thread: "G1B", length: "130 mm", width: "94 mm", height: "115 mm" },
-                            { dn: "DN25", thread: "G1¼B", length: "160 mm", width: "94 mm", height: "120 mm" },
-                            { dn: "DN32", thread: "G1½B", length: "180 mm", width: "94 mm", height: "125 mm" },
-                            { dn: "DN40", thread: "G2B", length: "200 mm", width: "94 mm", height: "135 mm" }
+                            { dn: "DN15", a: "G¾B", b: "R ½B", l: "147", l1: "110", h: "110", w: "94", s: "45" },
+                            { dn: "DN20", a: "G1B", b: "R ¾B", l: "147", l1: "130", h: "115", w: "94", s: "51" },
+                            { dn: "DN25", a: "G1¼B", b: "R 1B", l: "147", l1: "160", h: "120", w: "94", s: "59" },
+                            { dn: "DN32", a: "G1 ½ B", b: "R1 ¼B", l: "147", l1: "180", h: "125", w: "94", s: "60" },
+                            { dn: "DN40", a: "G2B", b: "R1 ½B", l: "147", l1: "200", h: "135", w: "94", s: "62" }
+                        ],
+                        "technicalFlowColumns": [
+                            { label: "Nominal Diameter (mm)", key: "dn" },
+                            { label: "Range Ratio", key: "ratio" },
+                            { label: "Common Flow qp (m³/h)", key: "qp" },
+                            { label: "Minimum Flow qi (m³/h)", key: "qi" },
+                            { label: "Maximum Flow qs (m³/h)", key: "qs" }
                         ],
                         "technicalFlow": [
-                            { dn: "DN15", min: "0.015", nominal: "1.5", max: "3", length: "110" },
-                            { dn: "DN20", min: "0.025", nominal: "2.5", max: "5", length: "130" },
-                            { dn: "DN25", min: "0.035", nominal: "3.5", max: "7", length: "160" },
-                            { dn: "DN32", min: "0.06", nominal: "6.0", max: "12", length: "180" },
-                            { dn: "DN40", min: "0.10", nominal: "10.0", max: "20", length: "200" }
+                            { dn: "DN15", ratio: "100", qp: "1 / 1.5", qi: "0.01 / 0.015", qs: "3" },
+                            { dn: "DN20", ratio: "100", qp: "1.5 / 2.5", qi: "0.015 / 0.025", qs: "5" },
+                            { dn: "DN25", ratio: "100", qp: "2.5 / 3.5", qi: "0.025 / 0.035", qs: "7" },
+                            { dn: "DN32", ratio: "100", qp: "6", qi: "0.06", qs: "12" },
+                            { dn: "DN40", ratio: "100", qp: "10", qi: "0.1", qs: "20" }
                         ],
                         "orderCodeLayout": "positional",
                         "orderCodeSlots": 6,
@@ -254,6 +301,30 @@ const productData = [
                         ],
                         "overview": "The Uflo U50 Bulk Meter is Suitable for industrial/commercial heat/cold flow metering, district heat/water supply utility's demand on accurately metering, billing, and big data analysis, and so on.",
                         "longDescription": "Uflo Ultrasonic buld BTU Meter-U50 Bulk Series\nSize : DN50 to DN300\nProtection : IP65 / IP68\nBattery Life : 10 Years\nCommunication: Mbus / RS485",
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Parameter", key: "param" },
+                                { label: "Data\n\nB1 series / B2 series", key: "data" }
+                            ],
+                            "items": [
+                                { param: "Temperature (oC)", data: "4 ~ 95" },
+                                { param: "Temperature difference range (oC)", data: "2 ~ 75" },
+                                { param: "Pressure (Mpa)", data: "PN16" },
+                                { param: "Pressure loss (Mpa)", data: "≤0.010" },
+                                { param: "Accuracy", data: "Class 2" },
+                                { param: "Temperature resolution (oC)", data: "0.01" },
+                                { param: "Environment temperature (oC)", data: "-20 ~ 55" },
+                                { param: "Battery life", data: "10 years" },
+                                { param: "Protection", data: "IP65 / IP68" },
+                                { param: "IR interface", data: "Baud rate: 2400bps" },
+                                { param: "M-Bus, RS485", data: "M-Bus: EN13757 RS485: Modbus" },
+                                { param: "Wireless", data: "NB-IOT, wireless M-Bus" },
+                                { param: "Tube material", data: "Brass, Stainless steel" },
+                                { param: "EEPROM", data: "Total flow of max 36 months, alarm clock, cause, or max 2 years" },
+                                { param: "Mounting", data: "Backflow inlet" }
+                            ]
+                        },
                         "orderCodeSections": [
                             {
                                 "title": "ORDER CODES – B1 SERIES",
@@ -342,19 +413,59 @@ const productData = [
                             "Battery Life": "≥ 10 years",
                             "Anti-Magnetic Interference": "Up to 100 kA/m"
                         },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Performance", key: "perf" },
+                                { label: "Parameter", key: "param" }
+                            ],
+                            "items": [
+                                { perf: "Accuracy Class", param: "Class 2" },
+                                { perf: "Connection type", param: "Threaded" },
+                                { perf: "Pressure loss", param: "≤ 0.02 MPa" },
+                                { perf: "Max. Working Pressure", param: "1.6 MPa" },
+                                { perf: "Temperature Sensor", param: "1.5m standard 2-wire PT1000 (wire length can be reserved)" },
+                                { perf: "Data Storage", param: "Continuous storage of 24 months of history" },
+                                { perf: "Communication", param: "Optical / M-Bus / RS-485 / NB-IoT / wM-Bus" },
+                                { perf: "Power Supply", param: "3.6 V lithium battery / external DC 24 V" },
+                                { perf: "Protection Grade", param: "IP65 / IP68" },
+                                { perf: "Environmental", param: "Class A" },
+                                { perf: "Temp. Range", param: "(4 - 95)°C" },
+                                { perf: "Temp. Difference Range", param: "(2 - 90) K" },
+                                { perf: "Installation Method", param: "Water inlet or return" },
+                                { perf: "Installation Position", param: "Horizontal or vertical" },
+                                { perf: "Battery Life", param: "12+ years" },
+                                { perf: "Display", param: "8-bit LCD" },
+                                { perf: "Anti-magnetic Interface", param: "upto 100 KA/M" }
+                            ]
+                        },
+                        "dimensionsColumns": [
+                            { label: "Nominal Diameter (DN)", key: "dn" },
+                            { label: "Thread Size", key: "thread" },
+                            { label: "Length (L)", key: "length" },
+                            { label: "Width (W)", key: "width" },
+                            { label: "Height (H)", key: "height" }
+                        ],
                         "dimensions": [
-                            { dn: "DN15", thread: "G¾B", length: "130 mm", width: "88 mm", height: "125 mm" },
-                            { dn: "DN20", thread: "G1B", length: "130 mm", width: "88 mm", height: "129 mm" },
-                            { dn: "DN25", thread: "G1¼B", length: "160 mm", width: "88 mm", height: "136 mm" },
-                            { dn: "DN32", thread: "G1½B", length: "180 mm", width: "88 mm", height: "139 mm" },
-                            { dn: "DN40", thread: "G2B", length: "200 mm", width: "88 mm", height: "149 mm" }
+                            { dn: "DN15", thread: "G¾B", length: "130", width: "88", height: "125" },
+                            { dn: "DN20", thread: "G1B", length: "130", width: "88", height: "129" },
+                            { dn: "DN25", thread: "G1¼B", length: "160", width: "88", height: "136" },
+                            { dn: "DN32", thread: "G1 ½ B", length: "180", width: "88", height: "139" },
+                            { dn: "DN40", thread: "G2B", length: "200", width: "88", height: "149" }
+                        ],
+                        "technicalFlowColumns": [
+                            { label: "Diameter", key: "dn" },
+                            { label: "Min.Flow qmin (m³/h)", key: "min" },
+                            { label: "Norm.Flow qp (m³/h)", key: "nom" },
+                            { label: "Max.Flow qmax (m³/h)", key: "max" },
+                            { label: "length mm", key: "length" }
                         ],
                         "technicalFlow": [
-                            { dn: "DN15", min: "0.015", nominal: "1.5", max: "3", length: "130" },
-                            { dn: "DN20", min: "0.05", nominal: "2.5", max: "5", length: "130" },
-                            { dn: "DN25", min: "0.07", nominal: "3.5", max: "7", length: "160" },
-                            { dn: "DN32", min: "0.12", nominal: "6", max: "12", length: "180" },
-                            { dn: "DN40", min: "0.20", nominal: "10", max: "20", length: "200" }
+                            { dn: "DN15", min: "0.015", nom: "1.5", max: "3", length: "130" },
+                            { dn: "DN20", min: "0.05", nom: "2.5", max: "5", length: "130" },
+                            { dn: "DN25", min: "0.07", nom: "3.5", max: "7", length: "160" },
+                            { dn: "DN32", min: "0.12", nom: "6", max: "12", length: "180" },
+                            { dn: "DN40", min: "0.2", nom: "10", max: "20", length: "200" }
                         ],
                         "orderCodes": [
                             { dn: "DN15", flow: "1.5", mbus: "U5111-DC-AA-R2", wmbus: "U5112-DC-AA-R2", modbus: "U5114-DC-AA-R2", nbiot: "U5116-DC-AA-R2" },
@@ -420,7 +531,72 @@ const productData = [
                             "MID certified"
                         ],
                         "overview": "Uflo U70 Advanced Series represents the next generation of ultrasonic metering, offering enhanced precision and durability for demanding industrial and commercial applications.",
-                        "longDescription": "Uflo ultrasonic BTU Meter- U70 Advanced series\nSize : DN15 to DN40\nTemp Sensor : PT1000 Jumo sensors\nBattery Life : > 12 years\nReplaceable: Battery & Temp. Sensors\nMID certified"
+                        "longDescription": "Uflo ultrasonic BTU Meter- U70 Advanced series\nSize : DN15 to DN40\nTemp Sensor : PT1000 Jumo sensors\nBattery Life : > 12 years\nReplaceable: Battery & Temp. Sensors\nMID certified",
+                        "technicalFlowColumns": [
+                            { label: "Nominal Diameter(mm)", key: "param" },
+                            { label: "DN15", key: "dn15" },
+                            { label: "DN20", key: "dn20" },
+                            { label: "DN25", key: "dn25" },
+                            { label: "DN32", key: "dn32" },
+                            { label: "DN40", key: "dn40" }
+                        ],
+                        "technicalFlow": [
+                            { param: "Minimum Q₁", dn15: "0.006", dn20: "0.010", dn25: "0.016", dn32: "0.025", dn40: "0.040" },
+                            { param: "Transitional Q₂", dn15: "0.010", dn20: "0.016", dn25: "0.025", dn32: "0.040", dn40: "0.064" },
+                            { param: "Permanent Q₃", dn15: "2.5", dn20: "4", dn25: "6.3", dn32: "10", dn40: "16" },
+                            { param: "Overload Q₄", dn15: "3.125", dn20: "5", dn25: "7.875", dn32: "12.5", dn40: "20" },
+                            { param: "Pressure Loss", dn15: "Δp63", dn20: "Δp63", dn25: "Δp63", dn32: "Δp63", dn40: "Δp63" }
+                        ],
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Item", key: "item" },
+                                { label: "Parameter (NB-IoT)", key: "nbiot" },
+                                { label: "Parameter (RS-485/M-Bus/RF)", key: "rs485" }
+                            ],
+                            "items": [
+                                { item: "Accuracy", nbiot: "Class 2", rs485: "Class 2" },
+                                { item: "Nominal Diameter", nbiot: "DN15~DN40", rs485: "DN15~DN40" },
+                                { item: "Dynamic Range", nbiot: "R250/R400", rs485: "R250/R400" },
+                                { item: "Maximum Working Pressure", nbiot: "1.6MPa", rs485: "1.6MPa" },
+                                { item: "Working Environment", nbiot: "-25°C~+70°C, ≤100%RH (If exceed this range, please specify when ordering)", rs485: "-25°C~+70°C, ≤100%RH (If exceed this range, please specify when ordering)" },
+                                { item: "Water Temperature Class", nbiot: "T30, T50, T70, default T50", rs485: "T30, T50, T70, default T50" },
+                                { item: "Class of Upstream Flow Field Sensitivity", nbiot: "U0", rs485: "U0" },
+                                { item: "Class of Downstream Flow Field Sensitivity", nbiot: "D0", rs485: "D0" },
+                                { item: "Category of Climate & Mechanical Environment Conditions", nbiot: "Class O", rs485: "Class O" },
+                                { item: "Class of Electromagnetic Compatibility", nbiot: "E2", rs485: "E2" },
+                                { item: "Operation", nbiot: "Photosensitive key", rs485: "Photosensitive key" },
+                                { item: "Display Indication", nbiot: "LCD, 10-digital+prompting character", rs485: "LCD, 10-digital+prompting character" },
+                                { item: "Values Displayed", nbiot: "Accumulated flow rate (m³), Instantaneous flow rate (m³/h), Water temperature (°C), Accumulated effective running time (h), Date (YY/MM/DD), Time (hh/mm/ss), Software version / Meter ID, Screen test", rs485: "Accumulated flow rate (m³), Instantaneous flow rate (m³/h), Water temperature (°C), Accumulated effective running time (h), Date (YY/MM/DD), Time (hh/mm/ss), Software version / Meter ID, Screen test" },
+                                { item: "Display Resolution", nbiot: "Accumulated flow rate 0.01m³, Instantaneous flow rate 0.01m³/h, Water temperature 0.01°C. (The decimal digits of accumulated flow rate and instantaneous flow rate can be customized up to 5 digits.)", rs485: "Accumulated flow rate 0.001m³, Instantaneous flow rate 0.0001m³/h, Water temperature 0.01°C" },
+                                { item: "Display Range", nbiot: "Accumulated flow rate: 0m³~1999999.999 m³", rs485: "Accumulated flow rate: 0m³~1999999.999 m³" },
+                                { item: "Data Communication (Photoelectric)", nbiot: "Baud rate: 2400bps, even parity, Protocol: EN13757", rs485: "Baud rate: 2400bps, even parity, Protocol: EN13757" },
+                                { item: "Data Communication (RS-485/M-Bus)", nbiot: "Baud rate: 2400bps, 4800bps, 9600bps, default: 2400bps, transmission distance ≤1200m; Support CJ/T 188 protocol, Modbus-RTU protocol, EN13757 protocol, default: EN13757 protocol", rs485: "Baud rate: 2400bps, 4800bps, 9600bps, default: 2400bps, transmission distance ≤1200m; Support CJ/T 188 protocol, Modbus-RTU protocol, EN13757 protocol, default: EN13757 protocol" },
+                                { item: "Data Communication (RF)", nbiot: "470MHz/868MHz", rs485: "470MHz/868MHz" },
+                                { item: "Data Communication (NB-IoT)", nbiot: "Data report period once per day (If the range is exceeded, please specify on ordering)", rs485: "-" },
+                                { item: "Power Supply", nbiot: "Battery DC3.6V (Continuous working years: more than 7 years/8 years/ 10 years optional)", rs485: "Battery DC3.6V (One battery can continuously work for over 10 years)" },
+                                { item: "Protection Class", nbiot: "IP68", rs485: "IP68" },
+                                { item: "Storage Temperature", nbiot: "-25°C~+70°C", rs485: "-25°C~+70°C" },
+                                { item: "Installation Position", nbiot: "Water supply pipe", rs485: "Water supply pipe" }
+                            ]
+                        },
+                        "dimensionsColumns": [
+                            { label: "Nominal Diameter (mm)", key: "param" },
+                            { label: "DN15", key: "dn15" },
+                            { label: "DN20", key: "dn20" },
+                            { label: "DN25", key: "dn25" },
+                            { label: "DN32", key: "dn32" },
+                            { label: "DN40", key: "dn40" }
+                        ],
+                        "dimensions": [
+                            { param: "A without Connections", dn15: "G¾B", dn20: "G1B", dn25: "G1¼B", dn32: "G1 ½ B", dn40: "G2B" },
+                            { param: "B with Connections", dn15: "R ½", dn20: "R ¾", dn25: "R 1", dn32: "R1 ¼", dn40: "R1 ½" },
+                            { param: "L (mm)", dn15: "97", dn20: "97", dn25: "97", dn32: "97", dn40: "97" },
+                            { param: "L1 (mm)", dn15: "110/165", dn20: "190/195", dn25: "160/260", dn32: "180", dn40: "200/245/300" },
+                            { param: "H (mm)", dn15: "119", dn20: "119", dn25: "119", dn32: "145", dn40: "153" },
+                            { param: "W (mm)", dn15: "98", dn20: "98", dn25: "98", dn32: "98", dn40: "98" },
+                            { param: "S Connection Length (mm)", dn15: "45", dn20: "51", dn25: "59", dn32: "74", dn40: "78" }
+                        ]
                     },
                     {
                         "id": "uflo-u40-compact-series",
@@ -442,23 +618,61 @@ const productData = [
                             "Downstream Flow Sensitivity": "D0",
                             "Data Communication": "Baud rate: 2400/4800/9600 bps. Modbus-RTU / EN13757. Freq: 868MHz"
                         },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Item", key: "item" },
+                                { label: "Parameter", key: "param" }
+                            ],
+                            "items": [
+                                { item: "Accuracy", param: "Class 2" },
+                                { item: "Nominal Diameter", param: "DN15, DN20, DN25, DN32, DN40, DN50" },
+                                { item: "R Value", param: "R250/R400" },
+                                { item: "Maximum Working Pressure", param: "1.6Mpa" },
+                                { item: "Working Environment", param: "-25°C~+60°C. ≤95%RH (If exceeds this range, please specify when ordering)" },
+                                { item: "Water Temperature Class", param: "T30, T50, default T50" },
+                                { item: "UP/Down Straight pipe", param: "U5/D3" },
+                                { item: "Ingress Protection", param: "IP68" },
+                                { item: "Pipe material", param: "Brass" },
+                                { item: "Mounting", param: "Horizontal/Vertical" },
+                                { item: "EMC", param: "E2" },
+                                { item: "Pressure Drop", param: "ΔP25" },
+                                { item: "Data Communication", param: "Baud rate: 2400bps, even parity, Protocol: EN13757\nBaud rate: 2400bps, 4800bps, 9600bps, default: 2400bps, transmission distances 1200m.\nModbus-RTU protocol, EN13757 protocol, default: EN13757 protocol\n868MHz" }
+                            ]
+                        },
+                        "dimensionsColumns": [
+                            { label: "Model", key: "model" },
+                            { label: "L1 (mm)", key: "l1" },
+                            { label: "L2 (mm)", key: "l2" },
+                            { label: "W (mm)", key: "w" },
+                            { label: "H (mm)", key: "h" },
+                            { label: "Meter Sensor Thread Length (mm)", key: "ms_tl" },
+                            { label: "Meter Sensor Connection Thread", key: "ms_ct" },
+                            { label: "Pipe Sensor Thread Length", key: "ps_tl" },
+                            { label: "Pipe Sensor Thread Specification", key: "ps_ts" }
+                        ],
+                        "dimensions": [
+                            { model: "DN15", l1: "114", l2: "165", w: "97", h: "106", ms_tl: "12", ms_ct: "G¾B", ps_tl: "15", ps_ts: "R½" },
+                            { model: "DN20", l1: "114", l2: "97", w: "97", h: "106", ms_tl: "12", ms_ct: "G1B", ps_tl: "16", ps_ts: "R¾" },
+                            { model: "DN25", l1: "114", l2: "225", w: "97", h: "110", ms_tl: "12", ms_ct: "G1¼B", ps_tl: "18", ps_ts: "R1" },
+                            { model: "DN32", l1: "114", l2: "180", w: "97", h: "135", ms_tl: "13", ms_ct: "G1½B", ps_tl: "20", ps_ts: "R1¼" },
+                            { model: "DN40", l1: "114", l2: "200", w: "97", h: "137", ms_tl: "14", ms_ct: "G2B", ps_tl: "22", ps_ts: "R1½" },
+                            { model: "DN50", l1: "114", l2: "200", w: "97", h: "150", ms_tl: "15", ms_ct: "G2½B", ps_tl: "24", ps_ts: "R2" }
+                        ],
                         "technicalFlowColumns": [
                             { label: "Model", key: "model" },
-                            { label: "Dia DN(mm)", key: "dn" },
+                            { label: "Dia. DN(mm)", key: "dn" },
                             { label: "Qp Q3(m³/h)", key: "q3" },
                             { label: "Qt Q2(m³/h)", key: "q2" },
-                            { label: "Qmin Q1(m³/h)", key: "q1" },
-                            { label: "Sensor Connect L1(mm)", key: "l1" },
-                            { label: "Sensor Tube Thread", key: "thread" },
-                            { label: "Length L2(mm)", key: "l2" }
+                            { label: "Qmin Q1(m³/h)", key: "q1" }
                         ],
                         "technicalFlow": [
-                            { model: "DN15", dn: "15", q3: "2.5", q2: "0.010", q1: "0.006", l1: "12", thread: "G¾B", l2: "43" },
-                            { model: "DN20", dn: "20", q3: "4.0", q2: "0.016", q1: "0.010", l1: "12", thread: "G1B", l2: "50" },
-                            { model: "DN25", dn: "25", q3: "6.3", q2: "0.025", q1: "0.016", l1: "12", thread: "G1¼B", l2: "58" },
-                            { model: "DN32", dn: "32", q3: "10", q2: "0.040", q1: "0.025", l1: "13", thread: "G1½B", l2: "58" },
-                            { model: "DN40", dn: "40", q3: "16", q2: "0.064", q1: "0.040", l1: "14", thread: "G2B", l2: "59" },
-                            { model: "DN50", dn: "50", q3: "25", q2: "0.160", q1: "0.10", l1: "15", thread: "G2½B", l2: "60" }
+                            { model: "DN15", dn: "15", q3: "2.5", q2: "0.010", q1: "0.006" },
+                            { model: "DN20", dn: "20", q3: "3.5", q2: "0.016", q1: "0.010" },
+                            { model: "DN25", dn: "25", q3: "6.0", q2: "0.025", q1: "0.016" },
+                            { model: "DN32", dn: "32", q3: "10", q2: "0.040", q1: "0.025" },
+                            { model: "DN40", dn: "40", q3: "16", q2: "0.064", q1: "0.040" },
+                            { model: "DN50", dn: "50", q3: "25", q2: "0.160", q1: "0.1" }
                         ],
                         "orderCodeLayout": "positional",
                         "orderCodeSlots": 6,
@@ -531,6 +745,28 @@ const productData = [
                             "Installation Mode": "H/V",
                             "Pipe Material": "Cast Steel"
                         },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Parameter", key: "param" },
+                                { label: "B1 series", key: "b1" },
+                                { label: "B2 series", key: "b2" }
+                            ],
+                            "items": [
+                                { param: "Accuracy", b1: "Class 2", b2: "Class 2" },
+                                { param: "Ambient Class", b1: "Class O", b2: "Class O" },
+                                { param: "Flow Section Sensitivity Level", b1: "U5/D3", b2: "U5/D3" },
+                                { param: "Temperature Class", b1: "T30", b2: "T30" },
+                                { param: "Protection Class", b1: "IP68", b2: "IP68" },
+                                { param: "Pressure Class", b1: "MAP16", b2: "MAP16" },
+                                { param: "EMC Level", b1: "E1", b2: "E1" },
+                                { param: "Dynamic Range", b1: "100-400 (Default 200)", b2: "100" },
+                                { param: "Pressure Loss class", b1: "ΔP40", b2: "ΔP40" },
+                                { param: "Installation Mode", b1: "H/V", b2: "H/V" },
+                                { param: "Pipe Material", b1: "Cast Steel", b2: "Cast Steel" },
+                                { param: "Pressure Resolution", b1: "0.1MPa", b2: "-" }
+                            ]
+                        },
                         "technicalFlowColumns": [
                             { label: "Model", key: "model" },
                             { label: "Normal Dia DN(mm)", key: "dn" },
@@ -555,37 +791,66 @@ const productData = [
                             { model: "DN450", dn: "450", q3: "2000", q2: "25.6", q1: "16", flange: "640", length: "650", bolt: "20*M27" },
                             { model: "DN500", dn: "500", q3: "2500", q2: "32", q1: "20", flange: "705", length: "650", bolt: "20*M30" }
                         ],
-                        "orderCodeLayout": "positional",
-                        "orderCodeSlots": 6,
-                        "orderCodes": [
-                            { param: "Model", col: null, code: "U40", desc: "" },
-                            { param: "Meter Type", col: 1, code: "1", desc: "Ultrasonic" },
-                            { param: "Communication Protocol", col: 2, code: "1", desc: "M bus" },
-                            { param: "", col: 2, code: "4", desc: "Modbus" },
-                            { param: "", col: 2, code: "6", desc: "NB-IoT" },
-                            { param: "Area of Usage", col: 3, code: "DH", desc: "Domestic -Hot" },
-                            { param: "", col: 3, code: "DD", desc: "Domestic - Drinking" },
-                            { param: "Flow rate", col: 4, code: "G", desc: "25" },
-                            { param: "", col: 4, code: "H", desc: "40" },
-                            { param: "", col: 4, code: "I", desc: "60" },
-                            { param: "", col: 4, code: "J", desc: "100" },
-                            { param: "", col: 4, code: "K", desc: "160" },
-                            { param: "", col: 4, code: "L", desc: "250" },
-                            { param: "", col: 4, code: "M", desc: "400" },
-                            { param: "", col: 4, code: "N", desc: "600" },
-                            { param: "", col: 4, code: "O", desc: "1000" },
-                            { param: "Size", col: 5, code: "G", desc: "50" },
-                            { param: "", col: 5, code: "H", desc: "65" },
-                            { param: "", col: 5, code: "I", desc: "80" },
-                            { param: "", col: 5, code: "J", desc: "100" },
-                            { param: "", col: 5, code: "K", desc: "125" },
-                            { param: "", col: 5, code: "L", desc: "150" },
-                            { param: "", col: 5, code: "M", desc: "200" },
-                            { param: "", col: 5, code: "N", desc: "250" },
-                            { param: "", col: 5, code: "O", desc: "300" },
-                            { param: "Range", col: 6, code: "R3", desc: "200" },
-                            { param: "", col: 6, code: "R4", desc: "250" },
-                            { param: "", col: 6, code: "R6", desc: "400" }
+                        "orderCodeSections": [
+                            {
+                                "title": "1. B1 SERIES",
+                                "positional": true,
+                                "slots": 6,
+                                "items": [
+                                    { param: "Model", col: null, code: "U40", desc: "" },
+                                    { param: "Meter Type", col: 1, code: "1", desc: "Ultrasonic" },
+                                    { param: "Communication Protocol", col: 2, code: "1", desc: "M bus" },
+                                    { param: "", col: 2, code: "4", desc: "Modbus" },
+                                    { param: "", col: 2, code: "6", desc: "NB-IoT" },
+                                    { param: "Area of Usage", col: 3, code: "DH", desc: "Domestic -Hot" },
+                                    { param: "", col: 3, code: "DD", desc: "Domestic - Drinking" },
+                                    { param: "Flow rate", col: 4, code: "G", desc: "25" },
+                                    { param: "", col: 4, code: "H", desc: "40" },
+                                    { param: "", col: 4, code: "I", desc: "60" },
+                                    { param: "", col: 4, code: "J", desc: "100" },
+                                    { param: "", col: 4, code: "K", desc: "160" },
+                                    { param: "", col: 4, code: "L", desc: "250" },
+                                    { param: "", col: 4, code: "M", desc: "400" },
+                                    { param: "", col: 4, code: "N", desc: "600" },
+                                    { param: "", col: 4, code: "O", desc: "1000" },
+                                    { param: "Size", col: 5, code: "G", desc: "50" },
+                                    { param: "", col: 5, code: "H", desc: "65" },
+                                    { param: "", col: 5, code: "I", desc: "80" },
+                                    { param: "", col: 5, code: "J", desc: "100" },
+                                    { param: "", col: 5, code: "K", desc: "125" },
+                                    { param: "", col: 5, code: "L", desc: "150" },
+                                    { param: "", col: 5, code: "M", desc: "200" },
+                                    { param: "", col: 5, code: "N", desc: "250" },
+                                    { param: "", col: 5, code: "O", desc: "300" },
+                                    { param: "Range", col: 6, code: "R3", desc: "200" },
+                                    { param: "", col: 6, code: "R4", desc: "250" },
+                                    { param: "", col: 6, code: "R6", desc: "400" }
+                                ]
+                            },
+                            {
+                                "title": "2. B2 SERIES",
+                                "positional": true,
+                                "slots": 6,
+                                "items": [
+                                    { param: "Model", col: null, code: "U40", desc: "" },
+                                    { param: "Meter Type", col: 1, code: "1", desc: "Ultrasonic" },
+                                    { param: "Communication Protocol", col: 2, code: "1", desc: "M bus" },
+                                    { param: "", col: 2, code: "4", desc: "Modbus" },
+                                    { param: "", col: 2, code: "6", desc: "NB-IoT" },
+                                    { param: "Area of Usage", col: 3, code: "DH", desc: "Domestic -Hot" },
+                                    { param: "", col: 3, code: "DD", desc: "Domestic - Drinking" },
+                                    { param: "Flow rate", col: 4, code: "P", desc: "1400" },
+                                    { param: "", col: 4, code: "Q", desc: "1600" },
+                                    { param: "", col: 4, code: "R", desc: "2000" },
+                                    { param: "", col: 4, code: "S", desc: "2500" },
+                                    { param: "Size", col: 5, code: "P", desc: "300" },
+                                    { param: "", col: 5, code: "Q", desc: "400" },
+                                    { param: "", col: 5, code: "R", desc: "450" },
+                                    { param: "", col: 5, code: "S", desc: "500" },
+                                    { param: "Range", col: 6, code: "R1", desc: "500" },
+                                    { param: "", col: 6, code: "R2", desc: "1000" }
+                                ]
+                            }
                         ],
                         "tags": [
                             "Meters",
@@ -728,6 +993,34 @@ const productData = [
                             "Temp sensor": "PT100",
                             "Communication": "RS485 / Mbus / BacNet IP / 4G"
                         },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Category", key: "cat" },
+                                { label: "Items", key: "item" },
+                                { label: "Performance & Parameter", key: "param" }
+                            ],
+                            "items": [
+                                { cat: "Controller", item: "Principle", param: "Transit time ultrasonic flowmeter" },
+                                { cat: "", item: "Accuracy", param: "1%" },
+                                { cat: "", item: "Display", param: "LCD with backlight 2*20 letters, Displays Menus and Measuring values and setting parameters" },
+                                { cat: "", item: "Signal output", param: "Current output: Single 4-20mA or 0-20mA output, impedance 0-1K, accuracy 0.1%\nPulse output: Single OCT pulse output for accumulated flow rates (Pulse width - 1000ms. default is 200ms)\nRelay: One NO/NC Relay output (configure upto 20 signals as no signal, revers flow, fault etc.,)" },
+                                { cat: "", item: "Signal Input", param: "Analog input: Three channels 4-20mA input, accuracy 0.1%. (signal such as temperature, press and liquid level)\nTemperature transducer: Pt100 for heat/energy measurement (BTU meter applications)" },
+                                { cat: "", item: "Data Interface", param: "Modbus RTU (RS485 serial interface) — Standard Modbus TCP server, BACnet / IP, M-Bus salve interfaces — Optional to choose from order code" },
+                                { cat: "", item: "Communication Interface", param: "GSM /GPRS (4G)/WIFI for remote monitoring and cloud server connectivity. UBILL cloud server on subscription based for remote recording, data analytical, reporting and alarm notifications." },
+                                { cat: "Pipe Installation Condition", item: "Pipe Material", param: "All metals, Cement pipe, Most plastics, Glass steel product, liner is allowed" },
+                                { cat: "", item: "Pipe Diameter", param: "50~6000mm" },
+                                { cat: "", item: "Straight Pipe", param: "Transducer installation should be satisfied: upstream 10D, downstream 5D, 30D from the pump" },
+                                { cat: "Measuring Medium", item: "Type Of Liquid", param: "All commonly used liquids (full pipe)\nWater (hot water, chilled water, potable, Treated Effluent, Sea water, etc.);\nOil (crude oil, lubricating oil, diesel oil, fuel oil, etc.); chemicals (alcohol, etc. ); Beverage ;" },
+                                { cat: "", item: "Temperature", param: "-30 ~ 160 °C" },
+                                { cat: "", item: "Turbidity", param: "No more than 10000ppm and less bubble" },
+                                { cat: "", item: "Flowrate", param: "0 - ±7m/s" },
+                                { cat: "Working Environment", item: "Temperature", param: "Controller: -20~80°C ; Transducer: -30~180 °C" },
+                                { cat: "", item: "Humidity", param: "Controller: 85% RH; Transducer: Water immersible, water depth ≤ 2m" },
+                                { cat: "Power Supply", item: "", param: "DC 8-36V or AC 85-264V, 50HZ Standard" },
+                                { cat: "Dimension", item: "", param: "253*136*115 mm (controller)" }
+                            ]
+                        },
                         "orderCodeLayout": "positional",
                         "orderCodeSlots": 3,
                         "orderCodes": [
@@ -770,26 +1063,35 @@ const productData = [
                         "images": [],
                         "brochure": tkn204Pdf,
                         "specs": {
-                            "Product Brief": "Techknave Enhanced Clampon Ultrasonic BTU /Flow meter (TKN204B /F) \\nSize: DN50 to DN3000\\nAccuracy: +/- 0.5%\\nTemp sensor: PT1000\\nCommunication: RS485 / Mbus",
-                            "Model": "D$22 6-(Standard)",
-                            "Type": "Wall-mounted",
-                            "Accuracy": "±0.5% of measured value",
-                            "Repeatability Error": "0.2%",
-                            "Flow Range": "±0.03m/s - ±5m/s",
-                            "Pipe Size": "1/2 to 200 (15mm to 5000mm)",
-                            "Pipe Material": "Carbon steel, stainless steel, PVC",
-                            "Output": "4-20mA, max load 750 Ω\nRelay, SPST, max 1Hz,(0.4A @ 125VAC or 2A @ 30VDC)\nOCT pulse, 0-10KHz",
-                            "Protocol": "MBus (EN 13757)",
-                            "SD Card": "Optional, 32G",
-                            "Power Supply": "90 to 245 VAC\n&\n10 to 36 VDC",
-                            "Display": "9999999, 1-2 digits after the decimal point",
-                            "Temperature": "-20°C-60°C",
-                            "Temperature (Sensor)": "PT1000, Default, 40°C-80°C\nMax -40°C- +180°C\nF10 type (2°C to 20°C, F20 type (Above 20°C)",
-                            "Protection (Transmitter)": "IP65",
-                            "Protection (Sensor)": "IP68",
-                            "Cable Length": "9m, up to 274m",
-                            "Housing": "PC/AB5",
-                            "Humidity": "Up to 99% RH, non-condensing"
+                            "Product Brief": "Techknave Enhanced Clampon Ultrasonic BTU /Flow meter (TKN204B /F) \\nSize: DN50 to DN3000\\nAccuracy: +/- 0.5%\\nTemp sensor: PT1000\\nCommunication: RS485 / Mbus"
+                        },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "MODEL", key: "model" },
+                                { label: "TKN204", key: "param" }
+                            ],
+                            "items": [
+                                { model: "Type", param: "Wall-mounted" },
+                                { model: "Accuracy", param: "±0.5% of measured value" },
+                                { model: "Repeatability Error", param: "0.2%" },
+                                { model: "Flow Range", param: "±0.03m/s - ±5m/s" },
+                                { model: "Pipe Size", param: "2\" to 48\"(50mm to 1200mm)" },
+                                { model: "Pipe Material", param: "Carbon steel, stainless steel, PVC" },
+                                { model: "Output", param: "4-20mA, max load 750 Ω\nRelay, SPST, max 1Hz,(0.4A @ 125VAC or 2A @ 30VDC)\nOCT pulse, 0-10KHz" },
+                                { model: "Protocol", param: "Modbus RTU/M-Bus (EN 13757)" },
+                                { model: "SD Card", param: "Optional, 32G" },
+                                { model: "Power Supply", param: "90 to 245 VAC\n&\n10 to 36 VDC" },
+                                { model: "Display", param: "9999999, 1-2 digits after the decimal point" },
+                                { model: "Temperature", param: "-20°C-60°C" },
+                                { model: "Temperature (Sensor)", param: "PT1000, Default, 40°C-80°C\nMax -40°C- +180°C\nT10 type (2\" to 20\"), T20 type (Above 20\")" },
+                                { model: "Protection (Transmitter)", param: "IP65" },
+                                { model: "Protection (Sensor)", param: "IP68" },
+                                { model: "Cable Length", param: "9m, up to 274m" },
+                                { model: "Housing", param: "PC/AB5" },
+                                { model: "Humidity", param: "Up to 99% RH, non-condensing" },
+                                { model: "Dimension", param: "28 x 24 x 17 (Box dimension)" }
+                            ]
                         },
                         "applicationDescription": "Techknave T204 series wall mounted CLAMP ON BTU and FLOW METER are ideal for process-control / BTU or kWh energy measurement / Flow measurement, Flow verification, Energy Audits, Network leak detection and various other industry requirements.",
                         "application": [
@@ -850,6 +1152,30 @@ const productData = [
                             "Size": "DN50 to DN6000",
                             "Interface": "RS485, MODBUS",
                             "Power": "Power supply DC 24V"
+                        },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Parameter", key: "param" },
+                                { label: "Description", key: "desc" }
+                            ],
+                            "items": [
+                                { param: "Principle", desc: "Transit-time" },
+                                { param: "Accuracy", desc: "Flow meter: ±0.5%; Heat meter: ±2.0%" },
+                                { param: "Output", desc: "4~20mA analog; OCT pulse; Relay" },
+                                { param: "Input", desc: "3 way 4~20mA analog input, acquisition signal of press and liquid level.\nAchieve heat measurement by connecting PT100 temperature sensors" },
+                                { param: "Interface", desc: "RS485; Modbus" },
+                                { param: "Pipe Material", desc: "Steel, stainless steel, cast iron, copper, PVC, aluminum, etc." },
+                                { param: "Caliber", desc: "DN50mm~DN6000mm" },
+                                { param: "Straight Pipeline", desc: "Upstream: 10D; Downstream: 5D; From the pump: 30D (D means outer diameter)" },
+                                { param: "Medium", desc: "Single liquid that can conduct sound wave, such as water (-30°C~160°C)" },
+                                { param: "Velocity", desc: "-12m/s~12m/s" },
+                                { param: "Special Cable", desc: "Shielded twisted-pair cable, length ≤ 50m" },
+                                { param: "Temperature", desc: "Main unit: -20°C~70°C; Transducers: -30°C~160°C" },
+                                { param: "Protection Class", desc: "Main Unit: IP65; Sensors: IP68" },
+                                { param: "Power Supply", desc: "DC24V ; AC85~264V ; 50Hz" },
+                                { param: "Consumption", desc: "1.5W" }
+                            ]
                         },
                         "orderCodeLayout": "positional",
                         "orderCodeSlots": 3,
@@ -965,6 +1291,27 @@ const productData = [
                             "Communication": "Mbus / LoRaWAN",
                             "Power": "Battery powered (16+ years)"
                         },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Model", key: "model" },
+                                { label: "Gas Konnect TKN2801C", key: "col1" },
+                                { label: "Gas Konnect TKN2803C", key: "col2" }
+                            ],
+                            "items": [
+                                { model: "Communication", col1: "Wired M-Bus\n(EN 13757 Standard)", col2: "Wireless LoRaWAN" },
+                                { model: "Enclosure", col1: "PC-GFS (Polycarbonate) Weatherproof resistant (IP66)", col2: "PC-GFS (Polycarbonate) Weatherproof resistant (IP66)" },
+                                { model: "Type", col1: "Built In Pulse reading (Gas meter reading and storage)\nValve control Module (Gas solenoid valve open/close)(Suitable for all\ncompatible Gas meter with pulse output andGas solenoid valves)", col2: "Built In Pulse reading (Gas meter reading and storage)\nValve control Module (Gas solenoid valve open/close)(Suitable for all\ncompatible Gas meter with pulse output andGas solenoid valves)" },
+                                { model: "Features", col1: "Automatically read Gas Flow and volume data\nIntegrated battery with life expectancy of 10+ years\nOperating temperature ranges -5 ° C to +60°C\nReal time clock with historical data logging options\nData storing options incase of power failure/ Battery failure\n2 Digital inputs configurable (Pulse Read / standard DI)\n1 Relay output with NO/NC", col2: "Automatically read Gas Flow and volume data\nIntegrated battery with life expectancy of 10+ years\nOperating temperature ranges -5 ° C to +60°C\nReal time clock with historical data logging options\nData storing options incase of power failure/ Battery failure\n2 Digital inputs configurable (Pulse Read / standard DI)\n1 Relay output with NO/NC" },
+                                { model: "Memory & Data Storage", col1: "Inbuilt EEPROM Memory\nStores Volume & Operation Count with date and time\n1500 Hourly / 150 Daily / 15 Monthly Readings with date and time\nLast 15 Error/Tamper events with date and time", col2: "Inbuilt EEPROM Memory\nStores Volume & Operation Count with date and time\n1500 Hourly / 150 Daily / 15 Monthly Readings with date and time\nLast 15 Error/Tamper events with date and time" },
+                                { model: "Software Support", col1: "Meter readings and history read through UBill IBM / UBill AMR Software\nControls Solenoid valve through UBill IBM / UBill AMR Software", col2: "Meter readings and history read through UBill IBM / UBill AMR Software\nControls Solenoid valve through UBill IBM / UBill AMR Software" },
+                                { model: "Tamper Alarm", col1: "Tamper proof (Gaskonnect module cover open)\nTamper proof (Pulse sensor)", col2: "Tamper proof (Gaskonnect module cover open)\nTamper proof (Pulse sensor)" },
+                                { model: "Output Relay", col1: "Relay contact rating up to 250 V AC, 5 A (For operating Gas solenoid valves)", col2: "Relay contact rating up to 250 V AC, 5 A (For operating Gas solenoid valves)" },
+                                { model: "LED Indications", col1: "Communication (RX/TX) (Red and green toggle flash every 2 secs)\nOpen (Green LED every 5 secs single Flash for 500 ms)\nClose (Red LED every 5 secs single Flash 500 ms)\nLow Battery Indication (Red LED flash 500ms ON & 500ms OFF)\nMemory full or Any other alarms (Green LED flash 500ms ON & 500ms OFF)", col2: "Communication (RX/TX) (Red and green toggle flash every 2 secs)\nOpen (Green LED every 5 secs single Flash for 500 ms)\nClose (Red LED every 5 secs single Flash 500 ms)\nLow Battery Indication (Red LED flash 500ms ON & 500ms OFF)\nMemory full or Any other alarms (Green LED flash 500ms ON & 500ms OFF)" },
+                                { model: "Local Operation", col1: "Inbuilt Open/Close switch for manual operations (Configurable)", col2: "Inbuilt Open/Close switch for manual operations (Configurable)" },
+                                { model: "Terminal Block(Push - in Type)", col1: "4-pin for M-bus connection(in/out),\n2-pin for 230V AC power input\n4-pin for Solenoid Valve Power output,\n4-pin for meter pulse input", col2: "4-pin for M-bus connection(in/out),\n2-pin for 230V AC power input\n4-pin for Solenoid Valve Power output,\n4-pin for meter pulse input" }
+                            ]
+                        },
                         "tags": [
                             "Meters",
                             "Gas Meters"
@@ -994,6 +1341,25 @@ const productData = [
                             "Product Brief": "Gaskonnect Pulse Reader (TKN2801P)\\nPulse to Mbus module\\nCommunication: Mbus\\nPower: Battery powered (16+ years)",
                             "Communication": "Mbus",
                             "Power": "Battery powered (16+ years)"
+                        },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Model", key: "model" },
+                                { label: "Gas Konnect TKN2801P", key: "col1" },
+                                { label: "Gas Konnect TKN2803P", key: "col2" }
+                            ],
+                            "items": [
+                                { model: "Communication", col1: "Wired M-Bus\n(EN 13757 Standard)", col2: "Wireless LoRaWAN" },
+                                { model: "Enclosure", col1: "PC-GFS (Polycarbonate) Weatherproof resistant (IP66)", col2: "PC-GFS (Polycarbonate) Weatherproof resistant (IP66)" },
+                                { model: "Type", col1: "Built In Pulse reading (Gas meter reading and storage)(Suitable for all Gas\nmeters with pulse output)", col2: "Built In Pulse reading (Gas meter reading and storage)(Suitable for all Gas\nmeters with pulse output)" },
+                                { model: "Features", col1: "Automatically read Gas Flow and volume data\nIntegrated battery with life expectancy of 10+ years\nOperating temperature ranges -5 ° C to +60°C\nReal time clock with historical data logging options\nData storing options incase of power failure/ Battery failure\n2 Digital inputs configurable (Pulse Read / standard DI)", col2: "Automatically read Gas Flow and volume data\nIntegrated battery with life expectancy of 10+ years\nOperating temperature ranges -5 ° C to +60°C\nReal time clock with historical data logging options\nData storing options incase of power failure/ Battery failure\n2 Digital inputs configurable (Pulse Read / standard DI)" },
+                                { model: "Memory & Data Storage", col1: "Inbuilt EEPROM Memory\nStores Volume & Operation Count with date and time\n1500 Hourly / 150 Daily / 15 Monthly Readings with date\nand time\nLast 15 Error/Tamper events with date and time", col2: "Inbuilt EEPROM Memory\nStores Volume & Operation Count with date and time\n1500 Hourly / 150 Daily / 15 Monthly Readings with date\nand time\nLast 15 Error/Tamper events with date and time" },
+                                { model: "Software Support", col1: "Meter readings and history read through UBill IBM / UBill AMR Software", col2: "Meter readings and history read through UBill IBM / UBill AMR Software" },
+                                { model: "Tamper Alarm", col1: "Tamper proof (Gaskonnect module cover open)\nTamper proof ( Pulse sensor)", col2: "Tamper proof (Gaskonnect module cover open)\nTamper proof ( Pulse sensor)" },
+                                { model: "LED Indications", col1: "Communication (RX/TX) (Red and green toggle flash every 2 secs)\nLow Battery Indication (Red LED flash 500ms ON & 500ms OFF)\nMemory full or Any other alarms (Green LED flash 500ms ON & 500ms OFF)", col2: "Communication (RX/TX) (Red and green toggle flash every 2 secs)\nLow Battery Indication (Red LED flash 500ms ON & 500ms OFF)\nMemory full or Any other alarms (Green LED flash 500ms ON & 500ms OFF)" },
+                                { model: "Terminal Block(Push - in Type)", col1: "4-pin for M-bus connection(in/out)\n4-pin for meter pulse\n4-pin for meter pulse & tamper input tamper input", col2: "4-pin for M-bus connection(in/out)\n4-pin for meter pulse\n4-pin for meter pulse & tamper input tamper input" }
+                            ]
                         },
                         "tags": [
                             "Meters",
@@ -1036,7 +1402,38 @@ const productData = [
                             "Supply power by m-bus, no external power supply."
                         ],
                         "overview": "Wired remote reading gas meter adopts m-bus or RS485 modbus communication to realize remote meter reading and valve control functions. It’s used for measuring the gas flow in the pipe. This smart gas meter equipped with microcomputer to measure and store gas consumption, and automatically detect battery status and meter operation status etc. With it, the gas utilities are easy to management gas supply and\ngreatly improve the billing efficiency and avoid read meter door to door and money owing.",
-                        "longDescription": "Gaskonnect Smart Gas Meters\nSize: G1.6 /G2.5/G4.0/G6.0\nCommunication : M-Bus / RS485 MODBUS\nInbuilt valve control"
+                        "longDescription": "Gaskonnect Smart Gas Meters\nSize: G1.6 /G2.5/G4.0/G6.0\nCommunication : M-Bus / RS485 MODBUS\nInbuilt valve control",
+                        "technicalParameters": {
+                            "title": "Technical Specifications",
+                            "columns": [
+                                { label: "Size(DN)", key: "param" },
+                                { label: "G1.6", key: "g1_6" },
+                                { label: "G2.5", key: "g2_5" },
+                                { label: "G4.0", key: "g4_0" },
+                                { label: "G6.0", key: "g6_0" }
+                            ],
+                            "items": [
+                                { param: "Common Flow Rate", g1_6: "1.6 m³/h", g2_5: "2.5 m³/h", g4_0: "4 m³/h", g6_0: "6.0 m³/h" },
+                                { param: "Maximum Flow Rate ( QMax)", g1_6: "2.5 m³/h", g2_5: "4 m³/h", g4_0: "6 m³/h", g6_0: "10 m³/h" },
+                                { param: "Transitional Flow Rate (Qt)", g1_6: "0.25 m³/h", g2_5: "0.4 m³/h", g4_0: "0.6 m³/h", g6_0: "1.0 m³/h" },
+                                { param: "Minimum Flow Rate (QMin )", g1_6: "0.016m³/h", g2_5: "0.025 m³/h", g4_0: "0.04m³/h", g6_0: "0.06m³/h" },
+                                { param: "Initiate Flow Rate", g1_6: "≤3dm³/h", g2_5: "≤5dm³/h", g4_0: "≤5dm³/h", g6_0: "≤5dm³/h" },
+                                { param: "Total Pressure Loss", g1_6: "≤120Pa", g2_5: "≤200Pa", g4_0: "≤250Pa", g6_0: "≤250Pa" },
+                                { param: "Cyclic Volume", g1_6: "1.20 dm³", g2_5: "1.20 dm³", g4_0: "1.20 dm³", g6_0: "2.40 dm³" },
+                                { param: "Maximum Reading", g1_6: "99999.999m³", g2_5: "99999.999m³", g4_0: "99999.999m³", g6_0: "99999.999m³" },
+                                { param: "Minimum Reading", g1_6: "0.0002m³", g2_5: "0.0002m³", g4_0: "0.0002m³", g6_0: "0.0002m³" },
+                                { param: "Accuracy Class", g1_6: "Class 1.5", g2_5: "Class 1.5", g4_0: "Class 1.5", g6_0: "Class 1.5" },
+                                { param: "Leak Tightness", g1_6: "No leak when ≤ 15kPa or No leak when ≤ 55kPa", g2_5: "No leak when ≤ 15kPa or No leak when ≤ 55kPa", g4_0: "No leak when ≤ 15kPa or No leak when ≤ 55kPa", g6_0: "No leak when ≤ 15kPa or No leak when ≤ 55kPa" },
+                                { param: "Explosion Proof", g1_6: "Ex ib IIB T3 Gb", g2_5: "Ex ib IIB T3 Gb", g4_0: "Ex ib IIB T3 Gb", g6_0: "Ex ib IIB T3 Gb" },
+                                { param: "Transmission Speed", g1_6: "2400bps", g2_5: "2400bps", g4_0: "2400bps", g6_0: "2400bps" },
+                                { param: "Working Pressure", g1_6: "≤10 kPa, ≤30 kPa or ≤50 kPa (optional)", g2_5: "≤10 kPa, ≤30 kPa or ≤50 kPa (optional)", g4_0: "≤10 kPa, ≤30 kPa or ≤50 kPa (optional)", g6_0: "≤10 kPa, ≤30 kPa or ≤50 kPa (optional)" },
+                                { param: "Working Temperature", g1_6: "-10°C～40°C or -25°C～55°C", g2_5: "-10°C～40°C or -25°C～55°C", g4_0: "-10°C～40°C or -25°C～55°C", g6_0: "-10°C～40°C or -25°C～55°C" },
+                                { param: "Basic Error", g1_6: "Qmin ≤ Q<Qt ≤ ±3.0%; Qt ≤ Qmax<Qmin ≤ ±1.5%", g2_5: "Qmin ≤ Q<Qt ≤ ±3.0%; Qt ≤ Qmax<Qmin ≤ ±1.5%", g4_0: "Qmin ≤ Q<Qt ≤ ±3.0%; Qt ≤ Qmax<Qmin ≤ ±1.5%", g6_0: "Qmin ≤ Q<Qt ≤ ±3.0%; Qt ≤ Qmax<Qmin ≤ ±1.5%" },
+                                { param: "Power Supply", g1_6: "power supply by m-bus cable or RS485 cable", g2_5: "power supply by m-bus cable or RS485 cable", g4_0: "power supply by m-bus cable or RS485 cable", g6_0: "power supply by m-bus cable or RS485 cable" },
+                                { param: "Material", g1_6: "Steel", g2_5: "Steel", g4_0: "Steel", g6_0: "Steel" },
+                                { param: "Communication", g1_6: "M-Bus or Modbus", g2_5: "M-Bus or Modbus", g4_0: "M-Bus or Modbus", g6_0: "M-Bus or Modbus" }
+                            ]
+                        }
                     }
                 ]
             },
@@ -1186,6 +1583,28 @@ const productData = [
                             "Communication": "Mbus / LoRaWAN",
                             "Power": "M-Bus (loop powered) / Battery (LoRaWAN)"
                         },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Model", key: "model" },
+                                { label: "Gas Konnect TKN2801R", key: "col1" },
+                                { label: "Gas Konnect TKN2803R", key: "col2" }
+                            ],
+                            "items": [
+                                { model: "Communication", col1: "Wired M-Bus\n(EN 13757 Standard)", col2: "Wireless LoRaWAN" },
+                                { model: "Enclosure", col1: "PC-GFS (Polycarbonate) Weatherproof resistant (IP66)", col2: "PC-GFS (Polycarbonate) Weatherproof resistant (IP66)" },
+                                { model: "Type", col1: "Solenoid valve control Module (Gas solenoid valve open/close)(Suitable\nfor all Gas solenoid valves)", col2: "Solenoid valve control Module (Gas solenoid valve open/close)(Suitable\nfor all Gas solenoid valves)" },
+                                { model: "Features", col1: "Operating temperature ranges -5 ° C to +60°C\nReal time clock with tamper logging options\n1 Relay output with NO/NC", col2: "Operating temperature ranges -5 ° C to +60°C\nReal time clock with tamper logging options\n1 Relay output with NO/NC" },
+                                { model: "Indications", col1: "Inbuilt EEPROM Memory\nStores Operation Count with date and time\nLast 15 Error/Tamper events with date and time", col2: "Inbuilt EEPROM Memory\nStores Operation Count with date and time\nLast 15 Error/Tamper events with date and time" },
+                                { model: "Software Support", col1: "Controls Solenoid valve through UBill IBM / UBill AMR Software", col2: "Controls Solenoid valve through UBill IBM / UBill AMR Software" },
+                                { model: "Output Relay", col1: "Relay contact rating up to 250 V AC, 5 A (For operating Gas solenoid valves)", col2: "Relay contact rating up to 250 V AC, 5 A (For operating Gas solenoid valves)" },
+                                { model: "Tamper Alarm", col1: "Tamper proof (Gaskonnect module cover open)", col2: "Tamper proof (Gaskonnect module cover open)" },
+                                { model: "LED Indications", col1: "Communication (RX/TX) (Red and green toggle flash every 2 secs)\nOpen (Green LED every 5 secs single Flash for 500 ms)\nClose (Red LED every 5 secs single Flash 500 ms)", col2: "Communication (RX/TX) (Red and green toggle flash every 2 secs)\nOpen (Green LED every 5 secs single Flash for 500 ms)\nClose (Red LED every 5 secs single Flash 500 ms)" },
+                                { model: "Local Operation", col1: "Inbuilt Open/Close switch for manual operations (Configurable)", col2: "Inbuilt Open/Close switch for manual operations (Configurable)" },
+                                { model: "Terminal Block\nPower (Push - in Type)", col1: "2-pin for 230V AC power input\n4-pin for Solenoid Valve Power output", col2: "2-pin for 230V AC power input\n4-pin for Solenoid Valve Power output" },
+                                { model: "Terminal Block\nCommunication(Push - in Type)", col1: "4-pin for M-bus connection(in/out)", col2: "4-pin for M-bus connection(in/out)" }
+                            ]
+                        },
                         "tags": [
                             "Valves & Switches",
                             "Smart Compact Switch (Relay control)"
@@ -1222,6 +1641,40 @@ const productData = [
                             "IP Rating": "IP68",
                             "Power": "Battery operated"
                         },
+                        "technicalParameters": {
+                            "title": "Technical Parameters",
+                            "columns": [
+                                { label: "Specification", key: "spec" },
+                                { label: "Description", key: "desc" }
+                            ],
+                            "items": [
+                                { spec: "Power Supply", desc: "24V DC or Replaceable Lithium battery (3.6V, 8500 mAh, type C)" },
+                                { spec: "Pipe Size", desc: "DN15, DN20, DN25, DN32, DN40" },
+                                { spec: "Pressure Range", desc: "PN16" },
+                                { spec: "IP Rating", desc: "IP68" },
+                                { spec: "Indications", desc: "DISPLAY - To show secondary id / M-Bus command receive/ Valve Status\nOPEN - LED indication (Valve Open)\nCLOSE - LED indication (Valve Close)" },
+                                { spec: "Valve Feedback", desc: "Valve position feedback by two\nphysical reed switch (open/close)" },
+                                { spec: "Material", desc: "Actuator: PC-ABS Valve\nBody / Ball Material: Brass\nSeal: EPDM/FKM" },
+                                { spec: "Medium Temperature", desc: "0~+100 °C" },
+                                { spec: "Ambient Temperature", desc: "-20 °C to 60 °C" },
+                                { spec: "Local Display", desc: "LCD Display with Back light" },
+                                { spec: "M-Bus Telegram Response Parameters", desc: "Valve position feedback\nBattery Voltage\nRTC\nTime period of last position" },
+                                { spec: "Software Support", desc: "UBill IBM Billing Software / UBILL VCM" },
+                                { spec: "Communication Protocol", desc: "Wired M-Bus( EN 13757 Protocol )" },
+                                { spec: "Battery Life", desc: "16+ years ( Refer our lifetime calc sheet)" }
+                            ]
+                        },
+                        "dimensionsColumns": [
+                            { label: "DN Value", key: "dn" },
+                            { label: "Valve Body Length (A)", key: "length" }
+                        ],
+                        "dimensions": [
+                            { dn: "DN 15", length: "66.00 mm" },
+                            { dn: "DN 20", length: "68.50 mm" },
+                            { dn: "DN 25", length: "75.00 mm" },
+                            { dn: "DN 32", length: "84.00 mm" },
+                            { dn: "DN 40", length: "99.00 mm" }
+                        ],
                         "orderCodeColumns": [
                             { label: "Order Code", key: "model" },
                             { label: "Description", key: "desc" }
@@ -1374,6 +1827,32 @@ const productData = [
                         ],
                         "overview": "UConnect M-Bus Masters are industrial-grade communication gateways designed to reliably collect data from large networks of M-Bus meters and sensors. They act as a central hub that powers, manages, and communicates with up to 250 M-Bus slave devices from a single unit.\nBy converting M-Bus signals into RS232, RS485, or TCP/IP, UConnect M-Bus Masters enable seamless integration with PLCs, BMS, SCADA systems, data loggers, and cloud platforms. Built-in protection against short circuits, overloads, and high voltage ensures safe and stable operation even in harsh field conditions.\nWith automatic load adjustment, intelligent fault recovery, and DIN-rail industrial design, UConnect M-Bus Masters provide a reliable and scalable solution for smart metering, energy management, and large-scale monitoring applications.",
                         "longDescription": "Uconnect M-Bus Master\nSlaves : 100/250\nCommunication: RS485 / TCP\nPower supply: 24V DC, 1.2A\nDIN Rail Sleek model",
+                        "technicalParameters": {
+                            "title": "Technical Specifications",
+                            "columns": [
+                                { label: "Specification", key: "spec" },
+                                { label: "Description", key: "desc" }
+                            ],
+                            "items": [
+                                { spec: "Interfaces", desc: "RS232, RS485, TCP/IP" },
+                                { spec: "RS232 Range", desc: "Up to 15 meters" },
+                                { spec: "RS485", desc: "Auto direction" },
+                                { spec: "TCP/IP", desc: "IP/Port programmable" },
+                                { spec: "M-Bus Capacity", desc: "Up to 250 devices" },
+                                { spec: "Power Supply", desc: "24V DC, 2A" },
+                                { spec: "M-Bus Voltage", desc: "Mark 36–40V, Space 24–27V" },
+                                { spec: "Short-Circuit Current", desc: "≥500 mA" },
+                                { spec: "Reaction Time", desc: "Configurable 1–4 s" },
+                                { spec: "Recovery Time", desc: "Configurable 10–60 s" },
+                                { spec: "Weight", desc: "300 g" },
+                                { spec: "Mounting", desc: "DIN rail, MS body" },
+                                { spec: "Protection", desc: "IP20" },
+                                { spec: "Operating Temp", desc: "-20°C to +50°C" },
+                                { spec: "Storage Temp", desc: "–50°C to +70°C" },
+                                { spec: "Humidity", desc: "5–95%, non-condensing" },
+                                { spec: "Output Selection", desc: "4xDIP switch to select RS232 / RS485 / TCP" }
+                            ]
+                        },
                         "orderCodeColumns": [
                             { "label": "Part Number", "key": "partNumber" },
                             { "label": "Description", "key": "desc" }
@@ -1423,6 +1902,15 @@ const productData = [
                                 { param: "Humidity", spec: "5–95%, non-condensing" }
                             ]
                         },
+                        "orderCodeColumns": [
+                            { label: "Order Code", key: "code" },
+                            { label: "Details", key: "details" }
+                        ],
+                        "orderCodes": [
+                            { code: "U2601-S125", details: "M-Bus Master supporting up to 125 slaves" },
+                            { code: "U2601-S250", details: "M-Bus Master supporting up to 250 slaves" },
+                            { code: "U2601T-TCP", details: "M-Bus Master to TCP/IP module" }
+                        ],
                         "tags": [
                             "Gateways & Connectivity",
                             "M-Bus Products"
@@ -1469,8 +1957,8 @@ const productData = [
                                 { param: "Baudrate", spec: "Up to 115200bps" },
                                 { param: "M-BUS Voltage(Transmit)", spec: "24V" },
                                 { param: "Dimension", spec: "85mm x 45mm x 26mm" },
-                                { param: "Protections", spec: "USB Over Voltage / Over Current, M-Bus Short circuit / Over Load" },
-                                { param: "Indications", spec: "Power ON (PWR), Transmit Telegram (TX), Receive Telegram (RX), Overload / Short Circuit Buzze" }
+                                { param: "Protections", spec: "USB Over Voltage / Over Current\nM-Bus Short circuit / Over Load" },
+                                { param: "Indications", spec: "Power ON (PWR)\nTransmit Telegram (TX)\nReceive Telegram (RX)\nOverload / Short Circuit Buzze" }
                             ]
                         },
                         "tags": [
@@ -1858,7 +2346,32 @@ const productData = [
                             "Ideal for gateways, controllers, and data-logging applications"
                         ],
                         "overview": "The U2406-EDGE is a compact industrial edge IoT controller engineered for reliable field connectivity and edge processing.\nDesigned to operate on a stable Debian Linux platform, it ensures long-term reliability and flexibility.\nWith a fan less, solid-state architecture, it is optimized for 24/7 continuous operation.\nThe device provides rich industrial I/O for seamless integration with field equipment.",
-                        "longDescription": "Uconnect Edge Controllers\nInterface: 2x RS485 & 2x TCP, 2x USB, 1x Memory card slot \nConfig: Web interface\nProtocols support: M-Bus / Modbus / BacNet IP\nABS casing, IP54, Din Rail, 12-36VDC, 2 Amps\nSupport upto 250 M-Bus nodes / 2000 tag points."
+                        "longDescription": "Uconnect Edge Controllers\nInterface: 2x RS485 & 2x TCP, 2x USB, 1x Memory card slot \nConfig: Web interface\nProtocols support: M-Bus / Modbus / BacNet IP\nABS casing, IP54, Din Rail, 12-36VDC, 2 Amps\nSupport upto 250 M-Bus nodes / 2000 tag points.",
+                        "technicalParameters": {
+                            "title": "Technical Specifications",
+                            "columns": [
+                                { label: "Parameter", key: "param" },
+                                { label: "Specification", key: "spec" }
+                            ],
+                            "items": [
+                                { param: "Model Number", spec: "U2406-EDGE" },
+                                { param: "Operating System", spec: "Debian Linux" },
+                                { param: "Processor", spec: "Industrial embedded processor" },
+                                { param: "RAM", spec: "1 GB" },
+                                { param: "Internal Storage", spec: "8 GB eMMC" },
+                                { param: "Ethernet", spec: "2 × 10/100 Mbps Ethernet" },
+                                { param: "RS485", spec: "2 × RS485" },
+                                { param: "RS232", spec: "2 × RS232" },
+                                { param: "Digital Inputs", spec: "2 × DI" },
+                                { param: "Digital Outputs", spec: "2 × DO" },
+                                { param: "USB", spec: "USB Host (for service / expansion)" },
+                                { param: "Power Input", spec: "Industrial DC power input" },
+                                { param: "Cooling", spec: "Passive, fan less" },
+                                { param: "Operating Mode", spec: "24/7 continuous duty" },
+                                { param: "Mounting", spec: "DIN rail / Wall mount" },
+                                { param: "Software Compatibility", spec: "UConnect Gateway Drivers supported" }
+                            ]
+                        }
                     },
                     {
                         "id": "u2601t-tcp",
@@ -2324,7 +2837,7 @@ const productData = [
                             "Operating Temperature": "15 to 40°C (5 to 104°F)"
                         },
                         "technicalParameters": {
-                            "title": "Technical Specifications",
+                            "title": "Technical Parameters",
                             "columns": [
                                 { label: "Parameter", key: "param" },
                                 { label: "Specification", key: "spec" }
@@ -2379,7 +2892,7 @@ const productData = [
                             "IP Rating": "IP67"
                         },
                         "technicalParameters": {
-                            "title": "Technical Specifications",
+                            "title": "Technical Parameters",
                             "columns": [
                                 { label: "Specification", key: "spec" },
                                 { label: "Description", key: "desc" }
@@ -2430,7 +2943,7 @@ const productData = [
                             "Battery Life": "Upto 4.6 years"
                         },
                         "technicalParameters": {
-                            "title": "Technical Specifications",
+                            "title": "Technical Parameters",
                             "columns": [
                                 { label: "Parameter", key: "param" },
                                 { label: "Specification", key: "spec" }
@@ -2492,6 +3005,25 @@ const productData = [
                             "Robust industrial housing"
                         ],
                         "longDescription": "Uconnect Wired Non-Location Area Leak Sensor\nPower Supply :\tDC 9–30 V (DC 12 V recommended)\nMax Sensing Cable Length : Up to 500 m\nDetection Method : Non-positional liquid leak detection",
+                        "technicalParameters": {
+                            "title": "Technical Specifications",
+                            "columns": [
+                                { label: "Specification", key: "spec" },
+                                { label: "Description", key: "desc" }
+                            ],
+                            "items": [
+                                { spec: "Detection Method", desc: "Non-positional liquid leak detection" },
+                                { spec: "Response Time", desc: "≤ 1 second" },
+                                { spec: "Max Sensing Cable Length", desc: "Up to 500 m (Extendable Cables)" },
+                                { spec: "Power Supply", desc: "DC 9–30 V (DC 12 V recommended)" },
+                                { spec: "Power Consumption", desc: "≤ 0.5 W" },
+                                { spec: "Relay Output", desc: "Normally Open / Normally Closed" },
+                                { spec: "Relay Rating", desc: "120 VAC / 2 A, 24 VDC / 2 A" },
+                                { spec: "Operating Temperature", desc: "–40 °C to +70 °C" },
+                                { spec: "Operating Humidity", desc: "0–95% RH (non-condensing)" },
+                                { spec: "Mounting", desc: "DIN 35 mm rail" }
+                            ]
+                        },
                         "orderCodeColumns": [
                             { "label": "ORDER CODES", "key": "code" },
                             { "label": "DESCRIPTION", "key": "desc" }
@@ -2530,6 +3062,28 @@ const productData = [
                         ],
                         "overview": "The U2801W is a high-precision leak detection positioning controller designed for real-time monitoring and localization of liquid leaks in critical infrastructure environments. Capable of supporting up to 7.5 meters of sensing cable, this controller provides rapid detection, accurate leak location reporting, and comprehensive alarm signaling via visual\nindicators, relay outputs, and RS-485 communication.",
                         "longDescription": "Uconnect Wired Location Area Leak Sensor\nPower Supply :  12V DC, 24V DC, 24V AC, or 220V AC\nProtocols Supported : MODBUS-RTU, MODBUS-ASCII\nMax Cable Length : 1200 meters (RS-485)",
+                        "technicalParameters": {
+                            "title": "Technical Specification",
+                            "columns": [
+                                { label: "Specification", key: "spec" },
+                                { label: "Description", key: "desc" }
+                            ],
+                            "items": [
+                                { spec: "Response Time", desc: "≤ 8 seconds" },
+                                { spec: "Detection Distance", desc: "with extension cable up to 50 meters" },
+                                { spec: "Detection Accuracy", desc: "± 0.1 meters" },
+                                { spec: "Dimensions", desc: "85.8 × 70 × 58.7 mm" },
+                                { spec: "Installation Method", desc: "DIN rail mount (35mm standard)" },
+                                { spec: "Operating Temperature", desc: "-10°C to 60°C (14°F to 140°F)" },
+                                { spec: "Storage Temperature", desc: "-20°C to 60°C (-4°F to 140°F)" },
+                                { spec: "Relative Humidity", desc: "5% to 95% RH (non-condensing)" },
+                                { spec: "Power Supply Options", desc: "12V DC, 24V DC, 24V AC, or 220V AC" },
+                                { spec: "Power Consumption", desc: "< 2W" },
+                                { spec: "Interface / Protocol", desc: "RS-485 / MODBUS-RTU" },
+                                { spec: "Relay Type", desc: "1 Form C (NO/NC) contact" },
+                                { spec: "Function", desc: "Triggered on leak or fault events" }
+                            ]
+                        },
                         "orderCodeColumns": [
                             { "label": "Order Code", "key": "code" },
                             { "label": "Product Name", "key": "name" },
@@ -2578,7 +3132,7 @@ const productData = [
                             { "label": "Description", "key": "desc" }
                         ],
                         "orderCodes": [
-                            { "model": "BMS Integral Module", "code": "1", "desc": "" },
+                            { "model": "BMS Integral Module", "code": "❶", "desc": "" },
                             { "model": "Nodes/Meters", "code": "BMS 1207-0050", "desc": "50" },
                             { "model": "Nodes/Meters", "code": "BMS 1207-0100", "desc": "100" },
                             { "model": "Nodes/Meters", "code": "BMS 1207-nnnn", "desc": "nnnn nodes" }

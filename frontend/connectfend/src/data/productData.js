@@ -3190,6 +3190,7 @@ const productData = [
                     {
                         "id": "m-bus-reader",
                         "name": "M-Bus reader",
+                        "image": Logo,
                         "brochure": null,
                         "specs": {
                             "Product Brief": "Techknave M-Bus Reader\\n* Automatic network meter search\\n* Manual editing of the meter list\\n* Meter data sort and search option\\n* Periodic readout of network meters\\n* Data export in EXCEL CSV format\\n* Support serial and TCP/IP communication."
